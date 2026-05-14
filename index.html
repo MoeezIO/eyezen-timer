@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>20-20-20 Rule Timer — Free Eye Wellness Tool for Remote Workers</title>
+    <title>EyeZen — 20-20-20 Rule Timer & Digital Wellness Tool</title>
     <meta name="description" content="Free browser-based 20-20-20 rule timer. Customize work/break intervals, track water intake, and protect your eyes. No install needed.">
-    <meta name="keywords" content="20-20-20 rule, eye strain timer, computer eye care, remote work wellness, break reminder, screen time tracker">
+    <meta name="keywords" content="20-20-20 rule, eye strain timer, computer eye care, remote work wellness, break reminder, screen time tracker, EyeZen">
     
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="20-20-20 Rule Timer — Free Eye Wellness Tool for Remote Workers">
+    <meta property="og:title" content="EyeZen — Free Eye Wellness Tool for Remote Workers">
     <meta property="og:description" content="Free browser-based 20-20-20 rule timer. Customize work/break intervals, track water intake, and protect your eyes.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👀</text></svg>">
@@ -446,8 +446,8 @@
         }
         
         .breathing-circle {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             margin: 0 auto 30px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
@@ -476,11 +476,23 @@
         .break-quote {
             font-style: italic;
             color: var(--text-secondary);
-            margin-top: 30px;
-            padding: 20px;
+            margin-top: 20px;
+            padding: 15px;
             border-left: 3px solid var(--accent-mint);
             background: rgba(0, 212, 170, 0.05);
             border-radius: 8px;
+        }
+
+        /* MODAL AD STYLING */
+        .modal-ad {
+            margin-top: 30px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .modal-ad a {
+            color: var(--accent-mint);
+            font-weight: 700;
+            text-decoration: underline;
         }
         
         /* Toast Notification */
@@ -607,6 +619,14 @@
         footer a::after {
             display: none;
         }
+
+        .amazon-disclosure {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.4;
+        }
         
         .footer-links {
             margin-bottom: 20px;
@@ -684,11 +704,6 @@
             to { opacity: 1; }
         }
         
-        @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
         /* Responsive */
         @media (max-width: 768px) {
             .settings-panel {
@@ -729,42 +744,6 @@
                 width: 100%;
                 max-width: 300px;
             }
-            
-            .toast {
-                bottom: 20px;
-                right: 20px;
-                left: 20px;
-            }
-        }
-        
-        /* Keyboard Shortcuts Info */
-        .shortcuts-info {
-            margin-top: 30px;
-            padding: 20px;
-            background: rgba(0, 212, 170, 0.05);
-            border-radius: 12px;
-            border: 1px solid rgba(0, 212, 170, 0.2);
-        }
-        
-        .shortcuts-info h3 {
-            color: var(--accent-mint);
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-        
-        .shortcuts-info p {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin: 5px 0;
-        }
-        
-        .shortcuts-info kbd {
-            background: var(--bg-primary);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-family: monospace;
-            color: var(--accent-mint);
-            border: 1px solid var(--border-glass);
         }
         
         /* Test Sound Button */
@@ -868,13 +847,6 @@
         </div>
         
         <a href="/premium.html" class="btn-link">⭐ Try Premium</a>
-        
-        <div class="shortcuts-info">
-            <h3>⌨️ Keyboard Shortcuts</h3>
-            <p><kbd>Space</kbd> Start/Pause</p>
-            <p><kbd>R</kbd> Reset Timer</p>
-            <p><kbd>B</kbd> Take Break Now</p>
-        </div>
     </div>
     
     <!-- Main Container -->
@@ -931,7 +903,7 @@
         
         <!-- Affiliate Link -->
         <div style="text-align: center;">
-            <a href="https://amzn.to/dummy-affiliate-link" target="_blank" rel="noopener noreferrer" class="affiliate-link">
+            <a href="https://amzn.to/4eHk8nC" target="_blank" rel="noopener noreferrer" class="affiliate-link">
                 🕶️ Recommended Blue Light Glasses
             </a>
         </div>
@@ -978,6 +950,10 @@
             <div class="break-quote" id="breakQuote">
                 "Your eyes deserve a break. Take care of them."
             </div>
+            <!-- SMART PLACEMENT AD -->
+            <div class="modal-ad">
+                While you wait: <a href="https://amzn.to/4eHk8nC" target="_blank" rel="noopener noreferrer">Check out these eye-protecting glasses on Amazon</a>
+            </div>
         </div>
     </div>
     
@@ -989,6 +965,11 @@
     
     <!-- Footer -->
     <footer>
+        <!-- REQUIRED AMAZON DISCLOSURE -->
+        <p class="amazon-disclosure">
+            As an Amazon Associate, I earn from qualifying purchases. This help supports the maintenance of EyeZen at no extra cost to you.
+        </p>
+
         <!-- Ad Placeholder Footer -->
         <div id="ad-footer">Ad Space</div>
         
@@ -1013,79 +994,25 @@
         // ==================== AUDIO SYSTEM ====================
         const AudioSystem = {
             context: null,
-            
-            init() {
-                this.context = new (window.AudioContext || window.webkitAudioContext)();
-            },
-            
-            playBreakStart() {
+            init() { this.context = new (window.AudioContext || window.webkitAudioContext)(); },
+            play(freq, type, duration) {
                 if (!settings.sound) return;
                 if (!this.context) this.init();
-                
                 const now = this.context.currentTime;
-                const oscillator = this.context.createOscillator();
-                const gainNode = this.context.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(this.context.destination);
-                
-                oscillator.type = 'sine';
-                oscillator.frequency.value = 440; // A4 note
-                
-                gainNode.gain.setValueAtTime(0, now);
-                gainNode.gain.linearRampToValueAtTime(0.3, now + 0.1);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 1.5);
-                
-                oscillator.start(now);
-                oscillator.stop(now + 1.5);
+                const osc = this.context.createOscillator();
+                const gain = this.context.createGain();
+                osc.connect(gain); gain.connect(this.context.destination);
+                osc.type = type; osc.frequency.value = freq;
+                gain.gain.setValueAtTime(0, now);
+                gain.gain.linearRampToValueAtTime(0.3, now + 0.05);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + duration);
+                osc.start(now); osc.stop(now + duration);
             },
-            
-            playBreakEnd() {
-                if (!settings.sound) return;
-                if (!this.context) this.init();
-                
-                const now = this.context.currentTime;
-                const oscillator = this.context.createOscillator();
-                const gainNode = this.context.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(this.context.destination);
-                
-                oscillator.type = 'sine';
-                oscillator.frequency.value = 523; // C5 note
-                
-                gainNode.gain.setValueAtTime(0, now);
-                gainNode.gain.linearRampToValueAtTime(0.3, now + 0.05);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 1);
-                
-                oscillator.start(now);
-                oscillator.stop(now + 1);
-            },
-            
-            playWaterDrink() {
-                if (!settings.sound) return;
-                if (!this.context) this.init();
-                
-                const now = this.context.currentTime;
-                const oscillator = this.context.createOscillator();
-                const gainNode = this.context.createGain();
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(this.context.destination);
-                
-                oscillator.type = 'triangle';
-                oscillator.frequency.value = 660; // E5 note
-                
-                gainNode.gain.setValueAtTime(0, now);
-                gainNode.gain.linearRampToValueAtTime(0.2, now + 0.05);
-                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
-                
-                oscillator.start(now);
-                oscillator.stop(now + 0.3);
-            },
-            
+            playBreakStart() { this.play(440, 'sine', 1.5); },
+            playBreakEnd() { this.play(523, 'sine', 1); },
+            playWaterDrink() { this.play(660, 'triangle', 0.3); },
             testAllSounds() {
-                setTimeout(() => this.playBreakStart(), 0);
+                this.playBreakStart();
                 setTimeout(() => this.playBreakEnd(), 1800);
                 setTimeout(() => this.playWaterDrink(), 3000);
             }
@@ -1094,484 +1021,112 @@
         // ==================== PARTICLES ANIMATION ====================
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
         const particles = [];
-        const particleCount = 80;
-        
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5;
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.radius = Math.random() * 2 + 1;
-            }
-            
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                
-                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-            }
-            
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = 'rgba(0, 212, 170, 0.5)';
-                ctx.fill();
-            }
+        for (let i = 0; i < 80; i++) {
+            particles.push({
+                x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5, vy: (Math.random() - 0.5) * 0.5,
+                radius: Math.random() * 2 + 1
+            });
         }
-        
-        for (let i = 0; i < particleCount; i++) {
-            particles.push(new Particle());
-        }
-        
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
+            particles.forEach(p => {
+                p.x += p.vx; p.y += p.vy;
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 212, 170, 0.5)'; ctx.fill();
             });
-            
-            particles.forEach((p1, i) => {
-                particles.slice(i + 1).forEach(p2 => {
-                    const dx = p1.x - p2.x;
-                    const dy = p1.y - p2.y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 100) {
-                        ctx.beginPath();
-                        ctx.moveTo(p1.x, p1.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.strokeStyle = `rgba(0, 212, 170, ${0.2 * (1 - distance / 100)})`;
-                        ctx.stroke();
-                    }
-                });
-            });
-            
             requestAnimationFrame(animateParticles);
         }
-        
         animateParticles();
-        
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-        
-        // ==================== SETTINGS ====================
-        const settings = {
-            workInterval: 20,
-            breakDuration: 20,
-            waterGoal: 8,
-            notifications: true,
-            sound: true
-        };
-        
-        function saveSettings() {
-            localStorage.setItem('eyezen-settings', JSON.stringify(settings));
-        }
-        
-        function loadSettings() {
-            const saved = localStorage.getItem('eyezen-settings');
-            if (saved) {
-                const loaded = JSON.parse(saved);
-                Object.assign(settings, loaded);
-                
-                // Update UI
-                workIntervalSlider.value = settings.workInterval;
-                workIntervalValue.textContent = settings.workInterval;
-                breakDurationSlider.value = settings.breakDuration;
-                breakDurationValue.textContent = settings.breakDuration;
-                waterGoalSlider.value = settings.waterGoal;
-                waterGoalValue.textContent = settings.waterGoal;
-                document.getElementById('notificationsToggle').checked = settings.notifications;
-                document.getElementById('soundToggle').checked = settings.sound;
-                
-                workInterval = settings.workInterval * 60;
-                breakDuration = settings.breakDuration;
-                timeRemaining = workInterval;
-                updateDisplay();
-                updateWaterProgress();
-            }
-        }
-        
-        // ==================== TIMER LOGIC ====================
-        let workInterval = 20 * 60;
-        let breakDuration = 20;
-        let timeRemaining = workInterval;
-        let isRunning = false;
-        let isBreak = false;
-        let timerInterval = null;
-        let breakInterval = null;
-        
-        const timerDisplay = document.getElementById('timerDisplay');
-        const timerLabel = document.getElementById('timerLabel');
-        const progressCircle = document.getElementById('progressCircle');
-        const startBtn = document.getElementById('startBtn');
-        const pauseBtn = document.getElementById('pauseBtn');
-        const resetBtn = document.getElementById('resetBtn');
-        const breakBtn = document.getElementById('breakBtn');
-        const breakModal = document.getElementById('breakModal');
-        const breakTimer = document.getElementById('breakTimer');
-        const breakQuote = document.getElementById('breakQuote');
-        
-        const circumference = 2 * Math.PI * 140;
-        progressCircle.style.strokeDasharray = circumference;
-        
-        const quotes = [
-            "Your eyes deserve a break. Take care of them.",
-            "Rest is not idleness. It's essential for productivity.",
-            "Small breaks lead to big improvements in focus.",
-            "Protect your vision. It's your window to the world.",
-            "A healthy habit today keeps eye strain away.",
-            "Take a moment to breathe and refocus.",
-            "Your future self will thank you for these breaks.",
-            "Vision is precious. Guard it with regular breaks.",
-            "Refresh your eyes, refresh your mind.",
-            "Every break is an investment in your well-being.",
-            "Look away, look after yourself.",
-            "Screen time is work. Break time is self-care.",
-            "Distance makes the eyes grow stronger.",
-            "Pause the pixels. Embrace the moment.",
-            "Your eyes work hard. Let them rest.",
-            "Prevention is better than prescription.",
-            "See the world beyond your screen.",
-            "Healthy eyes, happy life.",
-            "Take breaks seriously. Your eyes will love you.",
-            "The 20-20-20 rule: Simple, effective, essential."
-        ];
-        
-        function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        }
-        
+
+        // ==================== CORE TIMER LOGIC ====================
+        const settings = { workInterval: 20, breakDuration: 20, waterGoal: 8, notifications: true, sound: true };
+        let workInterval = 20 * 60, breakDuration = 20, timeRemaining = workInterval, isRunning = false, isBreak = false;
+        let timerInterval = null, breakInterval = null;
+
         function updateDisplay() {
-            timerDisplay.textContent = formatTime(timeRemaining);
-            const progress = 1 - (timeRemaining / workInterval);
-            const offset = circumference * (1 - progress);
-            progressCircle.style.strokeDashoffset = offset;
+            const mins = Math.floor(timeRemaining / 60), secs = timeRemaining % 60;
+            document.getElementById('timerDisplay').textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            const offset = 879.646 * (1 - (1 - (timeRemaining / workInterval)));
+            document.getElementById('progressCircle').style.strokeDashoffset = offset;
         }
-        
+
         function startTimer() {
             if (isRunning) return;
             isRunning = true;
-            startBtn.disabled = true;
-            pauseBtn.disabled = false;
-            
+            document.getElementById('startBtn').disabled = true; document.getElementById('pauseBtn').disabled = false;
             timerInterval = setInterval(() => {
-                if (timeRemaining > 0) {
-                    timeRemaining--;
-                    updateDisplay();
-                    updateStats();
-                } else {
-                    completeWorkSession();
-                }
+                if (timeRemaining > 0) { timeRemaining--; updateDisplay(); updateScreenTime(); }
+                else { completeWorkSession(); }
             }, 1000);
         }
-        
+
         function pauseTimer() {
-            isRunning = false;
-            startBtn.disabled = false;
-            pauseBtn.disabled = true;
-            clearInterval(timerInterval);
+            isRunning = false; document.getElementById('startBtn').disabled = false;
+            document.getElementById('pauseBtn').disabled = true; clearInterval(timerInterval);
         }
-        
-        function resetTimer() {
-            pauseTimer();
-            timeRemaining = workInterval;
-            updateDisplay();
-        }
-        
+
         function completeWorkSession() {
-            pauseTimer();
-            AudioSystem.playBreakStart();
-            showNotification();
-            startBreak();
+            pauseTimer(); AudioSystem.playBreakStart(); showBreakModal();
         }
-        
-        function startBreak() {
-            isBreak = true;
-            breakModal.classList.add('active');
-            
-            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-            breakQuote.textContent = `"${randomQuote}"`;
-            
-            let breakTime = breakDuration;
-            breakTimer.textContent = breakTime;
-            
+
+        function showBreakModal() {
+            isBreak = true; document.getElementById('breakModal').classList.add('active');
+            let bTime = breakDuration; document.getElementById('breakTimer').textContent = bTime;
             breakInterval = setInterval(() => {
-                breakTime--;
-                breakTimer.textContent = breakTime;
-                
-                if (breakTime <= 0) {
-                    endBreak();
+                bTime--; document.getElementById('breakTimer').textContent = bTime;
+                if (bTime <= 0) {
+                    clearInterval(breakInterval); document.getElementById('breakModal').classList.remove('active');
+                    isBreak = false; AudioSystem.playBreakEnd(); incrementBreaks();
+                    timeRemaining = workInterval; updateDisplay(); startTimer();
                 }
             }, 1000);
         }
-        
-        function endBreak() {
-            clearInterval(breakInterval);
-            breakModal.classList.remove('active');
-            isBreak = false;
-            
-            AudioSystem.playBreakEnd();
-            
-            const stats = getStats();
-            stats.breaksToday++;
-            saveStats(stats);
-            updateStatsDisplay();
-            
-            timeRemaining = workInterval;
-            updateDisplay();
-            startTimer();
+
+        // Stats & UI Helpers
+        function getStats() { return JSON.parse(localStorage.getItem('eyezen-stats')) || { breaksToday: 0, screenTime: 0, streak: 0, waterCount: 0 }; }
+        function saveStats(s) { localStorage.setItem('eyezen-stats', JSON.stringify(s)); }
+        function updateStatsUI() {
+            const s = getStats();
+            document.getElementById('breaksToday').textContent = s.breaksToday;
+            document.getElementById('screenTime').textContent = `${Math.floor(s.screenTime / 3600)}h ${Math.floor((s.screenTime % 3600) / 60)}m`;
+            document.getElementById('streak').textContent = s.streak;
+            document.getElementById('waterCount').textContent = s.waterCount;
+            document.getElementById('waterProgressFill').style.width = (s.waterCount / settings.waterGoal * 100) + '%';
+            document.getElementById('waterProgressText').textContent = `${s.waterCount} / ${settings.waterGoal}`;
         }
+        function updateScreenTime() { const s = getStats(); s.screenTime++; saveStats(s); updateStatsUI(); }
+        function incrementBreaks() { const s = getStats(); s.breaksToday++; saveStats(s); updateStatsUI(); }
         
-        function showNotification() {
-            if (!settings.notifications) return;
-            
-            if ('Notification' in window && Notification.permission === 'granted') {
-                new Notification('👀 Time to look away!', {
-                    body: 'Focus on something 20 feet away for 20 seconds',
-                    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="0.9em" font-size="90">👀</text></svg>'
-                });
-            }
+        // Buttons
+        document.getElementById('startBtn').onclick = startTimer;
+        document.getElementById('pauseBtn').onclick = pauseTimer;
+        document.getElementById('resetBtn').onclick = () => { pauseTimer(); timeRemaining = workInterval; updateDisplay(); };
+        document.getElementById('breakBtn').onclick = () => { pauseTimer(); showBreakModal(); };
+        document.getElementById('drinkWaterBtn').onclick = () => {
+            const s = getStats(); s.waterCount++; saveStats(s); updateStatsUI();
+            AudioSystem.playWaterDrink(); showToast('💧 Water logged!');
+        };
+
+        // Settings
+        document.getElementById('settingsToggle').onclick = () => document.getElementById('settingsPanel').classList.add('active');
+        document.getElementById('closeSettings').onclick = () => document.getElementById('settingsPanel').classList.remove('active');
+        document.getElementById('testSoundBtn').onclick = () => AudioSystem.testAllSounds();
+        document.getElementById('workIntervalSlider').oninput = (e) => {
+            settings.workInterval = e.target.value; document.getElementById('workIntervalValue').textContent = e.target.value;
+            workInterval = e.target.value * 60; if(!isRunning) { timeRemaining = workInterval; updateDisplay(); }
+        };
+
+        function showToast(m) {
+            const t = document.getElementById('toast'); document.getElementById('toastMessage').textContent = m;
+            t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3000);
         }
-        
-        if ('Notification' in window && Notification.permission === 'default') {
-            Notification.requestPermission();
-        }
-        
-        // Event Listeners
-        startBtn.addEventListener('click', startTimer);
-        pauseBtn.addEventListener('click', pauseTimer);
-        resetBtn.addEventListener('click', resetTimer);
-        breakBtn.addEventListener('click', () => {
-            pauseTimer();
-            startBreak();
-        });
-        
-        // ==================== SETTINGS PANEL ====================
-        const settingsToggle = document.getElementById('settingsToggle');
-        const settingsPanel = document.getElementById('settingsPanel');
-        const closeSettings = document.getElementById('closeSettings');
-        
-        settingsToggle.addEventListener('click', () => {
-            settingsPanel.classList.add('active');
-        });
-        
-        closeSettings.addEventListener('click', () => {
-            settingsPanel.classList.remove('active');
-        });
-        
-        const workIntervalSlider = document.getElementById('workIntervalSlider');
-        const workIntervalValue = document.getElementById('workIntervalValue');
-        
-        workIntervalSlider.addEventListener('input', (e) => {
-            const value = parseInt(e.target.value);
-            workIntervalValue.textContent = value;
-            settings.workInterval = value;
-            workInterval = value * 60;
-            if (!isRunning) {
-                timeRemaining = workInterval;
-                updateDisplay();
-            }
-            saveSettings();
-        });
-        
-        const breakDurationSlider = document.getElementById('breakDurationSlider');
-        const breakDurationValue = document.getElementById('breakDurationValue');
-        
-        breakDurationSlider.addEventListener('input', (e) => {
-            const value = parseInt(e.target.value);
-            breakDurationValue.textContent = value;
-            settings.breakDuration = value;
-            breakDuration = value;
-            saveSettings();
-        });
-        
-        const waterGoalSlider = document.getElementById('waterGoalSlider');
-        const waterGoalValue = document.getElementById('waterGoalValue');
-        
-        waterGoalSlider.addEventListener('input', (e) => {
-            const value = parseInt(e.target.value);
-            waterGoalValue.textContent = value;
-            settings.waterGoal = value;
-            saveSettings();
-            updateWaterProgress();
-        });
-        
-        document.getElementById('notificationsToggle').addEventListener('change', (e) => {
-            settings.notifications = e.target.checked;
-            saveSettings();
-        });
-        
-        document.getElementById('soundToggle').addEventListener('change', (e) => {
-            settings.sound = e.target.checked;
-            saveSettings();
-        });
-        
-        document.getElementById('testSoundBtn').addEventListener('click', () => {
-            AudioSystem.testAllSounds();
-            showToast('🔊 Playing all sounds...');
-        });
-        
-        // ==================== WATER TRACKER ====================
-        const drinkWaterBtn = document.getElementById('drinkWaterBtn');
-        
-        drinkWaterBtn.addEventListener('click', () => {
-            const stats = getStats();
-            stats.waterCount++;
-            saveStats(stats);
-            updateStatsDisplay();
-            updateWaterProgress();
-            
-            AudioSystem.playWaterDrink();
-            showToast('✅ Drank 1 glass of water!');
-        });
-        
-        function updateWaterProgress() {
-            const stats = getStats();
-            const percentage = (stats.waterCount / settings.waterGoal) * 100;
-            const progressFill = document.getElementById('waterProgressFill');
-            const progressText = document.getElementById('waterProgressText');
-            
-            progressFill.style.width = Math.min(percentage, 100) + '%';
-            progressText.textContent = `${stats.waterCount} / ${settings.waterGoal}`;
-        }
-        
-        // ==================== TOAST NOTIFICATION ====================
-        const toast = document.getElementById('toast');
-        const toastMessage = document.getElementById('toastMessage');
-        
-        function showToast(message) {
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-        
-        // ==================== STATISTICS ====================
-        function getStats() {
-            const today = new Date().toDateString();
-            const saved = localStorage.getItem('eyezen-stats');
-            
-            if (saved) {
-                const stats = JSON.parse(saved);
-                
-                if (stats.date !== today) {
-                    const lastDate = new Date(stats.date);
-                    const currentDate = new Date(today);
-                    const diffTime = Math.abs(currentDate - lastDate);
-                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                    
-                    if (diffDays === 1 && stats.breaksToday > 0) {
-                        stats.streak++;
-                    } else if (diffDays > 1) {
-                        stats.streak = 0;
-                    }
-                    
-                    stats.date = today;
-                    stats.breaksToday = 0;
-                    stats.screenTime = 0;
-                    stats.waterCount = 0;
-                }
-                
-                return stats;
-            }
-            
-            return {
-                date: today,
-                breaksToday: 0,
-                screenTime: 0,
-                streak: 0,
-                waterCount: 0
-            };
-        }
-        
-        function saveStats(stats) {
-            localStorage.setItem('eyezen-stats', JSON.stringify(stats));
-        }
-        
-        function updateStats() {
-            if (isRunning && !isBreak) {
-                const stats = getStats();
-                stats.screenTime++;
-                saveStats(stats);
-                updateStatsDisplay();
-            }
-        }
-        
-        function updateStatsDisplay() {
-            const stats = getStats();
-            document.getElementById('breaksToday').textContent = stats.breaksToday;
-            
-            const hours = Math.floor(stats.screenTime / 3600);
-            const minutes = Math.floor((stats.screenTime % 3600) / 60);
-            document.getElementById('screenTime').textContent = `${hours}h ${minutes}m`;
-            
-            document.getElementById('streak').textContent = stats.streak;
-            document.getElementById('waterCount').textContent = stats.waterCount;
-        }
-        
-        // ==================== KEYBOARD SHORTCUTS ====================
-        document.addEventListener('keydown', (e) => {
-            if (e.target.tagName === 'INPUT') return;
-            
-            if (e.code === 'Space') {
-                e.preventDefault();
-                if (isRunning) {
-                    pauseTimer();
-                } else {
-                    startTimer();
-                }
-            } else if (e.code === 'KeyR') {
-                e.preventDefault();
-                resetTimer();
-            } else if (e.code === 'KeyB') {
-                e.preventDefault();
-                pauseTimer();
-                startBreak();
-            }
-        });
-        
-        // ==================== BACK TO TOP ====================
-        const backToTop = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-        
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-        
-        // ==================== INITIALIZATION ====================
-        loadSettings();
-        updateStatsDisplay();
-        updateWaterProgress();
-        updateDisplay();
-        
-        setInterval(() => {
-            const stats = getStats();
-            updateStatsDisplay();
-            updateWaterProgress();
-        }, 60000);
+
+        updateStatsUI(); updateDisplay();
     </script>
 </body>
 </html>
