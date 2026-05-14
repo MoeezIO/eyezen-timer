@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EyeZen — 20-20-20 Rule Timer & Digital Wellness Tool</title>
-    <meta name="description" content="Free browser-based 20-20-20 rule timer. Customize work/break intervals, track water intake, and protect your eyes.">
+    <meta name="description" content="Free browser-based 20-20-20 rule timer. Customize work/break intervals, track water intake, and protect your eyes. No install needed.">
+    <meta name="keywords" content="20-20-20 rule, eye strain timer, computer eye care, remote work wellness, break reminder, screen time tracker, EyeZen">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="EyeZen — Free Eye Wellness Tool for Remote Workers">
+    <meta property="og:description" content="Free browser-based 20-20-20 rule timer. Track water, breaks, and protect your vision.">
+    <meta property="og:type" content="website">
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👀</text></svg>">
@@ -21,7 +27,7 @@
             --text-secondary: #9ca3af;
             --text-dim: #6b7280;
             --border-glass: rgba(255, 255, 255, 0.1);
-            --danger: #ef4444;
+            --danger: #ff4b2b;
         }
         
         body {
@@ -30,16 +36,15 @@
             color: var(--text-primary);
             min-height: 100vh;
             overflow-x: hidden;
+            line-height: 1.6;
         }
-
+        
         #particles-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.3; }
         .container { position: relative; z-index: 1; max-width: 1000px; margin: 0 auto; padding: 20px; }
 
-        /* Header */
         header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
-        .logo { font-size: 1.5rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .logo { font-size: 1.6rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* Card */
         .glass-card {
             background: var(--bg-card);
             backdrop-filter: blur(20px);
@@ -48,28 +53,26 @@
             padding: 40px;
             text-align: center;
             margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* Timer Display */
-        .timer-display { font-size: 4.5rem; font-weight: 800; margin: 20px 0; color: var(--accent-mint); }
-        .progress-container { position: relative; width: 280px; height: 280px; margin: 0 auto; }
-        .progress-ring-circle { transition: stroke-dashoffset 0.5s; transform: rotate(-90deg); transform-origin: 50% 50%; }
+        .timer-display { font-size: 4.5rem; font-weight: 800; margin: 20px 0; color: var(--accent-mint); font-variant-numeric: tabular-nums; }
+        
+        .timer-container { position: relative; width: 300px; height: 300px; margin: 0 auto; }
+        .progress-ring-circle { transition: stroke-dashoffset 0.5s linear; transform: rotate(-90deg); transform-origin: 50% 50%; }
 
-        /* Buttons */
         .btn { padding: 12px 28px; border-radius: 12px; border: none; cursor: pointer; font-weight: 600; transition: 0.3s; margin: 5px; }
-        .btn-primary { background: var(--accent-mint); color: var(--bg-primary); }
-        .btn-secondary { background: transparent; border: 1px solid var(--border-glass); color: white; }
-        .btn-water { background: #0ea5e9; color: white; margin-top: 20px; }
-        .btn-danger { background: transparent; border: 1px solid var(--danger); color: var(--danger); font-size: 0.8rem; }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); color: white; }
+        .btn-secondary { background: rgba(255,255,255,0.05); border: 1px solid var(--border-glass); color: white; }
+        .btn-water { background: #0ea5e9; color: white; margin-top: 20px; width: 100%; max-width: 300px; }
+        .btn-danger { background: transparent; border: 1px solid var(--danger); color: var(--danger); font-size: 0.8rem; margin-top: 40px; }
         .btn-danger:hover { background: var(--danger); color: white; }
 
-        /* Stats */
         .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 30px; }
-        .stat-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; border: 1px solid var(--border-glass); text-align: center; }
+        .stat-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; border: 1px solid var(--border-glass); }
         .stat-val { display: block; font-size: 2rem; font-weight: 700; color: var(--accent-mint); }
 
-        /* Affiliate Section */
-        .affiliate-link-wrapper { margin: 30px 0; }
+        .affiliate-link-box { margin: 30px 0; }
         .affiliate-link { display: inline-block; padding: 14px 28px; background: rgba(0, 212, 170, 0.1); border: 1px solid var(--accent-mint); border-radius: 12px; font-weight: 700; color: var(--accent-mint); text-decoration: none; transition: 0.3s; }
         .affiliate-link:hover { background: var(--accent-mint); color: var(--bg-primary); transform: translateY(-2px); }
 
@@ -77,76 +80,108 @@
         .modal { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.95); display:none; z-index:1000; align-items:center; justify-content:center; text-align:center; }
         .modal.active { display:flex; }
         .breathing-circle { width:150px; height:150px; background: var(--accent-mint); border-radius:50%; margin: 0 auto 20px; animation: breathe 4s infinite ease-in-out; }
-        @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.2); opacity: 1; } }
+        @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 0.5; } 50% { transform: scale(1.3); opacity: 1; } }
 
-        /* Break Modal Ad */
-        .modal-ad { margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.9rem; color: var(--text-secondary); }
+        .modal-ad { margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.9rem; color: var(--text-secondary); }
         .modal-ad a { color: var(--accent-mint); font-weight: 700; text-decoration: underline; }
 
         /* Settings */
         .settings-btn { position: fixed; top: 20px; right: 20px; background: var(--bg-card); border: 1px solid var(--border-glass); padding: 12px; border-radius: 50%; cursor: pointer; z-index: 101; }
         .settings-panel { position: fixed; right: -320px; top: 0; width: 320px; height: 100%; background: var(--bg-card); padding: 30px; transition: 0.3s ease; z-index: 102; border-left: 1px solid var(--border-glass); overflow-y: auto; }
         .settings-panel.active { right: 0; }
-        .settings-panel h3 { margin-bottom: 20px; color: var(--accent-mint); }
-        .settings-link { display: block; margin: 15px 0; color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; }
-        .settings-link:hover { color: var(--accent-mint); }
+        .settings-panel h3 { margin-bottom: 20px; color: var(--accent-mint); border-bottom: 1px solid var(--border-glass); padding-bottom: 10px; }
+        .setting-item { margin-bottom: 25px; }
+        .setting-item label { font-size: 0.85rem; color: var(--text-secondary); display: block; margin-bottom: 10px; }
 
         /* Footer */
         footer { margin-top: 80px; padding: 40px 20px; text-align: center; border-top: 1px solid var(--border-glass); }
         .amazon-disclosure { font-size: 0.7rem; color: var(--text-dim); line-height: 1.5; max-width: 600px; margin: 0 auto 20px; }
         .footer-nav { margin-bottom: 20px; }
-        .footer-nav a { color: var(--text-secondary); text-decoration: none; margin: 0 10px; font-size: 0.85rem; }
+        .footer-nav a { color: var(--text-secondary); text-decoration: none; margin: 0 15px; font-size: 0.85rem; cursor: pointer; }
         .footer-nav a:hover { color: var(--accent-mint); }
 
-        /* Reset Button at bottom */
-        .danger-zone { margin-top: 40px; border-top: 1px solid rgba(239, 68, 68, 0.1); padding-top: 20px; }
+        input[type=range] { width: 100%; accent-color: var(--accent-mint); background: var(--bg-primary); }
 
-        input[type=range] { width: 100%; accent-color: var(--accent-mint); margin-top: 10px; }
+        /* Generic Section for About/Privacy */
+        .info-section { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90%; max-width: 500px; background: var(--bg-card); padding: 30px; border-radius: 20px; border: 1px solid var(--accent-mint); z-index: 2000; box-shadow: 0 0 50px rgba(0,0,0,0.8); }
+        .info-section.active { display: block; }
+        .info-section h2 { color: var(--accent-mint); margin-bottom: 15px; }
+        .info-section p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px; }
+        .close-info { background: var(--accent-mint); color: var(--bg-primary); border: none; padding: 8px 20px; border-radius: 8px; cursor: pointer; font-weight: 700; }
     </style>
 </head>
 <body>
 
     <canvas id="particles-canvas"></canvas>
 
-    <!-- Settings Panel -->
     <button class="settings-btn" onclick="document.getElementById('settingsPanel').classList.toggle('active')">⚙️</button>
+    
     <div class="settings-panel" id="settingsPanel">
-        <h3>Settings</h3>
-        <label>Work Time (Min): <span id="workVal">20</span></label>
-        <input type="range" id="workInput" min="5" max="60" value="20" oninput="updateSettings()">
+        <h3>Timer Settings</h3>
+        <div class="setting-item">
+            <label>Work Interval (Min): <span id="workVal">20</span></label>
+            <input type="range" id="workInput" min="5" max="60" value="20" oninput="updateSettings()">
+        </div>
+        <div class="setting-item">
+            <label>Break Duration (Sec): <span id="breakVal">20</span></label>
+            <input type="range" id="breakInput" min="10" max="60" value="20" oninput="updateSettings()">
+        </div>
+
+        <h3>Information</h3>
+        <div class="footer-nav" style="text-align: left; display: flex; flex-direction: column; gap: 10px;">
+            <a onclick="showInfo('about')">ℹ️ About EyeZen</a>
+            <a onclick="showInfo('privacy')">🔒 Privacy Policy</a>
+            <a onclick="showInfo('support')">☕ Support Us</a>
+        </div>
         
-        <label style="display:block; margin-top:20px;">Break Time (Sec): <span id="breakVal">20</span></label>
-        <input type="range" id="breakInput" min="10" max="60" value="20" oninput="updateSettings()">
-        
-        <hr style="margin: 25px 0; border: 0; border-top: 1px solid var(--border-glass);">
-        
-        <h3>Wellness & Info</h3>
-        <a href="#" class="settings-link" onclick="alert('EyeZen is a digital wellness tool helping you follow the 20-20-20 rule to prevent eye strain.')">ℹ️ About EyeZen</a>
-        <a href="#" class="settings-link" onclick="alert('Privacy: All your data is stored locally in your browser. We do not collect or store your personal info.')">🔒 Privacy Policy</a>
-        <a href="#" class="settings-link" onclick="alert('Support: If you like this tool, please consider buying blue-light glasses through our links to support us!')">☕ Support Us</a>
-        
-        <button class="btn btn-secondary" style="width: 100%; margin-top: 20px;" onclick="document.getElementById('settingsPanel').classList.remove('active')">Close</button>
+        <button class="btn btn-secondary" style="width: 100%; margin-top: 30px;" onclick="document.getElementById('settingsPanel').classList.remove('active')">Close Settings</button>
+    </div>
+
+    <!-- Info Sections (Modals) -->
+    <div id="about" class="info-section">
+        <h2>About EyeZen</h2>
+        <p>EyeZen is a wellness tool designed to help you follow the 20-20-20 rule: Every 20 minutes, look at something 20 feet away for 20 seconds.</p>
+        <p>Regular breaks reduce digital eye strain and improve long-term focus.</p>
+        <button class="close-info" onclick="closeInfo()">Got it</button>
+    </div>
+
+    <div id="privacy" class="info-section">
+        <h2>Privacy Policy</h2>
+        <p>We value your privacy. EyeZen does not collect, store, or share any personal data.</p>
+        <p>All your statistics (water count, focus time) are stored locally in your own browser's cache.</p>
+        <button class="close-info" onclick="closeInfo()">I Understand</button>
+    </div>
+
+    <div id="support" class="info-section">
+        <h2>Support Us</h2>
+        <p>EyeZen is free to use. You can support our work by using the recommended affiliate links on the main page.</p>
+        <p>Your support helps us maintain the website and keep it ad-free!</p>
+        <button class="close-info" onclick="closeInfo()">Close</button>
     </div>
 
     <div class="container">
-        <header>
-            <div class="logo">EyeZen</div>
-        </header>
+        <header><div class="logo">EyeZen</div></header>
 
         <div class="glass-card">
             <h1 style="margin-bottom: 10px;">20-20-20 Rule Timer</h1>
-            <p style="color: var(--text-secondary);">Give your eyes a break. Stay productive.</p>
+            <p style="color: var(--text-secondary);">Protect your eyes while working.</p>
 
-            <div class="timer-display" id="timerDisplay">20:00</div>
+            <div class="timer-container">
+                <svg width="300" height="300" style="position:absolute; top:0; left:0;">
+                    <circle cx="150" cy="150" r="140" stroke="rgba(255,255,255,0.05)" stroke-width="8" fill="none"/>
+                    <circle id="progressRing" cx="150" cy="150" r="140" stroke="#00d4aa" stroke-width="8" fill="none" stroke-dasharray="880" stroke-dashoffset="880" class="progress-ring-circle"/>
+                </svg>
+                <div class="timer-display" id="timerDisplay">20:00</div>
+            </div>
 
             <div class="button-group">
                 <button class="btn btn-primary" id="startBtn" onclick="toggleTimer()">Start Session</button>
                 <button class="btn btn-secondary" onclick="resetTimer()">Reset</button>
             </div>
 
-            <button class="btn btn-water" onclick="logWater()">💧 Log 1 Glass Water</button>
+            <button class="btn btn-water" onclick="logWater()">💧 Drink Water</button>
             
-            <div class="affiliate-link-wrapper">
+            <div class="affiliate-link-box">
                 <a href="https://amzn.to/4eHk8nC" target="_blank" rel="noopener noreferrer" class="affiliate-link">
                     🕶️ Recommended: Best Blue Light Glasses
                 </a>
@@ -154,18 +189,9 @@
         </div>
 
         <div class="stats-grid">
-            <div class="stat-box">
-                <span class="stat-val" id="statBreaks">0</span>
-                <span style="font-size: 0.8rem; color: var(--text-secondary);">Breaks Today</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-val" id="statWater">0</span>
-                <span style="font-size: 0.8rem; color: var(--text-secondary);">Glasses of Water</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-val" id="statTime">0m</span>
-                <span style="font-size: 0.8rem; color: var(--text-secondary);">Focus Time Today</span>
-            </div>
+            <div class="stat-box"><span class="stat-val" id="statBreaks">0</span><span>Breaks Today</span></div>
+            <div class="stat-box"><span class="stat-val" id="statWater">0</span><span>Water Count</span></div>
+            <div class="stat-box"><span class="stat-val" id="statTime">0m</span><span>Focus Time</span></div>
         </div>
     </div>
 
@@ -175,7 +201,6 @@
             <div class="breathing-circle"></div>
             <h1 style="font-size: 4rem; color: var(--accent-mint)" id="breakCountdown">20</h1>
             <p>Look away! Focus on something 20 feet away.</p>
-            
             <div class="modal-ad">
                 While you wait: <a href="https://amzn.to/4eHk8nC" target="_blank" rel="noopener noreferrer">Check out these eye-protecting glasses on Amazon</a>
             </div>
@@ -184,21 +209,18 @@
 
     <footer>
         <div class="footer-nav">
-            <a href="#" onclick="alert('EyeZen: Version 1.2. Built for digital wellness.')">About</a>
-            <a href="#" onclick="alert('Your data stays on your device. We use browser LocalStorage for your daily stats.')">Privacy</a>
-            <a href="#" onclick="alert('Support us by using the affiliate links on the page. Thank you!')">Support</a>
+            <a onclick="showInfo('about')">About</a>
+            <a onclick="showInfo('privacy')">Privacy</a>
+            <a onclick="showInfo('support')">Support</a>
         </div>
 
         <p class="amazon-disclosure">
-            As an Amazon Associate, I earn from qualifying purchases. This help supports the maintenance of EyeZen at no extra cost to you.
+            As an Amazon Associate, I earn from qualifying purchases. This helps support the maintenance of EyeZen at no extra cost to you.
         </p>
 
-        <p style="color: var(--text-dim); font-size: 0.8rem;">© 2024 EyeZen Wellness • Stay Healthy</p>
-
-        <!-- FULL RESET BUTTON -->
-        <div class="danger-zone">
-            <button class="btn btn-danger" onclick="fullReset()">⚠️ Reset All Website Data</button>
-        </div>
+        <p style="color: var(--text-dim); font-size: 0.8rem;">© 2024 EyeZen Wellness • High-Performance Eye Care</p>
+        
+        <button class="btn btn-danger" onclick="fullReset()">⚠️ Reset All Website Data</button>
     </footer>
 
     <script>
@@ -208,42 +230,38 @@
         let timer = null;
         let isRunning = false;
 
-        // --- Stats & Daily Reset Logic ---
+        // --- Daily Reset & Storage ---
         function getStats() {
             const today = new Date().toDateString();
-            let s = JSON.parse(localStorage.getItem('eyezen_data')) || { date: today, breaks: 0, water: 0, focusMinutes: 0 };
+            let s = JSON.parse(localStorage.getItem('eyezen_master_data')) || { date: today, breaks: 0, water: 0, mins: 0 };
             
-            // Automatic Daily Reset
-            if (s.date !== today) {
-                s = { date: today, breaks: 0, water: 0, focusMinutes: 0 };
+            if (s.date !== today) { // Daily Reset
+                s = { date: today, breaks: 0, water: 0, mins: 0 };
                 saveStats(s);
             }
             return s;
         }
 
         function saveStats(s) {
-            localStorage.setItem('eyezen_data', JSON.stringify(s));
-            updateStatsUI();
+            localStorage.setItem('eyezen_master_data', JSON.stringify(s));
+            updateUI();
         }
 
-        function updateStatsUI() {
+        function updateUI() {
             const s = getStats();
             document.getElementById('statBreaks').innerText = s.breaks;
             document.getElementById('statWater').innerText = s.water;
-            document.getElementById('statTime').innerText = s.focusMinutes + 'm';
+            document.getElementById('statTime').innerText = s.mins + 'm';
         }
 
-        function logWater() {
-            let s = getStats();
-            s.water++;
-            saveStats(s);
-        }
-
-        // --- Timer Core ---
+        // --- Core Timer ---
         function updateDisplay() {
             let m = Math.floor(timeLeft / 60);
             let s = timeLeft % 60;
             document.getElementById('timerDisplay').innerText = `${m}:${s < 10 ? '0' : ''}${s}`;
+            const ring = document.getElementById('progressRing');
+            const offset = 880 - (880 * (1 - (timeLeft / workTime)));
+            ring.style.strokeDashoffset = offset;
         }
 
         function toggleTimer() {
@@ -262,11 +280,8 @@
             if (timeLeft > 0) {
                 timeLeft--;
                 updateDisplay();
-                // Increment focus time every minute
-                if (timeLeft > 0 && timeLeft % 60 === 0) {
-                    let s = getStats();
-                    s.focusMinutes++;
-                    saveStats(s);
+                if(timeLeft > 0 && timeLeft % 60 === 0) {
+                    let s = getStats(); s.mins++; saveStats(s);
                 }
             } else {
                 clearInterval(timer);
@@ -279,69 +294,62 @@
             document.getElementById('breakModal').classList.add('active');
             let bLeft = breakTime;
             document.getElementById('breakCountdown').innerText = bLeft;
-
             let bTimer = setInterval(() => {
                 bLeft--;
                 document.getElementById('breakCountdown').innerText = bLeft;
-                if (bLeft <= 0) {
+                if(bLeft <= 0) {
                     clearInterval(bTimer);
                     document.getElementById('breakModal').classList.remove('active');
-                    let s = getStats();
-                    s.breaks++;
-                    saveStats(s);
+                    let s = getStats(); s.breaks++; saveStats(s);
                     resetTimer();
-                    toggleTimer(); // Auto-restart
+                    toggleTimer();
                 }
             }, 1000);
         }
 
         function resetTimer() {
-            clearInterval(timer);
-            isRunning = false;
-            timeLeft = workTime;
-            updateDisplay();
+            clearInterval(timer); isRunning = false; timeLeft = workTime; updateDisplay();
             document.getElementById('startBtn').innerText = "Start Session";
         }
+
+        function logWater() { let s = getStats(); s.water++; saveStats(s); }
 
         function updateSettings() {
             workTime = document.getElementById('workInput').value * 60;
             breakTime = document.getElementById('breakInput').value;
             document.getElementById('workVal').innerText = document.getElementById('workInput').value;
             document.getElementById('breakVal').innerText = breakTime;
-            if (!isRunning) {
-                timeLeft = workTime;
-                updateDisplay();
-            }
+            if(!isRunning) { timeLeft = workTime; updateDisplay(); }
         }
 
+        // Info Modals Logic
+        function showInfo(id) { document.getElementById(id).classList.add('active'); }
+        function closeInfo() { document.querySelectorAll('.info-section').forEach(s => s.classList.remove('active')); }
+
         function fullReset() {
-            if (confirm("Are you sure? This will delete all your water logs, focus time, and daily breaks forever.")) {
+            if (confirm("WARNING: This will delete all your focus streaks, water logs, and settings forever. Continue?")) {
                 localStorage.clear();
                 location.reload();
             }
         }
 
-        // --- Particles ---
+        // Particles
         const canvas = document.getElementById('particles-canvas');
         const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        let particles = [];
-        for(let i=0; i<60; i++) particles.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*2, dx: Math.random()*0.5, dy: Math.random()*0.5});
-        function drawParticles() {
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+        let pts = [];
+        for(let i=0; i<50; i++) pts.push({x: Math.random()*canvas.width, y: Math.random()*canvas.height, dx: Math.random()*0.4, dy: Math.random()*0.4});
+        function drawPts() {
             ctx.clearRect(0,0,canvas.width, canvas.height);
             ctx.fillStyle = "#00d4aa";
-            particles.forEach(p => {
-                ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); ctx.fill();
+            pts.forEach(p => {
+                ctx.beginPath(); ctx.arc(p.x, p.y, 1.5, 0, Math.PI*2); ctx.fill();
                 p.x += p.dx; p.y += p.dy;
-                if(p.x > canvas.width) p.x = 0; if(p.y > canvas.height) p.y = 0;
+                if(p.x > canvas.width) p.x=0; if(p.y > canvas.height) p.y=0;
             });
-            requestAnimationFrame(drawParticles);
+            requestAnimationFrame(drawPts);
         }
-
-        drawParticles();
-        updateStatsUI();
-        updateDisplay();
+        drawPts(); updateUI(); updateDisplay();
     </script>
 </body>
 </html>
