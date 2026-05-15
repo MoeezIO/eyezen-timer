@@ -2156,6 +2156,17 @@
         
         function startTimer() {
             if (isRunning) return;
+
+            // Unlock audio on user gesture (browser autoplay policy)
+            if (!AudioSystem.context) {
+                AudioSystem.init();
+            }
+
+            // Request notification permission on first Start click
+            if ('Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission();
+            }
+
             isRunning = true;
             startBtn.disabled = true;
             pauseBtn.disabled = false;
@@ -2237,10 +2248,6 @@
                     icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="0.9em" font-size="90">👀</text></svg>'
                 });
             }
-        }
-        
-        if ('Notification' in window && Notification.permission === 'default') {
-            Notification.requestPermission();
         }
         
         // Event Listeners
