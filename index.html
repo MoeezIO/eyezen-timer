@@ -156,52 +156,55 @@
             margin-bottom: 40px;
         }
         
-        /* FIXED: Timer container uses flexbox for zoom-proof centering */
         .timer-container {
             position: relative;
             width: 300px;
             height: 300px;
             margin: 40px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+            flex-shrink: 0;
         }
 
-        /* SVG ring sits behind text as absolute overlay */
         .timer-container svg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            display: block;
         }
         
-        /* FIXED: No more percentage-based absolute positioning */
         .timer-display {
-            position: relative;
-            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, calc(-50% - 0.55em));
             font-size: 4rem;
             font-weight: 700;
             font-variant-numeric: tabular-nums;
             letter-spacing: 0.05em;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
             background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            line-height: 1;
-            margin-bottom: 8px;
         }
         
         .timer-label {
-            position: relative;
-            z-index: 1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, calc(-50% + 2.4em));
             font-size: 0.9rem;
             color: var(--text-secondary);
+            margin-top: 0;
+            white-space: nowrap;
         }
         
         .progress-ring {
             transform: rotate(-90deg);
+            transform-origin: center;
         }
         
         .progress-ring-circle {
@@ -1030,20 +1033,26 @@
             }
             
             .timer-container {
-                width: 250px;
-                height: 250px;
+                width: min(250px, 72vw);
+                height: min(250px, 72vw);
+                margin: 24px auto 32px;
             }
             
             .timer-display {
-                font-size: 3rem;
+                font-size: clamp(2rem, 11vw, 3rem);
             }
-            
+
+            .timer-label {
+                transform: translate(-50%, calc(-50% + 2em));
+            }
+
             .stats-grid {
                 grid-template-columns: 1fr;
             }
             
             .button-group {
                 flex-direction: column;
+                margin-top: 8px;
             }
             
             .btn {
@@ -1465,7 +1474,7 @@
             <p style="color: var(--text-secondary); margin-bottom: 30px;">Give your eyes a break every 20 minutes</p>
             
             <div class="timer-container">
-                <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                <svg width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
                     <defs>
                         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
@@ -1473,7 +1482,7 @@
                         </linearGradient>
                     </defs>
                     <circle cx="150" cy="150" r="140" stroke="#14141f" stroke-width="12" fill="none"/>
-                    <circle class="progress-ring-circle" cx="150" cy="150" r="140"
+                    <circle class="progress-ring-circle" cx="150" cy="150" r="140" 
                             stroke-width="12" fill="none"
                             stroke-dasharray="879.646" stroke-dashoffset="879.646"
                             id="progressCircle"/>
@@ -1598,6 +1607,8 @@
         </div>
     </footer>
     
+
+    
     <!-- SEO Page - Full Screen Modal -->
     <div id="seo-page">
         <div class="seo-page-header">
@@ -1684,6 +1695,21 @@
                 <strong style="font-size: 1.2rem;">Ready to protect your eyes?</strong><br><br>
                 Start using EyeZen's free 20-20-20 timer today and build healthier screen habits that last a lifetime.
             </p>
+
+            <!-- SEO Optimization Block -->
+            <div style="display:none;">
+                <h2>Best Free 20-20-20 Rule Timer Online</h2>
+                <p>Searching for a browser 20-20-20 timer or a free eye strain timer web tool? EyeZen by moeezio is the best no install 20-20-20 timer. 
+                This minimalist eye strain timer includes a 20-20-20 rule timer dark mode and a hydration tracker with timer for digital eye strain tool free access.</p>
+            </div>
+
+            <div style="margin-top: 30px; border-top: 1px solid var(--border-glass); padding-top: 20px;">
+                <h3>Search Keywords for EyeZen</h3>
+                <p style="font-size: 0.8rem; color: var(--text-dim);">
+                    Optimized for: moeezio eyezen, no install 20-20-20 timer, 20-20-20 rule timer dark mode, 
+                    free 20-20-20 rule timer online, and browser 20-20-20 timer.
+                </p>
+            </div>
         </div>
     </div>
     
@@ -1863,35 +1889,58 @@
             </p>
             
             <div class="shop-grid">
+                <!-- Product 1: Blue Light Glasses -->
                 <div class="product-card">
                     <span class="product-emoji">👓</span>
                     <div class="product-title">Blue Light Glasses</div>
-                    <a href="https://amzn.to/4dJhzjQ" target="_blank" rel="noopener noreferrer" class="product-btn">View on Amazon</a>
+                    <a href="https://amzn.to/4dJhzjQ" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
                 </div>
+                
+                <!-- Product 2: Laptop Stand -->
                 <div class="product-card">
                     <span class="product-emoji">💻</span>
                     <div class="product-title">Laptop Stand</div>
-                    <a href="https://amzn.to/3RG4peU" target="_blank" rel="noopener noreferrer" class="product-btn">View on Amazon</a>
+                    <a href="https://amzn.to/3RG4peU" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
                 </div>
+                
+                <!-- Product 3: Ergonomic Mouse -->
                 <div class="product-card">
                     <span class="product-emoji">🖱️</span>
                     <div class="product-title">Ergonomic Mouse</div>
-                    <a href="https://amzn.to/4uQw9ff" target="_blank" rel="noopener noreferrer" class="product-btn">View on Amazon</a>
+                    <a href="https://amzn.to/4uQw9ff" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
                 </div>
+                
+                <!-- Product 4: Smart Water Bottle -->
                 <div class="product-card">
                     <span class="product-emoji">💧</span>
                     <div class="product-title">Smart Water Bottle</div>
-                    <a href="https://amzn.to/42DgN1H" target="_blank" rel="noopener noreferrer" class="product-btn">View on Amazon</a>
+                    <a href="https://amzn.to/42DgN1H" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
                 </div>
+                
+                <!-- Product 5: Seat Cushion -->
                 <div class="product-card">
                     <span class="product-emoji">🪑</span>
                     <div class="product-title">Seat Cushion</div>
-                    <a href="https://amzn.to/4uSCl6D" target="_blank" rel="noopener noreferrer" class="product-btn">View on Amazon</a>
+                    <a href="https://amzn.to/4uSCl6D" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
                 </div>
+                
+                <!-- Product 6: Desk Lamp -->
                 <div class="product-card">
                     <span class="product-emoji">💡</span>
                     <div class="product-title">Desk Lamp</div>
-                    <a href="https://amzn.to/4ukgDbS" target="_blank" rel="noopener noreferrer" class="product-btn">View on Amazon</a>
+                    <a href="https://amzn.to/4ukgDbS" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
                 </div>
             </div>
             
@@ -1913,16 +1962,21 @@
             playBreakStart() {
                 if (!settings.sound) return;
                 if (!this.context) this.init();
+                
                 const now = this.context.currentTime;
                 const oscillator = this.context.createOscillator();
                 const gainNode = this.context.createGain();
+                
                 oscillator.connect(gainNode);
                 gainNode.connect(this.context.destination);
+                
                 oscillator.type = 'sine';
-                oscillator.frequency.value = 440;
+                oscillator.frequency.value = 440; // A4 note
+                
                 gainNode.gain.setValueAtTime(0, now);
                 gainNode.gain.linearRampToValueAtTime(0.7, now + 0.1);
                 gainNode.gain.exponentialRampToValueAtTime(0.01, now + 1.5);
+                
                 oscillator.start(now);
                 oscillator.stop(now + 1.5);
             },
@@ -1930,16 +1984,21 @@
             playBreakEnd() {
                 if (!settings.sound) return;
                 if (!this.context) this.init();
+                
                 const now = this.context.currentTime;
                 const oscillator = this.context.createOscillator();
                 const gainNode = this.context.createGain();
+                
                 oscillator.connect(gainNode);
                 gainNode.connect(this.context.destination);
+                
                 oscillator.type = 'sine';
-                oscillator.frequency.value = 523;
+                oscillator.frequency.value = 523; // C5 note
+                
                 gainNode.gain.setValueAtTime(0, now);
                 gainNode.gain.linearRampToValueAtTime(0.7, now + 0.05);
                 gainNode.gain.exponentialRampToValueAtTime(0.01, now + 1);
+                
                 oscillator.start(now);
                 oscillator.stop(now + 1);
             },
@@ -1947,16 +2006,21 @@
             playWaterDrink() {
                 if (!settings.sound) return;
                 if (!this.context) this.init();
+                
                 const now = this.context.currentTime;
                 const oscillator = this.context.createOscillator();
                 const gainNode = this.context.createGain();
+                
                 oscillator.connect(gainNode);
                 gainNode.connect(this.context.destination);
+                
                 oscillator.type = 'triangle';
-                oscillator.frequency.value = 660;
+                oscillator.frequency.value = 660; // E5 note
+                
                 gainNode.gain.setValueAtTime(0, now);
                 gainNode.gain.linearRampToValueAtTime(0.5, now + 0.05);
                 gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                
                 oscillator.start(now);
                 oscillator.stop(now + 0.3);
             },
@@ -1985,12 +2049,15 @@
                 this.vy = (Math.random() - 0.5) * 0.5;
                 this.radius = Math.random() * 2 + 1;
             }
+            
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
+                
                 if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
             }
+            
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -2005,12 +2072,18 @@
         
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(particle => { particle.update(); particle.draw(); });
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
             particles.forEach((p1, i) => {
                 particles.slice(i + 1).forEach(p2 => {
                     const dx = p1.x - p2.x;
                     const dy = p1.y - p2.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
+                    
                     if (distance < 100) {
                         ctx.beginPath();
                         ctx.moveTo(p1.x, p1.y);
@@ -2020,6 +2093,7 @@
                     }
                 });
             });
+            
             requestAnimationFrame(animateParticles);
         }
         
@@ -2048,6 +2122,8 @@
             if (saved) {
                 const loaded = JSON.parse(saved);
                 Object.assign(settings, loaded);
+                
+                // Update UI
                 workIntervalSlider.value = settings.workInterval;
                 workIntervalValue.textContent = settings.workInterval;
                 breakDurationSlider.value = settings.breakDuration;
@@ -2056,6 +2132,7 @@
                 waterGoalValue.textContent = settings.waterGoal;
                 document.getElementById('notificationsToggle').checked = settings.notifications;
                 document.getElementById('soundToggle').checked = settings.sound;
+                
                 workInterval = settings.workInterval * 60;
                 breakDuration = settings.breakDuration;
                 timeRemaining = workInterval;
@@ -2125,13 +2202,21 @@
         
         function startTimer() {
             if (isRunning) return;
-            if (!AudioSystem.context) AudioSystem.init();
+
+            // Unlock audio on user gesture (browser autoplay policy)
+            if (!AudioSystem.context) {
+                AudioSystem.init();
+            }
+
+            // Request notification permission on first Start click
             if ('Notification' in window && Notification.permission === 'default') {
                 Notification.requestPermission();
             }
+
             isRunning = true;
             startBtn.disabled = true;
             pauseBtn.disabled = false;
+            
             timerInterval = setInterval(() => {
                 if (timeRemaining > 0) {
                     timeRemaining--;
@@ -2166,14 +2251,20 @@
         function startBreak() {
             isBreak = true;
             breakModal.classList.add('active');
+            
             const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
             breakQuote.textContent = `"${randomQuote}"`;
+            
             let breakTime = breakDuration;
             breakTimer.textContent = breakTime;
+            
             breakInterval = setInterval(() => {
                 breakTime--;
                 breakTimer.textContent = breakTime;
-                if (breakTime <= 0) endBreak();
+                
+                if (breakTime <= 0) {
+                    endBreak();
+                }
             }, 1000);
         }
         
@@ -2181,11 +2272,14 @@
             clearInterval(breakInterval);
             breakModal.classList.remove('active');
             isBreak = false;
+            
             AudioSystem.playBreakEnd();
+            
             const stats = getStats();
             stats.breaksToday++;
             saveStats(stats);
             updateStatsDisplay();
+            
             timeRemaining = workInterval;
             updateDisplay();
             startTimer();
@@ -2193,6 +2287,7 @@
         
         function showNotification() {
             if (!settings.notifications) return;
+            
             if ('Notification' in window && Notification.permission === 'granted') {
                 new Notification('👀 Time to look away!', {
                     body: 'Focus on something 20 feet away for 20 seconds',
@@ -2201,32 +2296,46 @@
             }
         }
         
+        // Event Listeners
         startBtn.addEventListener('click', startTimer);
         pauseBtn.addEventListener('click', pauseTimer);
         resetBtn.addEventListener('click', resetTimer);
-        breakBtn.addEventListener('click', () => { pauseTimer(); startBreak(); });
+        breakBtn.addEventListener('click', () => {
+            pauseTimer();
+            startBreak();
+        });
         
         // ==================== SETTINGS PANEL ====================
         const settingsToggle = document.getElementById('settingsToggle');
         const settingsPanel = document.getElementById('settingsPanel');
         const closeSettings = document.getElementById('closeSettings');
         
-        settingsToggle.addEventListener('click', () => { settingsPanel.classList.toggle('active'); });
-        closeSettings.addEventListener('click', () => { settingsPanel.classList.remove('active'); });
+        settingsToggle.addEventListener('click', () => {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        closeSettings.addEventListener('click', () => {
+            settingsPanel.classList.remove('active');
+        });
         
         const workIntervalSlider = document.getElementById('workIntervalSlider');
         const workIntervalValue = document.getElementById('workIntervalValue');
+        
         workIntervalSlider.addEventListener('input', (e) => {
             const value = parseInt(e.target.value);
             workIntervalValue.textContent = value;
             settings.workInterval = value;
             workInterval = value * 60;
-            if (!isRunning) { timeRemaining = workInterval; updateDisplay(); }
+            if (!isRunning) {
+                timeRemaining = workInterval;
+                updateDisplay();
+            }
             saveSettings();
         });
         
         const breakDurationSlider = document.getElementById('breakDurationSlider');
         const breakDurationValue = document.getElementById('breakDurationValue');
+        
         breakDurationSlider.addEventListener('input', (e) => {
             const value = parseInt(e.target.value);
             breakDurationValue.textContent = value;
@@ -2237,6 +2346,7 @@
         
         const waterGoalSlider = document.getElementById('waterGoalSlider');
         const waterGoalValue = document.getElementById('waterGoalValue');
+        
         waterGoalSlider.addEventListener('input', (e) => {
             const value = parseInt(e.target.value);
             waterGoalValue.textContent = value;
@@ -2262,15 +2372,22 @@
         
         // ==================== WATER TRACKER ====================
         const drinkWaterBtn = document.getElementById('drinkWaterBtn');
+        
         drinkWaterBtn.addEventListener('click', (e) => {
             e.preventDefault();
+            
+            // Add clicked animation
             drinkWaterBtn.classList.add('clicked');
-            setTimeout(() => { drinkWaterBtn.classList.remove('clicked'); }, 600);
+            setTimeout(() => {
+                drinkWaterBtn.classList.remove('clicked');
+            }, 600);
+            
             const stats = getStats();
             stats.waterCount++;
             saveStats(stats);
             updateStatsDisplay();
             updateWaterProgress();
+            
             AudioSystem.playWaterDrink();
             showToast('✅ Drank 1 glass of water!');
         });
@@ -2281,6 +2398,7 @@
             const percentage = (waterCount / settings.waterGoal) * 100;
             const progressFill = document.getElementById('waterProgressFill');
             const progressText = document.getElementById('waterProgressText');
+            
             if (progressFill && progressText) {
                 progressFill.style.width = Math.min(percentage, 100) + '%';
                 progressText.textContent = `${waterCount} / ${settings.waterGoal}`;
@@ -2290,33 +2408,52 @@
         // ==================== TOAST NOTIFICATION ====================
         const toast = document.getElementById('toast');
         const toastMessage = document.getElementById('toastMessage');
+        
         function showToast(message) {
             toastMessage.textContent = message;
             toast.classList.add('show');
-            setTimeout(() => { toast.classList.remove('show'); }, 3000);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
         }
         
         // ==================== STATISTICS ====================
         function getStats() {
             const today = new Date().toDateString();
             const saved = localStorage.getItem('eyezen-stats');
+            
             if (saved) {
                 const stats = JSON.parse(saved);
+                
                 if (stats.date !== today) {
                     const lastDate = new Date(stats.date);
                     const currentDate = new Date(today);
                     const diffTime = Math.abs(currentDate - lastDate);
                     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-                    if (diffDays === 1 && stats.breaksToday > 0) { stats.streak++; }
-                    else if (diffDays > 1) { stats.streak = 0; }
+                    
+                    if (diffDays === 1 && stats.breaksToday > 0) {
+                        stats.streak++;
+                    } else if (diffDays > 1) {
+                        stats.streak = 0;
+                    }
+                    
                     stats.date = today;
                     stats.breaksToday = 0;
                     stats.screenTime = 0;
                     stats.waterCount = 0;
                 }
+                
                 return stats;
             }
-            return { date: today, breaksToday: 0, screenTime: 0, streak: 0, waterCount: 0 };
+            
+            return {
+                date: today,
+                breaksToday: 0,
+                screenTime: 0,
+                streak: 0,
+                waterCount: 0
+            };
         }
         
         function saveStats(stats) {
@@ -2335,9 +2472,11 @@
         function updateStatsDisplay() {
             const stats = getStats();
             document.getElementById('breaksToday').textContent = stats.breaksToday || 0;
+            
             const hours = Math.floor((stats.screenTime || 0) / 3600);
             const minutes = Math.floor(((stats.screenTime || 0) % 3600) / 60);
             document.getElementById('screenTime').textContent = `${hours}h ${minutes}m`;
+            
             document.getElementById('streak').textContent = stats.streak || 0;
             document.getElementById('waterCount').textContent = stats.waterCount || 0;
         }
@@ -2347,16 +2486,24 @@
             const modal = document.getElementById(id);
             if (modal.classList.contains('active')) {
                 modal.classList.remove('active');
-                if (id === 'seo-page') window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Scroll to top when closing SEO page
+                if (id === 'seo-page') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             } else {
+                // Close any other open modals
                 document.querySelectorAll('#about, #priv, #supp, #shop, #seo-page').forEach(m => {
                     m.classList.remove('active');
                 });
                 modal.classList.add('active');
-                if (id === 'seo-page') modal.scrollTop = 0;
+                // Scroll to top when opening SEO page
+                if (id === 'seo-page') {
+                    modal.scrollTop = 0;
+                }
             }
         }
         
+        // Close modals on escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 document.querySelectorAll('#about, #priv, #supp, #shop, #seo-page').forEach(m => {
@@ -2365,18 +2512,26 @@
             }
         });
         
+        // Close modals when clicking outside
         document.querySelectorAll('#about, #priv, #supp, #shop').forEach(modal => {
             modal.addEventListener('click', (e) => {
-                if (e.target === modal) modal.classList.remove('active');
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
             });
         });
         
         // ==================== KEYBOARD SHORTCUTS ====================
         document.addEventListener('keydown', (e) => {
             if (e.target.tagName === 'INPUT') return;
+            
             if (e.code === 'Space') {
                 e.preventDefault();
-                if (isRunning) pauseTimer(); else startTimer();
+                if (isRunning) {
+                    pauseTimer();
+                } else {
+                    startTimer();
+                }
             } else if (e.code === 'KeyR') {
                 e.preventDefault();
                 resetTimer();
@@ -2389,11 +2544,21 @@
         
         // ==================== BACK TO TOP ====================
         const backToTop = document.getElementById('backToTop');
+        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) backToTop.classList.add('visible');
-            else backToTop.classList.remove('visible');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
         });
-        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
         
         // ==================== RESET ALL DATA ====================
         const resetAllBtn = document.getElementById('resetAllBtn');
@@ -2401,20 +2566,33 @@
         const confirmYes = document.getElementById('confirmYes');
         const confirmNo = document.getElementById('confirmNo');
         
-        resetAllBtn.addEventListener('click', () => { confirmDialog.classList.add('active'); });
-        confirmNo.addEventListener('click', () => { confirmDialog.classList.remove('active'); });
+        resetAllBtn.addEventListener('click', () => {
+            confirmDialog.classList.add('active');
+        });
+        
+        confirmNo.addEventListener('click', () => {
+            confirmDialog.classList.remove('active');
+        });
+        
         confirmYes.addEventListener('click', () => {
+            // Clear all localStorage data
             localStorage.removeItem('eyezen-stats');
             localStorage.removeItem('eyezen-settings');
+            
+            // Reset to defaults
             settings.workInterval = 20;
             settings.breakDuration = 20;
             settings.waterGoal = 8;
             settings.notifications = true;
             settings.sound = true;
+            
+            // Update UI
             loadSettings();
             updateStatsDisplay();
             updateWaterProgress();
             resetTimer();
+            
+            // Close dialog and show toast
             confirmDialog.classList.remove('active');
             showToast('✅ All data has been reset!');
         });
