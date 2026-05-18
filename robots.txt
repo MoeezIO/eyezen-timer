@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://moeezio.github.io/eyezen-timer/sitemap.xml
