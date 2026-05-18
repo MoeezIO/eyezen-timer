@@ -1485,28 +1485,75 @@
             box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
         }
         
-        @media (max-width: 768px) {
+        
+                @media (max-width: 768px) {
             .seo-page-content {
                 padding: 40px 20px;
             }
-            
-            .seo-page-content h1 {
-                font-size: 2rem;
-            }
-            
-            .seo-page-content h2 {
-                font-size: 1.6rem;
-            }
-            
-            .seo-page-content h3 {
-                font-size: 1.3rem;
-            }
-            
-            .seo-page-content p {
-                font-size: 1rem;
-            }
+            .seo-page-content h1 { font-size: 2rem; }
+            .seo-page-content h2 { font-size: 1.6rem; }
+            .seo-page-content h3 { font-size: 1.3rem; }
+            .seo-page-content p { font-size: 1rem; }
+        } 
+        .edu-container {
+            margin: 40px auto;
+            max-width: 800px;
         }
-    </style>
+
+        .edu-item {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .edu-header-btn {
+            width: 100%;
+            padding: 20px;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .edu-header-btn::after {
+            content: '+';
+            color: var(--accent-mint);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .edu-item.active .edu-header-btn::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+
+        .edu-content {
+            max-height: 0;
+            opacity: 0;
+            padding: 0 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .edu-item.active .edu-content {
+            max-height: 1000px;
+            opacity: 1;
+            padding: 0 20px 20px 20px;
+        }
+	</style>
 </head>
 <body>
     <!-- Particles Canvas -->
@@ -1653,99 +1700,7 @@
             </div>
         </div>
         
-        <!-- Educational Resources (visible for crawlers & AdSense) -->
-        <section class="glass-card educational-resources" aria-labelledby="edu-resources-heading">
-            <h2 id="edu-resources-heading">Educational Resources</h2>
-            <p class="edu-intro">
-                Evidence-based guides on digital eye health, workplace wellness, and the science behind the 20-20-20 rule.
-                Use EyeZen's free timer to put these habits into practice every workday.
-            </p>
-            <div class="edu-articles">
-                <article class="edu-article" id="scientific-benefits-20-20-20">
-                    <h3>Scientific Benefits of the 20-20-20 Rule for Eye Health</h3>
-                    <p>
-                        The <strong>20-20-20 rule</strong> is one of the most widely recommended habits for reducing
-                        <strong>digital eye strain</strong> among people who work on computers, tablets, and smartphones.
-                        Optometrists and organizations such as the American Academy of Ophthalmology suggest that every
-                        20 minutes of near work, you pause for 20 seconds and look at an object roughly 20 feet away.
-                        This brief shift relaxes the ciliary muscles that control lens focus, which tighten during
-                        prolonged close-up viewing and contribute to fatigue, blurred vision, and headaches.
-                    </p>
-                    <p>
-                        Research on computer vision syndrome consistently links extended screen time with dry eyes,
-                        reduced blink rate, and accommodative stress. When you stare at a monitor, blink frequency
-                        can drop by up to 66%, accelerating tear film evaporation and surface irritation. Micro-breaks
-                        that include distance viewing encourage more natural blinking and give the visual system time
-                        to recover. Studies on workplace ergonomics also show that structured rest intervals improve
-                        comfort ratings and self-reported focus without significantly harming output when breaks are short.
-                    </p>
-                    <p>
-                        The 20-20-20 rule is not a substitute for professional eye care, but it is a practical,
-                        zero-cost intervention supported by clinical guidance. Pairing timed breaks with proper
-                        lighting, screen distance, and hydration—features you can track with EyeZen—creates a
-                        sustainable routine for long-term ocular comfort. Consistency matters more than perfection:
-                        even missed cycles add up when you return to the habit, helping protect vision during years
-                        of remote and hybrid work.
-                    </p>
-                </article>
-                <article class="edu-article" id="eye-strain-productivity">
-                    <h3>How Digital Eye Strain Affects Productivity at Work</h3>
-                    <p>
-                        <strong>Digital eye strain</strong>, also called computer vision syndrome, is more than an
-                        annoyance—it measurably impacts how well people perform during knowledge work. Symptoms such
-                        as burning eyes, difficulty focusing, neck tension, and afternoon headaches increase error
-                        rates and slow reading speed on screens. Employees who experience chronic discomfort often
-                        take longer to complete tasks, require more frequent unplanned breaks, and report lower
-                        energy by mid-afternoon, which affects collaboration and decision quality in remote teams.
-                    </p>
-                    <p>
-                        Productivity losses are often invisible in spreadsheets but show up as "brain fog,"
-                        procrastination, or reliance on caffeine to push through discomfort. When the eyes struggle,
-                        the brain allocates more effort to maintaining clarity, leaving fewer cognitive resources
-                        for problem-solving and creative work. Developers, designers, writers, and students are
-                        especially vulnerable because sustained attention on pixels demands continuous accommodation
-                        and convergence—two visual processes that fatigue faster than many realize.
-                    </p>
-                    <p>
-                        Organizations that invest in eye wellness see benefits in attendance, satisfaction, and
-                        output. Simple interventions—scheduled breaks, ergonomic setups, and tools like a
-                        <strong>browser-based 20-20-20 timer</strong>—reduce symptom severity without expensive
-                        hardware. EyeZen helps individuals track screen time and break consistency so patterns
-                        become visible. Addressing eye strain early prevents it from becoming a chronic barrier
-                        to deep work, making vision care a practical productivity strategy, not just a health nicety.
-                    </p>
-                </article>
-                <article class="edu-article" id="remote-workspace-tips">
-                    <h3>Top 5 Tips for a Healthier Remote Workspace</h3>
-                    <p>
-                        A healthier <strong>remote workspace</strong> combines ergonomics, lighting, and habits that
-                        protect your eyes during long screen sessions. Whether you work from a home office or a shared
-                        desk, small upgrades compound into meaningful comfort gains over months and years.
-                    </p>
-                    <ul>
-                        <li><strong>Follow the 20-20-20 rule consistently.</strong> Use a dedicated timer—such as EyeZen—to
-                            remind you every 20 minutes. Automated cues remove the burden of remembering during deep focus.</li>
-                        <li><strong>Position your monitor correctly.</strong> The top of the screen should sit at or slightly
-                            below eye level, about an arm's length away. This reduces neck strain and limits excessive
-                            upward gaze that dries the eyes.</li>
-                        <li><strong>Optimize lighting.</strong> Avoid glare from windows or overhead lights. Soft, indirect
-                            illumination reduces contrast fatigue and helps pupils stay relaxed.</li>
-                        <li><strong>Stay hydrated.</strong> Dehydration worsens dry eye symptoms. Keep water within reach
-                            and log daily intake to build a repeatable wellness habit alongside screen breaks.</li>
-                        <li><strong>Invest in supportive gear thoughtfully.</strong> Blue-light filters, ergonomic chairs,
-                            and external keyboards can help when chosen for your body and workflow—not as generic fixes.</li>
-                    </ul>
-                    <p>
-                        Remote work rewards systems, not willpower alone. Tracking breaks, water, and screen time turns
-                        abstract advice into measurable progress. EyeZen was built to make those systems effortless:
-                        free, private, and accessible in any browser. Start with one tip this week, add another the
-                        next, and build a workspace that supports both your eyes and your career.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Ad Placeholder Sidebar (on mobile, it appears below) -->
+                <!-- Ad Placeholder Sidebar (on mobile, it appears below) -->
         <div id="ad-sidebar">Ad Space</div>
         
         <!-- Upgrade Button Section -->
@@ -1755,39 +1710,65 @@
             </button>
         </div>
         
-        <!-- Google Ads Space -->
+                <!-- Google Ads Space -->
         <div class="google-ads-space">
             <!-- Insert Google AdSense code here -->
             <span style="opacity: 0.5;">Google Ads Space (728x90)</span>
         </div>
-        
+
+        <!-- NEW: Library & Wellness Guides Accordion -->
+        <div class="edu-container">
+            <h2 class="logo" style="text-align: center; margin-bottom: 30px; font-size: 1.5rem;">Library & Wellness Guides</h2>
+
+            <!-- Guide 1 -->
+            <div class="edu-item">
+                <button class="edu-header-btn" onclick="this.parentElement.classList.toggle('active')">
+                    Scientific Benefits of the 20-20-20 Rule
+                </button>
+                <div class="edu-content">
+                    <p>The 20-20-20 rule is a scientifically-backed technique to reduce eye strain. Every 20 minutes, look at something 20 feet away for 20 seconds. This allows your eye muscles to relax and resets your focus.</p>
+                </div>
+            </div>
+
+            <!-- Guide 2 -->
+            <div class="edu-item">
+                <button class="edu-header-btn" onclick="this.parentElement.classList.toggle('active')">
+                    How Eye Strain Affects Your Productivity
+                </button>
+                <div class="edu-content">
+                    <p>Digital eye strain can cause headaches, blurred vision, and "brain fog." By taking regular breaks with EyeZen, you maintain higher energy levels and better concentration throughout your workday.</p>
+                </div>
+            </div>
+
+            <!-- Guide 3 -->
+            <div class="edu-item">
+                <button class="edu-header-btn" onclick="this.parentElement.classList.toggle('active')">
+                    Top 5 Tips for a Healthier Workspace
+                </button>
+                <div class="edu-content">
+                    <p>1. Keep your monitor at arm's length.<br>
+                       2. Use our water tracker to stay hydrated.<br>
+                       3. Position your screen to avoid window glare.<br>
+                       4. Adjust screen brightness to match your room.<br>
+                       5. Blink often to keep your eyes moist.</p>
+                </div>
+            </div>
+        </div>
+        <!-- End Library Section -->
         <!-- Reset Section -->
         <div class="reset-section">
-            <h3 style="margin-bottom: 15px; font-size: 1.3rem; color: var(--text-primary);">
-                <span role="img" aria-label="Warning">⚠️</span> Reset All Data
-            </h3>
-            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9rem;">
-                This will permanently delete all your progress including water intake, screen time, breaks, and streak counter.
-            </p>
-            <button class="btn-reset" id="resetAllBtn" aria-label="Reset all website data">Reset All Website Data</button>
-        </div>
-    </div>
-    
-    <!-- Break Modal -->
-    <div class="break-modal" id="breakModal">
-        <div class="break-content">
-            <div class="breathing-circle"></div>
-            <div class="break-timer" id="breakTimer">20</div>
-            <div class="break-text">
-                Look away from your screen.<br>
-                Focus on something 20 feet away.
-            </div>
-            <div class="break-quote" id="breakQuote">
-                "Your eyes deserve a break. Take care of them."
-            </div>
-        </div>
-    </div>
-    
+	<h3 style="margin-bottom: 15px; font-size: 1.3rem; color: var(--text-primary);">
+		<span role="img" aria-label="Warning">⚠️</span> Reset All Data
+	</h3>
+
+	<p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9rem;">
+		This will permanently delete all your progress including water intake, screen time, breaks, and streak counter.
+	</p>
+
+	<button class="btn-reset" id="resetAllBtn" aria-label="Reset all website data">
+		Reset All Website Data
+	</button>
+	</div>
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <div class="toast-icon">✅</div>
