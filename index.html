@@ -1,2829 +1,1605 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NHPVHT8SBP"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'G-NHPVHT8SBP');
-</script>
-<meta name="google-site-verification" content="2JgShkRn2C8eYRK9Q1odVXjTn1Ni92G-JaDu-GzAq4Q" />
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EyeZen | Best 20-20-20 Rule Timer for Eye Strain Relief</title>
-<meta name="description" content="Protect your vision with EyeZen, the ultimate free 20-20-20 rule timer. Prevent digital eye strain, track daily hydration, and optimize your workspace with ergonomic gear. No install needed.">
-<meta name="keywords" content="20-20-20 rule, eye strain timer, computer eye care, remote work wellness, break reminder, screen time tracker, digital eye strain, computer vision syndrome, eye wellness, blue light protection">
-<meta name="author" content="EyeZen">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://moeezio.github.io/eyezen-timer/">
-
-<!-- Open Graph Tags -->
-<meta property="og:title" content="EyeZen | Best 20-20-20 Rule Timer for Eye Strain Relief">
-<meta property="og:description" content="Protect your vision with EyeZen, the ultimate free 20-20-20 rule timer. Prevent digital eye strain, track daily hydration, and optimize your workspace with ergonomic gear.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👀</text></svg>">
-
-<!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👀</text></svg>">
-
-<!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
-{
-"@context": "https://schema.org",
-"@type": "SoftwareApplication",
-"name": "EyeZen",
-"applicationCategory": "HealthApplication",
-"applicationSubCategory": "Wellness",
-"operatingSystem": "Web Browser",
-"offers": {
-"@type": "Offer",
-"price": "0.00",
-"priceCurrency": "USD"
-},
-"description": "Free 20-20-20 rule timer for preventing digital eye strain. Track breaks, hydration, and maintain healthy screen habits.",
-"featureList": [
-"20-20-20 Rule Timer",
-"Customizable Work Intervals",
-"Break Reminders with Notifications",
-"Daily Hydration Tracker",
-"Screen Time Tracking",
-"Streak Counter for Motivation",
-"Ergonomic Workspace Recommendations"
-],
-"screenshot": "https://YOUR_GITHUB_USERNAME.github.io/eyezen-timer/screenshot.png",
-"aggregateRating": {
-"@type": "AggregateRating",
-"ratingValue": "4.9",
-"ratingCount": "1250"
-}
-}
-</script>
-
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
-:root {
---bg-primary: #0a0a0f;
---bg-card: #14141f;
---accent-mint: #00d4aa;
---accent-purple: #7c3aed;
---text-primary: #e5e5e5;
---text-secondary: #9ca3af;
---text-dim: #6b7280;
---border-glass: rgba(255, 255, 255, 0.1);
-}
-
-body {
-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, 'Helvetica Neue', Arial, sans-serif;
-background: var(--bg-primary);
-color: var(--text-primary);
-min-height: 100vh;
-overflow-x: hidden;
-position: relative;
-}
-
-/* Particle Background */
-#particles-canvas {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: 0;
-opacity: 0.4;
-}
-
-/* Main Container */
-.container {
-position: relative;
-z-index: 1;
-max-width: 1200px;
-margin: 0 auto;
-padding: 20px;
-}
-
-/* Header */
-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 20px 0;
-margin-bottom: 40px;
-}
-
-.logo {
-font-size: 1.5rem;
-font-weight: 600;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-
-nav a {
-color: var(--text-secondary);
-text-decoration: none;
-font-weight: 500;
-margin-left: 20px;
-transition: color 0.3s ease;
-}
-
-nav a:hover {
-color: var(--accent-mint);
-}
-
-/* Glassmorphism Card */
-.glass-card {
-background: rgba(6, 182, 212, 0.08);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid var(--border-glass);
-border-radius: 24px;
-padding: 40px;
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-/* Timer Section */
-.timer-section {
-text-align: center;
-margin-bottom: 40px;
-}
-
-.timer-container {
-position: relative;
-width: 300px;
-height: 300px;
-margin: 40px auto;
-flex-shrink: 0;
-}
-
-.timer-container svg {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-display: block;
-}
-
-.timer-display {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, calc(-50% - 0.55em));
-font-size: 4rem;
-font-weight: 700;
-font-variant-numeric: tabular-nums;
-letter-spacing: 0.05em;
-line-height: 1;
-text-align: center;
-white-space: nowrap;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-
-.timer-label {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, calc(-50% + 2.4em));
-font-size: 0.9rem;
-color: var(--text-secondary);
-margin-top: 0;
-white-space: nowrap;
-}
-
-.progress-ring {
-transform: rotate(-90deg);
-transform-origin: center;
-}
-
-.progress-ring-circle {
-transition: stroke-dashoffset 1s linear;
-stroke: url(#gradient);
-stroke-linecap: round;
-}
-
-/* Buttons */
-.button-group {
-display: flex;
-gap: 15px;
-justify-content: center;
-margin-top: 30px;
-flex-wrap: wrap;
-}
-
-.btn {
-padding: 14px 32px;
-border: none;
-border-radius: 12px;
-font-size: 1rem;
-font-weight: 500;
-cursor: pointer;
-transition: all 0.3s ease;
-background: var(--bg-card);
-color: var(--text-primary);
-border: 1px solid var(--border-glass);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-}
-
-.btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(0, 212, 170, 0.3);
-}
-
-.btn-primary {
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
-border: none;
-color: white;
-}
-
-.btn-primary:hover {
-box-shadow: 0 6px 30px rgba(0, 212, 170, 0.5);
-}
-
-.btn:active {
-transform: translateY(0);
-}
-
-.btn:disabled {
-opacity: 0.5;
-cursor: not-allowed;
-}
-
-.btn-water {
-background: linear-gradient(135deg, #00d4aa, #06b6d4);
-border: none;
-color: white;
-display: inline-flex;
-align-items: center;
-gap: 8px;
-position: relative;
-overflow: hidden;
-}
-
-.btn-water:hover {
-box-shadow: 0 6px 30px rgba(0, 212, 170, 0.5);
-}
-
-.btn-water:active {
-transform: scale(0.95);
-}
-
-.btn-water.clicked {
-animation: waterPulse 0.6s ease;
-}
-
-@keyframes waterPulse {
-0% { transform: scale(1); background: linear-gradient(135deg, #00d4aa, #06b6d4); }
-50% { transform: scale(1.1); background: linear-gradient(135deg, #06b6d4, #00d4aa); box-shadow: 0 0 30px rgba(6, 182, 212, 0.8); }
-100% { transform: scale(1); background: linear-gradient(135deg, #00d4aa, #06b6d4); }
-}
-
-/* Stats Grid */
-.stats-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 20px;
-margin-bottom: 40px;
-}
-
-.stat-card {
-background: rgba(6, 182, 212, 0.08);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid var(--border-glass);
-border-radius: 16px;
-padding: 24px;
-text-align: center;
-transition: all 0.3s ease;
-}
-
-.stat-card:hover {
-transform: translateY(-4px);
-border-color: var(--accent-mint);
-}
-
-.stat-value {
-font-size: 2.5rem;
-font-weight: 700;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-margin-bottom: 8px;
-}
-
-.stat-label {
-font-size: 0.9rem;
-color: var(--text-secondary);
-}
-
-/* Settings Panel */
-.settings-toggle {
-position: fixed;
-top: 20px;
-right: 20px;
-z-index: 1000;
-background: var(--bg-card);
-border: 1px solid var(--border-glass);
-border-radius: 50%;
-width: 50px;
-height: 50px;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-transition: all 0.3s ease;
-}
-
-.settings-toggle:hover {
-background: var(--accent-mint);
-transform: rotate(90deg);
-}
-
-.settings-panel {
-position: fixed;
-top: 0;
-right: -450px;
-width: 450px;
-height: 100vh;
-background: rgba(6, 182, 212, 0.1);
-backdrop-filter: blur(25px);
--webkit-backdrop-filter: blur(25px);
-border-left: 1px solid var(--border-glass);
-padding: 30px;
-transition: right 0.3s ease;
-z-index: 999;
-overflow-y: auto;
-}
-
-.settings-panel.active {
-right: 0;
-}
-
-.settings-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 30px;
-}
-
-.settings-header h2 {
-font-size: 1.5rem;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-
-.close-settings {
-background: none;
-border: none;
-color: var(--text-primary);
-font-size: 1.5rem;
-cursor: pointer;
-transition: transform 0.3s ease;
-}
-
-.close-settings:hover {
-transform: rotate(90deg);
-}
-
-.setting-group {
-margin-bottom: 30px;
-}
-
-.setting-group label {
-display: block;
-margin-bottom: 10px;
-color: var(--text-secondary);
-font-size: 0.9rem;
-}
-
-.slider {
-width: 100%;
-height: 6px;
-border-radius: 3px;
-background: var(--bg-primary);
-outline: none;
--webkit-appearance: none;
-}
-
-.slider::-webkit-slider-thumb {
--webkit-appearance: none;
-appearance: none;
-width: 20px;
-height: 20px;
-border-radius: 50%;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
-cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-width: 20px;
-height: 20px;
-border-radius: 50%;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
-cursor: pointer;
-border: none;
-}
-
-.toggle-switch {
-position: relative;
-display: inline-block;
-width: 50px;
-height: 26px;
-}
-
-.toggle-switch input {
-opacity: 0;
-width: 0;
-height: 0;
-}
-
-.toggle-slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: var(--bg-primary);
-transition: 0.3s;
-border-radius: 26px;
-}
-
-.toggle-slider:before {
-position: absolute;
-content: "";
-height: 18px;
-width: 18px;
-left: 4px;
-bottom: 4px;
-background-color: var(--text-secondary);
-transition: 0.3s;
-border-radius: 50%;
-}
-
-input:checked + .toggle-slider {
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
-}
-
-input:checked + .toggle-slider:before {
-transform: translateX(24px);
-background-color: white;
-}
-
-.setting-row {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.slider-value {
-color: var(--accent-mint);
-font-weight: 600;
-font-size: 0.9rem;
-}
-
-/* Break Modal */
-.break-modal {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(10, 10, 15, 0.95);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-display: none;
-align-items: center;
-justify-content: center;
-z-index: 2000;
-animation: fadeIn 0.3s ease;
-}
-
-.break-modal.active {
-display: flex;
-}
-
-.break-content {
-text-align: center;
-padding: 40px;
-max-width: 600px;
-}
-
-.breathing-circle {
-width: 200px;
-height: 200px;
-margin: 0 auto 30px;
-border-radius: 50%;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
-animation: breathe 4s ease-in-out infinite;
-box-shadow: 0 0 40px rgba(0, 212, 170, 0.5);
-}
-
-@keyframes breathe {
-0%, 100% { transform: scale(1); opacity: 0.8; }
-50% { transform: scale(1.2); opacity: 1; }
-}
-
-.break-timer {
-font-size: 3rem;
-font-weight: 700;
-color: var(--accent-mint);
-margin-bottom: 20px;
-}
-
-.break-text {
-font-size: 1.3rem;
-margin-bottom: 20px;
-line-height: 1.6;
-}
-
-.break-quote {
-font-style: italic;
-color: var(--text-secondary);
-margin-top: 30px;
-padding: 20px;
-border-left: 3px solid var(--accent-mint);
-background: rgba(0, 212, 170, 0.05);
-border-radius: 8px;
-}
-
-/* Toast Notification */
-.toast {
-position: fixed;
-bottom: 30px;
-right: 30px;
-background: rgba(6, 182, 212, 0.1);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid var(--border-glass);
-border-radius: 12px;
-padding: 16px 24px;
-display: flex;
-align-items: center;
-gap: 12px;
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-z-index: 3000;
-transform: translateX(400px);
-transition: transform 0.3s ease;
-}
-
-.toast.show {
-transform: translateX(0);
-}
-
-.toast-icon {
-font-size: 1.5rem;
-}
-
-.toast-message {
-color: var(--text-primary);
-font-weight: 500;
-}
-
-/* Links Styling */
-a {
-color: var(--accent-mint);
-text-decoration: none;
-font-weight: 500;
-position: relative;
-transition: all 0.3s ease;
-}
-
-a::after {
-content: '';
-position: absolute;
-bottom: -2px;
-left: 50%;
-width: 0;
-height: 2px;
-background: var(--accent-mint);
-transition: all 0.3s ease;
-transform: translateX(-50%);
-}
-
-a:hover {
-color: var(--accent-purple);
-text-shadow: 0 0 8px rgba(124, 58, 237, 0.5);
-}
-
-a:hover::after {
-width: 100%;
-}
-
-.btn-link {
-display: inline-block;
-padding: 10px 24px;
-border: 1px solid var(--accent-mint);
-border-radius: 8px;
-background: transparent;
-transition: all 0.3s ease;
-margin-top: 20px;
-}
-
-.btn-link:hover {
-background: var(--accent-mint);
-color: var(--bg-primary);
-text-shadow: none;
-}
-
-.btn-link::after {
-display: none;
-}
-
-/* Footer */
-footer {
-background: #000000;
-text-align: center;
-padding: 40px 20px;
-margin-top: 60px;
-border-top: 1px solid var(--border-glass);
-position: relative;
-z-index: 10;
-}
-
-footer::before {
-content: '';
-position: absolute;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background: #000000;
-z-index: -1;
-}
-
-footer a {
-color: var(--text-dim);
-font-size: 0.85rem;
-margin: 0 15px;
-font-weight: 400;
-background: transparent;
-}
-
-footer a:hover {
-color: var(--accent-mint);
-background: transparent;
-}
-
-footer a::after {
-display: none;
-}
-
-.footer-links {
-margin-bottom: 20px;
-background: #000000;
-padding: 10px 0;
-}
-
-.copyright {
-color: var(--text-dim);
-font-size: 0.8rem;
-background: #000000;
-padding: 10px 0;
-}
-
-/* Disclaimer */
-.disclaimer {
-margin-top: 15px;
-padding: 15px;
-background: #000000;
-border: 1px solid rgba(0, 212, 170, 0.2);
-border-radius: 8px;
-font-size: 0.75rem;
-color: var(--text-dim);
-line-height: 1.5;
-text-align: center;
-max-width: 600px;
-margin-left: auto;
-margin-right: auto;
-}
-
-.disclaimer strong {
-color: var(--accent-mint);
-}
-
-/* Educational Resources */
-.educational-resources {
-margin: 50px 0 40px;
-text-align: left;
-}
-
-.educational-resources > h2 {
-font-size: 2rem;
-text-align: center;
-margin-bottom: 12px;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-
-.edu-intro {
-text-align: center;
-color: var(--text-secondary);
-max-width: 720px;
-margin: 0 auto 36px;
-line-height: 1.7;
-font-size: 1rem;
-}
-
-.edu-articles {
-display: flex;
-flex-direction: column;
-gap: 28px;
-}
-
-.edu-article {
-background: rgba(6, 182, 212, 0.05);
-border: 1px solid var(--border-glass);
-border-radius: 16px;
-padding: 28px 32px;
-transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.edu-article:hover {
-border-color: rgba(0, 212, 170, 0.35);
-box-shadow: 0 4px 24px rgba(0, 212, 170, 0.08);
-}
-
-.edu-article h3 {
-font-size: 1.35rem;
-color: var(--accent-mint);
-margin-bottom: 16px;
-line-height: 1.35;
-}
-
-.edu-article p {
-color: var(--text-secondary);
-line-height: 1.75;
-margin-bottom: 14px;
-font-size: 0.95rem;
-}
-
-.edu-article p:last-child {
-margin-bottom: 0;
-}
-
-.edu-article ul {
-color: var(--text-secondary);
-line-height: 1.75;
-margin: 12px 0 14px 1.25rem;
-font-size: 0.95rem;
-}
-
-.edu-article li {
-margin-bottom: 8px;
-}
-
-.edu-article strong {
-color: var(--text-primary);
-}
-
-.footer-legal {
-margin-bottom: 16px;
-padding: 12px 0;
-border-top: 1px solid var(--border-glass);
-border-bottom: 1px solid var(--border-glass);
-}
-
-.footer-legal-label {
-display: block;
-color: var(--text-dim);
-font-size: 0.75rem;
-text-transform: uppercase;
-letter-spacing: 0.08em;
-margin-bottom: 10px;
-}
-
-.footer-legal a {
-margin: 0 12px;
-}
-
-@media (max-width: 768px) {
-.educational-resources {
-margin: 36px 0 28px;
-}
-
-.educational-resources > h2 {
-font-size: 1.6rem;
-}
-
-.edu-article {
-padding: 22px 20px;
-}
-
-.edu-article h3 {
-font-size: 1.15rem;
-}
-
-.footer-legal a {
-display: inline-block;
-margin: 6px 10px;
-}
-}
-
-/* Confirmation Dialog */
-.confirm-dialog {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(10, 10, 15, 0.95);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-display: none;
-align-items: center;
-justify-content: center;
-z-index: 4000;
-}
-
-.confirm-dialog.active {
-display: flex;
-}
-
-.confirm-content {
-background: rgba(6, 182, 212, 0.1);
-backdrop-filter: blur(25px);
--webkit-backdrop-filter: blur(25px);
-border: 1px solid var(--border-glass);
-border-radius: 24px;
-padding: 40px;
-max-width: 500px;
-text-align: center;
-}
-
-.confirm-buttons {
-display: flex;
-gap: 15px;
-justify-content: center;
-margin-top: 25px;
-}
-
-.btn-confirm {
-background: linear-gradient(135deg, #dc2626, #7c3aed);
-border: none;
-color: white;
-}
-
-.btn-cancel {
-background: rgba(100, 100, 100, 0.3);
-border: 1px solid var(--border-glass);
-}
-
-/* Info Modals */
-#about, #priv, #supp, #shop {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(10, 10, 15, 0.95);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-z-index: 5000;
-overflow-y: auto;
-padding: 40px 20px;
-}
-
-#about.active, #priv.active, #supp.active, #shop.active {
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.modal-content-box {
-max-width: 800px;
-width: 100%;
-margin: 0 auto;
-background: #000000;
-border: 1px solid var(--border-glass);
-border-radius: 24px;
-padding: 40px;
-}
-
-.modal-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 30px;
-}
-
-.modal-header h2 {
-font-size: 2rem;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-}
-
-.close-modal {
-background: none;
-border: none;
-color: var(--text-primary);
-font-size: 2rem;
-cursor: pointer;
-transition: transform 0.3s ease;
-width: 40px;
-height: 40px;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
-.close-modal:hover {
-transform: rotate(90deg);
-color: var(--accent-mint);
-}
-
-.modal-content-box p {
-color: var(--text-secondary);
-line-height: 1.8;
-margin-bottom: 20px;
-}
-
-.modal-content-box h3 {
-color: var(--accent-mint);
-margin-top: 30px;
-margin-bottom: 15px;
-font-size: 1.3rem;
-}
-
-.modal-content-box ul {
-color: var(--text-secondary);
-margin-left: 20px;
-margin-bottom: 20px;
-line-height: 1.8;
-}
-
-.modal-content-box a {
-color: var(--accent-mint);
-}
-
-@media (max-width: 768px) {
-.modal-content-box {
-padding: 30px 20px;
-}
-
-.modal-header h2 {
-font-size: 1.5rem;
-}
-}
-
-/* Shop Modal Specific Styles */
-#shop .modal-content-box {
-background: rgba(20, 20, 31, 0.4);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-max-width: 1000px;
-}
-
-.shop-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 20px;
-margin-top: 30px;
-margin-bottom: 30px;
-}
-
-.product-card {
-background: rgba(0, 0, 0, 0.5);
-border: 1px solid var(--border-glass);
-border-radius: 16px;
-padding: 24px;
-text-align: center;
-transition: all 0.3s ease;
-}
-
-.product-card:hover {
-transform: translateY(-5px);
-border-color: var(--accent-mint);
-box-shadow: 0 8px 24px rgba(0, 212, 170, 0.2);
-}
-
-.product-emoji {
-font-size: 3rem;
-margin-bottom: 15px;
-display: block;
-}
-
-.product-title {
-font-size: 1.2rem;
-font-weight: 600;
-color: var(--text-primary);
-margin-bottom: 20px;
-}
-
-.product-btn {
-display: inline-block;
-padding: 12px 24px;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
-border: none;
-border-radius: 8px;
-color: white;
-font-weight: 600;
-text-decoration: none;
-transition: all 0.3s ease;
-}
-
-.product-btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
-text-shadow: none;
-}
-
-.product-btn::after {
-display: none;
-}
-
-.shop-disclaimer {
-text-align: center;
-padding: 15px;
-background: rgba(0, 0, 0, 0.5);
-border: 1px solid rgba(0, 212, 170, 0.2);
-border-radius: 8px;
-font-size: 0.85rem;
-color: var(--text-dim);
-margin-top: 20px;
-}
-
-.shop-disclaimer strong {
-color: var(--accent-mint);
-}
-
-@media (max-width: 768px) {
-.shop-grid {
-grid-template-columns: 1fr;
-}
-}
-
-/* Back to Top Button */
-.back-to-top {
-position: fixed;
-bottom: 30px;
-right: 30px;
-width: 50px;
-height: 50px;
-background: var(--accent-mint);
-border-radius: 50%;
-display: none;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-transition: all 0.3s ease;
-z-index: 998;
-box-shadow: 0 4px 12px rgba(0, 212, 170, 0.4);
-}
-
-.back-to-top.visible {
-display: flex;
-}
-
-.back-to-top:hover {
-transform: translateY(-5px);
-box-shadow: 0 6px 20px rgba(0, 212, 170, 0.6);
-}
-
-.back-to-top svg {
-width: 24px;
-height: 24px;
-fill: var(--bg-primary);
-}
-
-/* Ad Placeholders */
-#ad-banner-top,
-#ad-sidebar,
-#ad-footer {
-display: none;
-border: 1px dashed #2a2a3a;
-background: #0d0d14;
-border-radius: 8px;
-padding: 10px;
-text-align: center;
-font-size: 0.8rem;
-color: #4a4a5a;
-margin: 20px auto;
-}
-
-#ad-banner-top,
-#ad-footer {
-width: 728px;
-height: 90px;
-line-height: 70px;
-}
-
-#ad-sidebar {
-width: 300px;
-height: 250px;
-line-height: 230px;
-}
-
-/* Animations */
-@keyframes fadeIn {
-from { opacity: 0; }
-to { opacity: 1; }
-}
-
-@keyframes slideIn {
-from { transform: translateY(20px); opacity: 0; }
-to { transform: translateY(0); opacity: 1; }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-.settings-panel {
-width: 100%;
-right: -100%;
-}
-
-.timer-container {
-width: min(250px, 72vw);
-height: min(250px, 72vw);
-margin: 24px auto 32px;
-}
-
-.timer-display {
-font-size: clamp(2rem, 11vw, 3rem);
-}
-
-.timer-label {
-transform: translate(-50%, calc(-50% + 2em));
-}
-
-.stats-grid {
-grid-template-columns: 1fr;
-}
-
-.button-group {
-flex-direction: column;
-margin-top: 8px;
-}
-
-.btn {
-width: 100%;
-}
-
-#ad-banner-top,
-#ad-footer {
-width: 100%;
-max-width: 320px;
-height: 50px;
-line-height: 30px;
-}
-
-#ad-sidebar {
-width: 100%;
-max-width: 300px;
-}
-
-.toast {
-bottom: 20px;
-right: 20px;
-left: 20px;
-}
-}
-
-/* Keyboard Shortcuts Info */
-.shortcuts-info {
-margin-top: 30px;
-padding: 20px;
-background: rgba(0, 212, 170, 0.05);
-border-radius: 12px;
-border: 1px solid rgba(0, 212, 170, 0.2);
-}
-
-.shortcuts-info h3 {
-color: var(--accent-mint);
-margin-bottom: 10px;
-font-size: 1rem;
-}
-
-.shortcuts-info p {
-color: var(--text-secondary);
-font-size: 0.85rem;
-margin: 5px 0;
-}
-
-.shortcuts-info kbd {
-background: var(--bg-primary);
-padding: 2px 8px;
-border-radius: 4px;
-font-family: monospace;
-color: var(--accent-mint);
-border: 1px solid var(--border-glass);
-}
-
-/* Test Sound Button */
-.btn-test-sound {
-width: 100%;
-margin-top: 10px;
-background: rgba(124, 58, 237, 0.2);
-border: 1px solid var(--accent-purple);
-color: var(--accent-purple);
-}
-
-.btn-test-sound:hover {
-background: var(--accent-purple);
-color: white;
-}
-
-/* Water Goal Progress */
-.water-progress {
-margin-top: 15px;
-}
-
-.water-progress-bar {
-width: 100%;
-height: 8px;
-background: var(--bg-primary);
-border-radius: 4px;
-overflow: hidden;
-}
-
-.water-progress-fill {
-height: 100%;
-background: linear-gradient(90deg, var(--accent-mint), #06b6d4);
-transition: width 0.3s ease;
-border-radius: 4px;
-}
-
-.water-progress-text {
-text-align: center;
-margin-top: 8px;
-font-size: 0.85rem;
-color: var(--text-secondary);
-}
-
-/* Reset Button */
-.reset-section {
-margin-top: 60px;
-padding: 30px;
-text-align: center;
-background: rgba(6, 182, 212, 0.08);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px solid rgba(124, 58, 237, 0.3);
-border-radius: 16px;
-}
-
-.btn-reset {
-background: linear-gradient(135deg, #dc2626, #7c3aed);
-border: none;
-color: white;
-padding: 14px 32px;
-border-radius: 12px;
-font-size: 1rem;
-font-weight: 600;
-cursor: pointer;
-transition: all 0.3s ease;
-}
-
-.btn-reset:hover {
-transform: translateY(-2px);
-box-shadow: 0 6px 30px rgba(220, 38, 38, 0.5);
-}
-
-.btn-reset:active {
-transform: translateY(0);
-}
-
-/* Google Ads Space */
-.google-ads-space {
-margin: 0 auto 30px;
-padding: 40px 20px;
-background: rgba(6, 182, 212, 0.08);
-backdrop-filter: blur(20px);
--webkit-backdrop-filter: blur(20px);
-border: 1px dashed rgba(0, 212, 170, 0.2);
-border-radius: 12px;
-max-width: 728px;
-min-height: 90px;
-display: flex;
-align-items: center;
-justify-content: center;
-color: #4a4a5a;
-font-size: 0.85rem;
-}
-
-/* Upgrade Button */
-.btn-upgrade {
-display: inline-block;
-padding: 18px 50px;
-background: transparent;
-border: 2px solid transparent;
-border-radius: 12px;
-font-size: 1.2rem;
-font-weight: 600;
-cursor: pointer;
-transition: all 0.3s ease;
-background-image: linear-gradient(var(--bg-primary), var(--bg-primary)), linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
-background-origin: border-box;
-background-clip: padding-box, border-box;
-color: var(--text-primary);
-}
-
-.btn-upgrade:hover {
-transform: translateY(-2px);
-box-shadow: 0 8px 30px rgba(0, 212, 170, 0.4);
-background-image: linear-gradient(rgba(0, 212, 170, 0.1), rgba(0, 212, 170, 0.1)), linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
-}
-
-.btn-upgrade:active {
-transform: translateY(0);
-}
-
-/* SEO Page - Full Screen Modal */
-#seo-page {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100vh;
-background: #0a0a0f;
-z-index: 10000;
-overflow-y: auto;
-animation: fadeIn 0.3s ease;
-}
-
-#seo-page.active {
-display: block;
-}
-
-.seo-page-header {
-position: sticky;
-top: 0;
-background: #0a0a0f;
-border-bottom: 1px solid var(--border-glass);
-padding: 20px;
-z-index: 10001;
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-}
-
-.seo-back-btn {
-display: inline-flex;
-align-items: center;
-gap: 10px;
-background: transparent;
-border: 1px solid var(--border-glass);
-color: var(--text-primary);
-padding: 12px 24px;
-border-radius: 8px;
-font-size: 1rem;
-font-weight: 500;
-cursor: pointer;
-transition: all 0.3s ease;
-}
-
-.seo-back-btn:hover {
-background: var(--accent-mint);
-border-color: var(--accent-mint);
-color: #0a0a0f;
-transform: translateX(-5px);
-}
-
-.seo-page-content {
-max-width: 900px;
-margin: 0 auto;
-padding: 60px 20px;
-}
-
-.seo-page-content h1 {
-font-size: 2.5rem;
-margin-bottom: 30px;
-background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-line-height: 1.2;
-}
-
-.seo-page-content h2 {
-font-size: 2rem;
-margin-top: 50px;
-margin-bottom: 20px;
-color: var(--text-primary);
-border-left: 4px solid var(--accent-mint);
-padding-left: 20px;
-}
-
-.seo-page-content h3 {
-font-size: 1.5rem;
-margin-top: 35px;
-margin-bottom: 15px;
-color: var(--accent-mint);
-}
-
-.seo-page-content p {
-color: var(--text-secondary);
-line-height: 1.9;
-margin-bottom: 20px;
-font-size: 1.1rem;
-}
-
-.seo-page-content ul {
-margin: 25px 0 25px 30px;
-color: var(--text-secondary);
-line-height: 1.9;
-}
-
-.seo-page-content li {
-margin-bottom: 15px;
-font-size: 1.05rem;
-}
-
-.seo-page-content strong {
-color: var(--accent-mint);
-font-weight: 600;
-}
-
-/* Learn More Button */
-.learn-more-wrapper {
-text-align: center;
-margin: 40px auto 20px;
-padding: 20px;
-}
-
-.btn-learn-more {
-display: inline-flex;
-align-items: center;
-gap: 10px;
-background: rgba(6, 182, 212, 0.1);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-border: 1px solid var(--accent-mint);
-color: var(--accent-mint);
-padding: 14px 32px;
-border-radius: 12px;
-font-size: 1rem;
-font-weight: 600;
-cursor: pointer;
-transition: all 0.3s ease;
-}
-
-.btn-learn-more:hover {
-background: var(--accent-mint);
-color: #0a0a0f;
-transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
-}
-
-@media (max-width: 768px) {
-.seo-page-content {
-padding: 40px 20px;
-}
-
-.seo-page-content h1 {
-font-size: 2rem;
-}
-
-.seo-page-content h2 {
-font-size: 1.6rem;
-}
-
-.seo-page-content h3 {
-font-size: 1.3rem;
-}
-
-.seo-page-content p {
-font-size: 1rem;
-}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeZen | Best 20-20-20 Rule Timer for Eye Strain Relief</title>
+    <meta name="description" content="Protect your vision with EyeZen, the ultimate free 20-20-20 rule timer. Prevent digital eye strain, track daily hydration, and optimize your workspace with ergonomic gear. No install needed.">
+    <meta name="keywords" content="20-20-20 rule, eye strain timer, computer eye care, remote work wellness, break reminder, screen time tracker, digital eye strain, computer vision syndrome, eye wellness, blue light protection">
+    <meta name="author" content="EyeZen">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://moeezio.github.io/eyezen-timer/">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NHPVHT8SBP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-NHPVHT8SBP');
+    </script>
+    <meta name="google-site-verification" content="2JgShkRn2C8eYRK9Q1odVXjTn1Ni92G-JaDu-GzAq4Q" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="EyeZen | Best 20-20-20 Rule Timer for Eye Strain Relief">
+    <meta property="og:description" content="Protect your vision with EyeZen, the ultimate free 20-20-20 rule timer. Prevent digital eye strain, track daily hydration, and optimize your workspace with ergonomic gear.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👀</text></svg>">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👀</text></svg>">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "EyeZen",
+      "applicationCategory": "HealthApplication",
+      "applicationSubCategory": "Wellness",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "USD"
+      },
+      "description": "Free 20-20-20 rule timer for preventing digital eye strain. Track breaks, hydration, and maintain healthy screen habits.",
+      "featureList": [
+        "20-20-20 Rule Timer",
+        "Customizable Work Intervals",
+        "Break Reminders with Notifications",
+        "Daily Hydration Tracker",
+        "Screen Time Tracking",
+        "Streak Counter for Motivation",
+        "Ergonomic Workspace Recommendations"
+      ],
+      "screenshot": "https://moeezio.github.io/eyezen-timer/screenshot.png",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1250"
+      }
+    }
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-card: #14141f;
+            --accent-mint: #00d4aa;
+            --accent-purple: #7c3aed;
+            --text-primary: #e5e5e5;
+            --text-secondary: #9ca3af;
+            --text-dim: #6b7280;
+            --border-glass: rgba(255, 255, 255, 0.1);
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        #particles-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; opacity: 0.4; }
+        .container { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 20px; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; margin-bottom: 40px; }
+        .logo { font-size: 1.5rem; font-weight: 600; background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        nav a { color: var(--text-secondary); text-decoration: none; font-weight: 500; margin-left: 20px; transition: color 0.3s ease; }
+        nav a:hover { color: var(--accent-mint); }
+        .glass-card { background: rgba(6, 182, 212, 0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border-glass); border-radius: 24px; padding: 40px; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); }
+        .timer-section { text-align: center; margin-bottom: 40px; }
+        .timer-container { position: relative; width: 300px; height: 300px; margin: 40px auto; }
+        .timer-display { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 4rem; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: 0.05em; background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .timer-label { position: absolute; top: 60%; left: 50%; transform: translate(-50%, 0); font-size: 0.9rem; color: var(--text-secondary); margin-top: 20px; }
+        .progress-ring { transform: rotate(-90deg); }
+        .progress-ring-circle { transition: stroke-dashoffset 1s linear; stroke: url(#gradient); stroke-linecap: round; }
+        .button-group { display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        .btn { padding: 14px 32px; border: none; border-radius: 12px; font-size: 1rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border-glass); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0, 212, 170, 0.3); }
+        .btn-primary { background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); border: none; color: white; }
+        .btn-primary:hover { box-shadow: 0 6px 30px rgba(0, 212, 170, 0.5); }
+        .btn-water { background: linear-gradient(135deg, #00d4aa, #06b6d4); border: none; color: white; display: inline-flex; align-items: center; gap: 8px; position: relative; overflow: hidden; }
+        @keyframes waterPulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); box-shadow: 0 0 30px rgba(6, 182, 212, 0.8); } 100% { transform: scale(1); } }
+        .btn-water.clicked { animation: waterPulse 0.6s ease; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .stat-card { background: rgba(6, 182, 212, 0.08); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid var(--border-glass); border-radius: 16px; padding: 24px; text-align: center; transition: all 0.3s ease; }
+        .stat-card:hover { transform: translateY(-4px); border-color: var(--accent-mint); }
+        .stat-value { font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px; }
+        .stat-label { font-size: 0.9rem; color: var(--text-secondary); }
+        .settings-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; background: var(--bg-card); border: 1px solid var(--border-glass); border-radius: 50%; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; }
+        .settings-toggle:hover { background: var(--accent-mint); transform: rotate(90deg); }
+        .settings-panel { position: fixed; top: 0; right: -450px; width: 450px; height: 100vh; background: rgba(6, 182, 212, 0.1); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); border-left: 1px solid var(--border-glass); padding: 30px; transition: right 0.3s ease; z-index: 999; overflow-y: auto; }
+        .settings-panel.active { right: 0; }
+        .settings-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .close-settings { background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
+        .setting-group { margin-bottom: 30px; }
+        .setting-group label { display: block; margin-bottom: 10px; color: var(--text-secondary); font-size: 0.9rem; }
+        .slider { width: 100%; height: 6px; border-radius: 3px; background: var(--bg-primary); outline: none; -webkit-appearance: none; }
+        .slider::-webkit-slider-thumb { -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); cursor: pointer; }
+        .toggle-switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .toggle-slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--bg-primary); transition: 0.3s; border-radius: 26px; }
+        .toggle-slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: var(--text-secondary); transition: 0.3s; border-radius: 50%; }
+        input:checked + .toggle-slider { background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); }
+        input:checked + .toggle-slider:before { transform: translateX(24px); background-color: white; }
+        .slider-value { color: var(--accent-mint); font-weight: 600; font-size: 0.9rem; }
+        .break-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(10px); display: none; align-items: center; justify-content: center; z-index: 2000; }
+        .break-modal.active { display: flex; }
+        .break-content { text-align: center; padding: 40px; max-width: 600px; }
+        .breathing-circle { width: 200px; height: 200px; margin: 0 auto 30px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); animation: breathe 4s ease-in-out infinite; box-shadow: 0 0 40px rgba(0, 212, 170, 0.5); }
+        @keyframes breathe { 0%, 100% { transform: scale(1); opacity: 0.8; } 50% { transform: scale(1.2); opacity: 1; } }
+        .break-timer { font-size: 3rem; font-weight: 700; color: var(--accent-mint); margin-bottom: 20px; }
+        .break-text { font-size: 1.3rem; margin-bottom: 20px; line-height: 1.6; }
+        .toast { position: fixed; bottom: 30px; right: 30px; background: rgba(6, 182, 212, 0.1); backdrop-filter: blur(20px); border: 1px solid var(--border-glass); border-radius: 12px; padding: 16px 24px; display: flex; align-items: center; gap: 12px; transform: translateX(400px); transition: transform 0.3s ease; z-index: 3000; }
+        .toast.show { transform: translateX(0); }
+        .btn-link { display: inline-block; padding: 10px 24px; border: 1px solid var(--accent-mint); border-radius: 8px; background: transparent; transition: all 0.3s ease; margin-top: 20px; color: var(--accent-mint); text-decoration: none; }
+        footer { background: #000000; text-align: center; padding: 40px 20px; margin-top: 60px; border-top: 1px solid var(--border-glass); }
+        footer a { color: var(--text-dim); font-size: 0.85rem; margin: 0 15px; text-decoration: none; }
+        .disclaimer { margin-top: 15px; padding: 15px; background: #000000; border: 1px solid rgba(0, 212, 170, 0.2); border-radius: 8px; font-size: 0.75rem; color: var(--text-dim); line-height: 1.5; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .reset-section { margin-top: 60px; padding: 30px; text-align: center; background: rgba(6, 182, 212, 0.08); border-radius: 16px; border: 1px solid rgba(124, 58, 237, 0.3); }
+        .btn-reset { background: linear-gradient(135deg, #dc2626, #7c3aed); border: none; color: white; padding: 14px 32px; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+        .btn-upgrade { display: inline-block; padding: 18px 50px; background: transparent; border: 2px solid transparent; border-radius: 12px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; background-image: linear-gradient(var(--bg-primary), var(--bg-primary)), linear-gradient(135deg, var(--accent-mint), var(--accent-purple)); background-origin: border-box; background-clip: padding-box, border-box; color: var(--text-primary); }
+        
+        /* Library Guides Styles */
+        .edu-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid var(--border-glass); border-radius: 20px; padding: 20px; margin: 0 auto 15px auto; max-width: 800px; cursor: pointer; transition: all 0.3s ease; overflow: hidden; text-align: left; }
+        .edu-card:hover { background: rgba(255, 255, 255, 0.07); border-color: var(--accent-mint); }
+        .edu-card h3 { margin: 0; font-size: 1.1rem; display: flex; justify-content: space-between; align-items: center; color: var(--text-primary); }
+        .edu-card h3::after { content: '+'; color: var(--accent-mint); font-size: 1.5rem; transition: transform 0.3s ease; }
+        .edu-card.active h3::after { content: '−'; }
+        .edu-content { max-height: 0; opacity: 0; overflow: hidden; transition: all 0.4s ease; }
+        .edu-card.active .edu-content { max-height: 500px; opacity: 1; padding-top: 15px; }
+        .edu-content p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+        @media (max-width: 768px) { .settings-panel { width: 100%; right: -100%; } .button-group { flex-direction: column; } .btn { width: 100%; } }
+    </style>
 </head>
 <body>
-<!-- Particles Canvas -->
-<canvas id="particles-canvas"></canvas>
+    <canvas id="particles-canvas"></canvas>
+    
+    <div class="settings-toggle" id="settingsToggle">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 6v6m-9-9h6m6 0h6"></path></svg>
+    </div>
+    
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header"><h2>⚙️ Settings</h2><button class="close-settings" id="closeSettings">×</button></div>
+        <div class="setting-group"><label>Work Interval: <span class="slider-value" id="workIntervalValue">20</span> minutes</label><input type="range" min="5" max="120" value="20" step="5" class="slider" id="workIntervalSlider"></div>
+        <div class="setting-group"><label>Break Duration: <span class="slider-value" id="breakDurationValue">20</span> seconds</label><input type="range" min="10" max="120" value="20" step="5" class="slider" id="breakDurationSlider"></div>
+        <div class="setting-group"><label>Daily Water Goal: <span class="slider-value" id="waterGoalValue">8</span> glasses</label><input type="range" min="1" max="20" value="8" step="1" class="slider" id="waterGoalSlider"></div>
+        <div class="setting-group"><div class="setting-row"><label>Enable Notifications</label><label class="toggle-switch"><input type="checkbox" id="notificationsToggle" checked><span class="toggle-slider"></span></label></div></div>
+        <div class="setting-group"><div class="setting-row"><label>Enable Sound</label><label class="toggle-switch"><input type="checkbox" id="soundToggle" checked><span class="toggle-slider"></span></label></div></div>
+        <button class="btn btn-test-sound" id="testSoundBtn" style="width:100%">🔊 Test Sounds</button>
+        <a href="javascript:void(0);" onclick="sh('shop')" class="btn-link" style="width:100%; text-align:center">⭐ Wellness Shop</a>
+    </div>
+    
+    <div class="container">
+        <header><div class="logo">👀 EyeZen</div></header>
+        
+        <div class="glass-card timer-section">
+            <h1 style="margin-bottom: 10px;">20-20-20 Rule Timer</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">Protect your eyes every 20 minutes</p>
+            <div class="timer-container">
+                <svg width="300" height="300">
+                    <defs><linearGradient id="gradient"><stop offset="0%" style="stop-color:#00d4aa" /><stop offset="100%" style="stop-color:#7c3aed" /></linearGradient></defs>
+                    <circle cx="150" cy="150" r="140" stroke="#14141f" stroke-width="12" fill="none"/>
+                    <circle class="progress-ring-circle" cx="150" cy="150" r="140" stroke-width="12" fill="none" stroke-dasharray="879.646" stroke-dashoffset="879.646" id="progressCircle"/>
+                </svg>
+                <div class="timer-display" id="timerDisplay">20:00</div>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-primary" id="startBtn">Start</button>
+                <button class="btn" id="pauseBtn" disabled>Pause</button>
+                <button class="btn" id="resetBtn">Reset</button>
+                <button class="btn" id="breakBtn">Take Break</button>
+            </div>
+        </div>
 
-<!-- Settings Toggle -->
-<div class="settings-toggle" id="settingsToggle" role="button" aria-label="Open settings panel" tabindex="0">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-<circle cx="12" cy="12" r="3"></circle>
-<path d="M12 1v6m0 6v6m-9-9h6m6 0h6"></path>
-</svg>
-</div>
+        <div style="text-align: center; margin: 30px 0;">
+            <button class="btn btn-water" id="drinkWaterBtn">💧 Drink Water</button>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-value" id="breaksToday">0</div><div class="stat-label">Breaks Today</div></div>
+            <div class="stat-card"><div class="stat-value" id="screenTime">0h 0m</div><div class="stat-label">Screen Time</div></div>
+            <div class="stat-card"><div class="stat-value" id="streak">0</div><div class="stat-label">Streak 🔥</div></div>
+            <div class="stat-card"><div class="stat-value" id="waterCount">0</div><div class="stat-label">Water 💧</div>
+                <div class="water-progress"><div class="water-progress-bar" style="width:100%; height:8px; background:var(--bg-primary); border-radius:4px; overflow:hidden; margin-top:10px;"><div class="water-progress-fill" id="waterProgressFill" style="width:0%; height:100%; background:var(--accent-mint);"></div></div></div>
+            </div>
+        </div>
 
-<!-- Settings Panel -->
-<div class="settings-panel" id="settingsPanel">
-<div class="settings-header">
-<h2>⚙️ Settings</h2>
-<button class="close-settings" id="closeSettings">×</button>
-</div>
+        <div style="text-align: center; margin: 40px 0;">
+            <button class="btn-upgrade" onclick="sh('shop')">🛍️ Upgrade Workspace</button>
+        </div>
 
-<div class="setting-group">
-<label>Work Interval: <span class="slider-value" id="workIntervalValue">20</span> minutes</label>
-<input type="range" min="5" max="120" value="20" step="5" class="slider" id="workIntervalSlider">
-</div>
+        <!-- Library & Wellness Guides Accordion Section -->
+        <section style="margin-top: 60px; margin-bottom: 40px;">
+            <h2 class="logo" style="text-align: center; margin-bottom: 30px; font-size: 1.5rem;">Library & Wellness Guides</h2>
+            <div class="edu-card" onclick="this.classList.toggle('active')">
+                <h3>Scientific Benefits of the 20-20-20 Rule</h3>
+                <div class="edu-content"><p>The 20-20-20 rule is a scientifically-backed eye wellness technique. Every 20 minutes, take a 20-second break and look at something 20 feet away. This relaxes the ciliary muscles, reducing eye fatigue, blurred vision, and headaches caused by screens.</p></div>
+            </div>
+            <div class="edu-card" onclick="this.classList.toggle('active')">
+                <h3>How Eye Strain Affects Your Productivity</h3>
+                <div class="edu-content"><p>Digital eye strain (Computer Vision Syndrome) impacts performance. Symptoms like dry eyes and neck tension increase error rates. Using a timer like EyeZen helps maintain cognitive resources for deep work and problem-solving.</p></div>
+            </div>
+            <div class="edu-card" onclick="this.classList.toggle('active')">
+                <h3>Top Tips for a Healthier Workspace</h3>
+                <div class="edu-content"><p>Position your monitor at eye level, an arm's length away. Optimize lighting to avoid glare, stay hydrated to reduce dry eye symptoms, and use EyeZen's automated reminders to build healthy screen habits.</p></div>
+            </div>
+        </section>
 
-<div class="setting-group">
-<label>Break Duration: <span class="slider-value" id="breakDurationValue">20</span> seconds</label>
-<input type="range" min="10" max="120" value="20" step="5" class="slider" id="breakDurationSlider">
-</div>
+        <div class="reset-section">
+            <h3>⚠️ Reset All Data</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px;">This will permanently delete all your progress.</p>
+            <button class="btn-reset" id="resetAllBtn">Reset All Website Data</button>
+        </div>
+    </div>
 
-<div class="setting-group">
-<label>Daily Water Goal: <span class="slider-value" id="waterGoalValue">8</span> glasses</label>
-<input type="range" min="1" max="20" value="8" step="1" class="slider" id="waterGoalSlider">
-</div>
+    <!-- Modals & Toasts -->
+    <div class="break-modal" id="breakModal"><div class="break-content"><div class="breathing-circle"></div><div class="break-timer" id="breakTimer">20</div><div class="break-text">Look away from your screen.</div></div></div>
+    <div class="toast" id="toast"><div class="toast-icon">✅</div><div class="toast-message" id="toastMessage">Done!</div></div>
+    
+    <!-- Modals for Shop and Support -->
+    <div id="supp" class="break-modal" style="background:rgba(10,10,15,0.98)"><div class="modal-content-box"><h2>Support Us</h2><p>EyeZen is free forever. Share it with friends!</p><button class="btn" onclick="sh('supp')">Close</button></div></div>
+    <div id="shop" class="break-modal" style="background:rgba(10,10,15,0.98)"><div class="modal-content-box"><div class="modal-header"><h2>Wellness Shop</h2><button class="close-modal" onclick="sh('shop')">×</button></div><div class="shop-grid"><div class="product-card">👓 Blue Light Glasses <a href="https://amzn.to/4dJhzjQ" target="_blank" class="product-btn">View</a></div><div class="product-card">💻 Laptop Stand <a href="https://amzn.to/3RG4peU" target="_blank" class="product-btn">View</a></div></div></div></div>
 
-<div class="setting-group">
-<div class="setting-row">
-<label>Enable Notifications</label>
-<label class="toggle-switch">
-<input type="checkbox" id="notificationsToggle" checked>
-<span class="toggle-slider"></span>
-</label>
-</div>
-</div>
+    <footer>
+        <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="javascript:void(0);" onclick="sh('supp')">Support Us</a>
+        </div>
+        <div class="copyright" style="margin-top:20px; color:var(--text-dim)">© 2026 EyeZen. Protect your vision.</div>
+        <div class="disclaimer"><strong>Affiliate Disclosure:</strong> As an Amazon Associate, I earn from qualified purchases.</div>
+    </footer>
 
-<div class="setting-group">
-<div class="setting-row">
-<label>Enable Sound</label>
-<label class="toggle-switch">
-<input type="checkbox" id="soundToggle" checked>
-<span class="toggle-slider"></span>
-</label>
-</div>
-</div>
+    <script>
+        // Copy the Javascript logic exactly as it was in your previous version
+        const settings = { workInterval: 20, breakDuration: 20, waterGoal: 8, notifications: true, sound: true };
+        let workInterval = 20 * 60, breakDuration = 20, timeRemaining = workInterval, isRunning = false, isBreak = false, timerInterval = null, breakInterval = null;
+        
+        const timerDisplay = document.getElementById('timerDisplay');
+        const progressCircle = document.getElementById('progressCircle');
+        const circumference = 2 * Math.PI * 140;
+        progressCircle.style.strokeDasharray = circumference;
 
-<div class="setting-group">
-<button class="btn btn-test-sound" id="testSoundBtn">🔊 Test Sounds</button>
-</div>
+        function updateDisplay() {
+            const mins = Math.floor(timeRemaining / 60), secs = timeRemaining % 60;
+            timerDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            progressCircle.style.strokeDashoffset = circumference * (timeRemaining / (settings.workInterval * 60));
+        }
 
-<a href="javascript:void(0);" onclick="sh('shop')" class="btn-link">⭐ Browse Wellness Shop</a>
+        document.getElementById('startBtn').onclick = () => { isRunning = true; timerInterval = setInterval(() => { if(timeRemaining > 0) { timeRemaining--; updateDisplay(); } else { clearInterval(timerInterval); startBreak(); } }, 1000); };
+        document.getElementById('pauseBtn').onclick = () => { isRunning = false; clearInterval(timerInterval); };
+        document.getElementById('resetBtn').onclick = () => { timeRemaining = settings.workInterval * 60; updateDisplay(); };
 
-<div class="shortcuts-info">
-<h3>⌨️ Keyboard Shortcuts</h3>
-<p><kbd>Space</kbd> Start/Pause</p>
-<p><kbd>R</kbd> Reset Timer</p>
-<p><kbd>B</kbd> Take Break Now</p>
-</div>
-</div>
+        function startBreak() {
+            document.getElementById('breakModal').classList.add('active');
+            let bt = settings.breakDuration;
+            breakInterval = setInterval(() => { bt--; document.getElementById('breakTimer').textContent = bt; if(bt <= 0) { clearInterval(breakInterval); document.getElementById('breakModal').classList.remove('active'); timeRemaining = settings.workInterval * 60; updateDisplay(); } }, 1000);
+        }
 
-<!-- Main Container -->
-<div class="container">
-<!-- Header -->
-<header>
-<div class="logo">👀 EyeZen</div>
-<nav>
-</nav>
-</header>
+        function sh(id) { document.getElementById(id).classList.toggle('active'); }
+        // (Add rest of your specific logic functions for water, stats, etc here)
+    </script>
+</body>
+</html>    <!-- Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Settings Toggle -->
+    <div class="settings-toggle" id="settingsToggle" role="button" aria-label="Open settings panel" tabindex="0">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M12 1v6m0 6v6m-9-9h6m6 0h6"></path>
+        </svg>
+    </div>
+    
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-header">
+            <h2>⚙️ Settings</h2>
+            <button class="close-settings" id="closeSettings">×</button>
+        </div>
+        
+        <div class="setting-group">
+            <label>Work Interval: <span class="slider-value" id="workIntervalValue">20</span> minutes</label>
+            <input type="range" min="5" max="120" value="20" step="5" class="slider" id="workIntervalSlider">
+        </div>
+        
+        <div class="setting-group">
+            <label>Break Duration: <span class="slider-value" id="breakDurationValue">20</span> seconds</label>
+            <input type="range" min="10" max="120" value="20" step="5" class="slider" id="breakDurationSlider">
+        </div>
+        
+        <div class="setting-group">
+            <label>Daily Water Goal: <span class="slider-value" id="waterGoalValue">8</span> glasses</label>
+            <input type="range" min="1" max="20" value="8" step="1" class="slider" id="waterGoalSlider">
+        </div>
+        
+        <div class="setting-group">
+            <div class="setting-row">
+                <label>Enable Notifications</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="notificationsToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="setting-group">
+            <div class="setting-row">
+                <label>Enable Sound</label>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="soundToggle" checked>
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="setting-group">
+            <button class="btn btn-test-sound" id="testSoundBtn">🔊 Test Sounds</button>
+        </div>
+        
+        <a href="javascript:void(0);" onclick="sh('shop')" class="btn-link">⭐ Browse Wellness Shop</a>
+        
+        <div class="shortcuts-info">
+            <h3>⌨️ Keyboard Shortcuts</h3>
+            <p><kbd>Space</kbd> Start/Pause</p>
+            <p><kbd>R</kbd> Reset Timer</p>
+            <p><kbd>B</kbd> Take Break Now</p>
+        </div>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">👀 EyeZen</div>
+            <nav>
+            </nav>
+        </header>
+        
+        <!-- Ad Placeholder Top -->
+        <div id="ad-banner-top">Ad Space</div>
+        
+        <!-- Timer Section -->
+        <div class="glass-card timer-section">
+            <h1 style="margin-bottom: 10px; font-size: 2rem;">20-20-20 Rule Timer</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">Give your eyes a break every 20 minutes</p>
+            
+            <div class="timer-container">
+                <svg width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="150" cy="150" r="140" stroke="#14141f" stroke-width="12" fill="none"/>
+                    <circle class="progress-ring-circle" cx="150" cy="150" r="140" 
+                            stroke-width="12" fill="none"
+                            stroke-dasharray="879.646" stroke-dashoffset="879.646"
+                            id="progressCircle"/>
+                </svg>
+                <div class="timer-display" id="timerDisplay">20:00</div>
+                <div class="timer-label" id="timerLabel">Focus time</div>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" id="startBtn" aria-label="Start the 20-20-20 timer">Start</button>
+                <button class="btn" id="pauseBtn" disabled aria-label="Pause the timer">Pause</button>
+                <button class="btn" id="resetBtn" aria-label="Reset the timer">Reset</button>
+                <button class="btn" id="breakBtn" aria-label="Take a break now">Take Break Now</button>
+            </div>
+        </div>
+        
+        <!-- Drink Water Button -->
+        <div style="text-align: center; margin: 30px 0;">
+            <button class="btn btn-water" id="drinkWaterBtn" aria-label="Log a glass of water">
+                <span style="font-size: 1.2rem;" role="img" aria-label="Water drop">💧</span>
+                Drink Water
+            </button>
+        </div>
+        
+        <!-- Stats Dashboard -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="breaksToday">0</div>
+                <div class="stat-label">Breaks Today</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="screenTime">0h 0m</div>
+                <div class="stat-label">Screen Time Tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="streak">0</div>
+                <div class="stat-label">Day Streak <span role="img" aria-label="Fire">🔥</span></div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="waterCount">0</div>
+                <div class="stat-label">Glasses Drank Today <span role="img" aria-label="Water drop">💧</span></div>
+                <div class="water-progress">
+                    <div class="water-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="8">
+                        <div class="water-progress-fill" id="waterProgressFill" style="width: 0%;"></div>
+                    </div>
+                    <div class="water-progress-text" id="waterProgressText">0 / 8</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Educational Resources (visible for crawlers & AdSense) -->
+        <section class="glass-card educational-resources" aria-labelledby="edu-resources-heading">
+            <h2 id="edu-resources-heading">Educational Resources</h2>
+            <p class="edu-intro">
+                Evidence-based guides on digital eye health, workplace wellness, and the science behind the 20-20-20 rule.
+                Use EyeZen's free timer to put these habits into practice every workday.
+            </p>
+            <div class="edu-articles">
+                <article class="edu-article" id="scientific-benefits-20-20-20">
+                    <h3>Scientific Benefits of the 20-20-20 Rule for Eye Health</h3>
+                    <p>
+                        The <strong>20-20-20 rule</strong> is one of the most widely recommended habits for reducing
+                        <strong>digital eye strain</strong> among people who work on computers, tablets, and smartphones.
+                        Optometrists and organizations such as the American Academy of Ophthalmology suggest that every
+                        20 minutes of near work, you pause for 20 seconds and look at an object roughly 20 feet away.
+                        This brief shift relaxes the ciliary muscles that control lens focus, which tighten during
+                        prolonged close-up viewing and contribute to fatigue, blurred vision, and headaches.
+                    </p>
+                    <p>
+                        Research on computer vision syndrome consistently links extended screen time with dry eyes,
+                        reduced blink rate, and accommodative stress. When you stare at a monitor, blink frequency
+                        can drop by up to 66%, accelerating tear film evaporation and surface irritation. Micro-breaks
+                        that include distance viewing encourage more natural blinking and give the visual system time
+                        to recover. Studies on workplace ergonomics also show that structured rest intervals improve
+                        comfort ratings and self-reported focus without significantly harming output when breaks are short.
+                    </p>
+                    <p>
+                        The 20-20-20 rule is not a substitute for professional eye care, but it is a practical,
+                        zero-cost intervention supported by clinical guidance. Pairing timed breaks with proper
+                        lighting, screen distance, and hydration—features you can track with EyeZen—creates a
+                        sustainable routine for long-term ocular comfort. Consistency matters more than perfection:
+                        even missed cycles add up when you return to the habit, helping protect vision during years
+                        of remote and hybrid work.
+                    </p>
+                </article>
+                <article class="edu-article" id="eye-strain-productivity">
+                    <h3>How Digital Eye Strain Affects Productivity at Work</h3>
+                    <p>
+                        <strong>Digital eye strain</strong>, also called computer vision syndrome, is more than an
+                        annoyance—it measurably impacts how well people perform during knowledge work. Symptoms such
+                        as burning eyes, difficulty focusing, neck tension, and afternoon headaches increase error
+                        rates and slow reading speed on screens. Employees who experience chronic discomfort often
+                        take longer to complete tasks, require more frequent unplanned breaks, and report lower
+                        energy by mid-afternoon, which affects collaboration and decision quality in remote teams.
+                    </p>
+                    <p>
+                        Productivity losses are often invisible in spreadsheets but show up as "brain fog,"
+                        procrastination, or reliance on caffeine to push through discomfort. When the eyes struggle,
+                        the brain allocates more effort to maintaining clarity, leaving fewer cognitive resources
+                        for problem-solving and creative work. Developers, designers, writers, and students are
+                        especially vulnerable because sustained attention on pixels demands continuous accommodation
+                        and convergence—two visual processes that fatigue faster than many realize.
+                    </p>
+                    <p>
+                        Organizations that invest in eye wellness see benefits in attendance, satisfaction, and
+                        output. Simple interventions—scheduled breaks, ergonomic setups, and tools like a
+                        <strong>browser-based 20-20-20 timer</strong>—reduce symptom severity without expensive
+                        hardware. EyeZen helps individuals track screen time and break consistency so patterns
+                        become visible. Addressing eye strain early prevents it from becoming a chronic barrier
+                        to deep work, making vision care a practical productivity strategy, not just a health nicety.
+                    </p>
+                </article>
+                <article class="edu-article" id="remote-workspace-tips">
+                    <h3>Top 5 Tips for a Healthier Remote Workspace</h3>
+                    <p>
+                        A healthier <strong>remote workspace</strong> combines ergonomics, lighting, and habits that
+                        protect your eyes during long screen sessions. Whether you work from a home office or a shared
+                        desk, small upgrades compound into meaningful comfort gains over months and years.
+                    </p>
+                    <ul>
+                        <li><strong>Follow the 20-20-20 rule consistently.</strong> Use a dedicated timer—such as EyeZen—to
+                            remind you every 20 minutes. Automated cues remove the burden of remembering during deep focus.</li>
+                        <li><strong>Position your monitor correctly.</strong> The top of the screen should sit at or slightly
+                            below eye level, about an arm's length away. This reduces neck strain and limits excessive
+                            upward gaze that dries the eyes.</li>
+                        <li><strong>Optimize lighting.</strong> Avoid glare from windows or overhead lights. Soft, indirect
+                            illumination reduces contrast fatigue and helps pupils stay relaxed.</li>
+                        <li><strong>Stay hydrated.</strong> Dehydration worsens dry eye symptoms. Keep water within reach
+                            and log daily intake to build a repeatable wellness habit alongside screen breaks.</li>
+                        <li><strong>Invest in supportive gear thoughtfully.</strong> Blue-light filters, ergonomic chairs,
+                            and external keyboards can help when chosen for your body and workflow—not as generic fixes.</li>
+                    </ul>
+                    <p>
+                        Remote work rewards systems, not willpower alone. Tracking breaks, water, and screen time turns
+                        abstract advice into measurable progress. EyeZen was built to make those systems effortless:
+                        free, private, and accessible in any browser. Start with one tip this week, add another the
+                        next, and build a workspace that supports both your eyes and your career.
+                    </p>
+                </article>
+            </div>
+        </section>
 
-<!-- Ad Placeholder Top -->
-<div id="ad-banner-top">Ad Space</div>
+        <!-- Ad Placeholder Sidebar (on mobile, it appears below) -->
+        <div id="ad-sidebar">Ad Space</div>
+        
+        <!-- Upgrade Button Section -->
+        <div style="text-align: center; margin: 40px 0;">
+            <button class="btn-upgrade" onclick="sh('shop')" aria-label="Open workspace shop">
+                <span role="img" aria-label="Shopping bags">🛍️</span> Upgrade Your Workspace
+            </button>
+        </div>
+        
+        <!-- Google Ads Space -->
+        <div class="google-ads-space">
+            <!-- Insert Google AdSense code here -->
+            <span style="opacity: 0.5;">Google Ads Space (728x90)</span>
+        </div>
+        
+        <!-- Reset Section -->
+        <div class="reset-section">
+            <h3 style="margin-bottom: 15px; font-size: 1.3rem; color: var(--text-primary);">
+                <span role="img" aria-label="Warning">⚠️</span> Reset All Data
+            </h3>
+            <p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9rem;">
+                This will permanently delete all your progress including water intake, screen time, breaks, and streak counter.
+            </p>
+            <button class="btn-reset" id="resetAllBtn" aria-label="Reset all website data">Reset All Website Data</button>
+        </div>
+    </div>
+    
+    <!-- Break Modal -->
+    <div class="break-modal" id="breakModal">
+        <div class="break-content">
+            <div class="breathing-circle"></div>
+            <div class="break-timer" id="breakTimer">20</div>
+            <div class="break-text">
+                Look away from your screen.<br>
+                Focus on something 20 feet away.
+            </div>
+            <div class="break-quote" id="breakQuote">
+                "Your eyes deserve a break. Take care of them."
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">✅</div>
+        <div class="toast-message" id="toastMessage">Action completed!</div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+    	<!-- Ad Placeholder Footer -->
+    	<div id="ad-footer">Ad Space</div>
 
-<!-- Timer Section -->
-<div class="glass-card timer-section">
-<h1 style="margin-bottom: 10px; font-size: 2rem;">20-20-20 Rule Timer</h1>
-<p style="color: var(--text-secondary); margin-bottom: 30px;">Give your eyes a break every 20 minutes</p>
+    <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="javascript:void(0);" onclick="sh('supp')">Support Us</a>
+    </div>
 
-<div class="timer-container">
-<svg width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
-<defs>
-<linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" style="stop-color:#00d4aa;stop-opacity:1" />
-<stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
-</linearGradient>
-</defs>
-<circle cx="150" cy="150" r="140" stroke="#14141f" stroke-width="12" fill="none"/>
-<circle class="progress-ring-circle" cx="150" cy="150" r="140"
-stroke-width="12" fill="none"
-stroke-dasharray="879.646" stroke-dashoffset="879.646"
-id="progressCircle"/>
-</svg>
-<div class="timer-display" id="timerDisplay">20:00</div>
-<div class="timer-label" id="timerLabel">Focus time</div>
-</div>
+    <div style="margin-top: 15px; margin-bottom: 20px;">
+        <a href="javascript:void(0);" onclick="sh('seo-page')" style="color: var(--text-dim); font-size: 0.85rem; font-weight: 400;">
+            Learn About Eye Health & the 20-20-20 Rule
+        </a>
+    </div>
 
-<div class="button-group">
-<button class="btn btn-primary" id="startBtn" aria-label="Start the 20-20-20 timer">Start</button>
-<button class="btn" id="pauseBtn" disabled aria-label="Pause the timer">Pause</button>
-<button class="btn" id="resetBtn" aria-label="Reset the timer">Reset</button>
-<button class="btn" id="breakBtn" aria-label="Take a break now">Take Break Now</button>
-</div>
-</div>
-
-<!-- Drink Water Button -->
-<div style="text-align: center; margin: 30px 0;">
-<button class="btn btn-water" id="drinkWaterBtn" aria-label="Log a glass of water">
-<span style="font-size: 1.2rem;" role="img" aria-label="Water drop">💧</span>
-Drink Water
-</button>
-</div>
-
-<!-- Stats Dashboard -->
-<div class="stats-grid">
-<div class="stat-card">
-<div class="stat-value" id="breaksToday">0</div>
-<div class="stat-label">Breaks Today</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="screenTime">0h 0m</div>
-<div class="stat-label">Screen Time Tracked</div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="streak">0</div>
-<div class="stat-label">Day Streak <span role="img" aria-label="Fire">🔥</span></div>
-</div>
-<div class="stat-card">
-<div class="stat-value" id="waterCount">0</div>
-<div class="stat-label">Glasses Drank Today <span role="img" aria-label="Water drop">💧</span></div>
-<div class="water-progress">
-<div class="water-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="8">
-<div class="water-progress-fill" id="waterProgressFill" style="width: 0%;"></div>
-</div>
-<div class="water-progress-text" id="waterProgressText">0 / 8</div>
-</div>
-</div>
-</div>
-
-<!-- Educational Resources (visible for crawlers & AdSense) -->
-<section class="glass-card educational-resources" aria-labelledby="edu-resources-heading">
-<h2 id="edu-resources-heading">Educational Resources</h2>
-<p class="edu-intro">
-Evidence-based guides on digital eye health, workplace wellness, and the science behind the 20-20-20 rule.
-Use EyeZen's free timer to put these habits into practice every workday.
-</p>
-<div class="edu-articles">
-<article class="edu-article" id="scientific-benefits-20-20-20">
-<h3>Scientific Benefits of the 20-20-20 Rule for Eye Health</h3>
-<p>
-The <strong>20-20-20 rule</strong> is one of the most widely recommended habits for reducing
-<strong>digital eye strain</strong> among people who work on computers, tablets, and smartphones.
-Optometrists and organizations such as the American Academy of Ophthalmology suggest that every
-20 minutes of near work, you pause for 20 seconds and look at an object roughly 20 feet away.
-This brief shift relaxes the ciliary muscles that control lens focus, which tighten during
-prolonged close-up viewing and contribute to fatigue, blurred vision, and headaches.
-</p>
-<p>
-Research on computer vision syndrome consistently links extended screen time with dry eyes,
-reduced blink rate, and accommodative stress. When you stare at a monitor, blink frequency
-can drop by up to 66%, accelerating tear film evaporation and surface irritation. Micro-breaks
-that include distance viewing encourage more natural blinking and give the visual system time
-to recover. Studies on workplace ergonomics also show that structured rest intervals improve
-comfort ratings and self-reported focus without significantly harming output when breaks are short.
-</p>
-<p>
-The 20-20-20 rule is not a substitute for professional eye care, but it is a practical,
-zero-cost intervention supported by clinical guidance. Pairing timed breaks with proper
-lighting, screen distance, and hydration—features you can track with EyeZen—creates a
-sustainable routine for long-term ocular comfort. Consistency matters more than perfection:
-even missed cycles add up when you return to the habit, helping protect vision during years
-of remote and hybrid work.
-</p>
-</article>
-<article class="edu-article" id="eye-strain-productivity">
-<h3>How Digital Eye Strain Affects Productivity at Work</h3>
-<p>
-<strong>Digital eye strain</strong>, also called computer vision syndrome, is more than an
-annoyance—it measurably impacts how well people perform during knowledge work. Symptoms such
-as burning eyes, difficulty focusing, neck tension, and afternoon headaches increase error
-rates and slow reading speed on screens. Employees who experience chronic discomfort often
-take longer to complete tasks, require more frequent unplanned breaks, and report lower
-energy by mid-afternoon, which affects collaboration and decision quality in remote teams.
-</p>
-<p>
-Productivity losses are often invisible in spreadsheets but show up as "brain fog,"
-procrastination, or reliance on caffeine to push through discomfort. When the eyes struggle,
-the brain allocates more effort to maintaining clarity, leaving fewer cognitive resources
-for problem-solving and creative work. Developers, designers, writers, and students are
-especially vulnerable because sustained attention on pixels demands continuous accommodation
-and convergence—two visual processes that fatigue faster than many realize.
-</p>
-<p>
-Organizations that invest in eye wellness see benefits in attendance, satisfaction, and
-output. Simple interventions—scheduled breaks, ergonomic setups, and tools like a
-<strong>browser-based 20-20-20 timer</strong>—reduce symptom severity without expensive
-hardware. EyeZen helps individuals track screen time and break consistency so patterns
-become visible. Addressing eye strain early prevents it from becoming a chronic barrier
-to deep work, making vision care a practical productivity strategy, not just a health nicety.
-</p>
-</article>
-<article class="edu-article" id="remote-workspace-tips">
-<h3>Top 5 Tips for a Healthier Remote Workspace</h3>
-<p>
-A healthier <strong>remote workspace</strong> combines ergonomics, lighting, and habits that
-protect your eyes during long screen sessions. Whether you work from a home office or a shared
-desk, small upgrades compound into meaningful comfort gains over months and years.
-</p>
-<ul>
-<li><strong>Follow the 20-20-20 rule consistently.</strong> Use a dedicated timer—such as EyeZen—to
-remind you every 20 minutes. Automated cues remove the burden of remembering during deep focus.</li>
-<li><strong>Position your monitor correctly.</strong> The top of the screen should sit at or slightly
-below eye level, about an arm's length away. This reduces neck strain and limits excessive
-upward gaze that dries the eyes.</li>
-<li><strong>Optimize lighting.</strong> Avoid glare from windows or overhead lights. Soft, indirect
-illumination reduces contrast fatigue and helps pupils stay relaxed.</li>
-<li><strong>Stay hydrated.</strong> Dehydration worsens dry eye symptoms. Keep water within reach
-and log daily intake to build a repeatable wellness habit alongside screen breaks.</li>
-<li><strong>Invest in supportive gear thoughtfully.</strong> Blue-light filters, ergonomic chairs,
-and external keyboards can help when chosen for your body and workflow—not as generic fixes.</li>
-</ul>
-<p>
-Remote work rewards systems, not willpower alone. Tracking breaks, water, and screen time turns
-abstract advice into measurable progress. EyeZen was built to make those systems effortless:
-free, private, and accessible in any browser. Start with one tip this week, add another the
-next, and build a workspace that supports both your eyes and your career.
-</p>
-</article>
-</div>
-</section>
-
-<!-- Ad Placeholder Sidebar (on mobile, it appears below) -->
-<div id="ad-sidebar">Ad Space</div>
-
-<!-- Upgrade Button Section -->
-<div style="text-align: center; margin: 40px 0;">
-<button class="btn-upgrade" onclick="sh('shop')" aria-label="Open workspace shop">
-<span role="img" aria-label="Shopping bags">🛍️</span> Upgrade Your Workspace
-</button>
-</div>
-
-<!-- Google Ads Space -->
-<div class="google-ads-space">
-<!-- Insert Google AdSense code here -->
-<span style="opacity: 0.5;">Google Ads Space (728x90)</span>
-</div>
-
-<!-- Reset Section -->
-<div class="reset-section">
-<h3 style="margin-bottom: 15px; font-size: 1.3rem; color: var(--text-primary);">
-<span role="img" aria-label="Warning">⚠️</span> Reset All Data
-</h3>
-<p style="color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9rem;">
-This will permanently delete all your progress including water intake, screen time, breaks, and streak counter.
-</p>
-<button class="btn-reset" id="resetAllBtn" aria-label="Reset all website data">Reset All Website Data</button>
-</div>
-</div>
-
-<!-- Break Modal -->
-<div class="break-modal" id="breakModal">
-<div class="break-content">
-<div class="breathing-circle"></div>
-<div class="break-timer" id="breakTimer">20</div>
-<div class="break-text">
-Look away from your screen.<br>
-Focus on something 20 feet away.
-</div>
-<div class="break-quote" id="breakQuote">
-"Your eyes deserve a break. Take care of them."
-</div>
-</div>
-</div>
-
-<!-- Toast Notification -->
-<div class="toast" id="toast">
-<div class="toast-icon">✅</div>
-<div class="toast-message" id="toastMessage">Action completed!</div>
-</div>
-
-<!-- Footer -->
-<footer>
-<!-- Ad Placeholder Footer -->
-<div id="ad-footer">Ad Space</div>
-
-<div class="footer-links">
-<a href="about.html">About Us</a>
-<a href="privacy.html">Privacy Policy</a>
-<a href="terms.html">Terms of Service</a>
-<a href="contact.html">Contact Us</a>
-<a href="javascript:void(0);" onclick="sh('supp')">Support Us</a>
-</div>
-
-<div style="margin-top: 15px; margin-bottom: 20px;">
-<a href="javascript:void(0);" onclick="sh('seo-page')" style="color: var(--text-dim); font-size: 0.85rem; font-weight: 400;">
-Learn About Eye Health & the 20-20-20 Rule
-</a>
-</div>
-
-<div class="copyright">
-© 2026 EyeZen. Protect your eyes, enhance your productivity.
-</div>
-
-<!-- Amazon Disclaimer -->
-<div class="disclaimer">
-<strong>Affiliate Disclosure:</strong> As an Amazon Associate, I earn from qualified purchases. This supports the EyeZen team in providing free eye wellness tools for everyone.
-</div>
+    <div class="copyright">
+        © 2026 EyeZen. Protect your eyes, enhance your productivity.
+    </div>
+    
+    <!-- Amazon Disclaimer -->
+    <div class="disclaimer">
+        <strong>Affiliate Disclosure:</strong> As an Amazon Associate, I earn from qualified purchases. This supports the EyeZen team in providing free eye wellness tools for everyone.
+    </div>
 </footer>
-
-
-
-<!-- SEO Page - Full Screen Modal -->
-<div id="seo-page">
-<div class="seo-page-header">
-<button class="seo-back-btn" onclick="sh('seo-page')" aria-label="Back to timer">
-<span>←</span>
-<span>Back to Timer</span>
-</button>
-</div>
-
-<div class="seo-page-content">
-<h1>Eye Health & The 20-20-20 Rule</h1>
-
-<h2>What is the 20-20-20 Rule for Eye Strain?</h2>
-
-<p>
-<strong>Computer Vision Syndrome (CVS)</strong> affects millions of remote workers, developers, and digital professionals worldwide.
-Prolonged screen exposure causes digital eye strain, resulting in headaches, dry eyes, blurred vision, and neck pain.
-The average office worker spends over 7 hours per day staring at screens, putting immense pressure on eye muscles that weren't designed for such sustained focus.
-</p>
-
-<p>
-The <strong>20-20-20 rule</strong> is a scientifically-backed eye wellness technique recommended by optometrists and the American Academy of Ophthalmology.
-The principle is simple: <strong>every 20 minutes, take a 20-second break and look at something 20 feet away</strong>.
-This practice allows your eye muscles to relax, reducing the risk of eye fatigue and long-term vision damage.
-By shifting your focus to distant objects, you counteract the constant near-vision stress caused by monitors and smartphones.
-</p>
-
-<p>
-EyeZen makes following the 20-20-20 rule effortless with a <strong>browser-based reminder system</strong> that requires no installation.
-Our customizable timer sends gentle notifications, plays soothing sounds, and tracks your daily wellness habits.
-Unlike mobile apps that drain battery or desktop software that requires updates, EyeZen works instantly in any modern browser—perfect for remote workers, students, and anyone committed to protecting their vision.
-</p>
-
-<h2>Features for Digital Wellness</h2>
-
-<ul>
-<li><strong>Customizable 20-20-20 Timer:</strong> Adjust work intervals (5-120 minutes) and break durations (10-120 seconds) to match your workflow.</li>
-<li><strong>Browser Notifications:</strong> Receive desktop alerts when it's time to rest your eyes—no app installation required.</li>
-<li><strong>Soothing Audio Alerts:</strong> Gentle chime sounds generated via Web Audio API signal break time without being intrusive.</li>
-<li><strong>Daily Hydration Tracker:</strong> Log water intake with a single click. Staying hydrated reduces dry eye symptoms and improves overall wellness.</li>
-<li><strong>Screen Time Analytics:</strong> Track how many hours you spend in front of screens each day and monitor your break consistency.</li>
-<li><strong>Streak Counter:</strong> Build healthy habits with a daily streak system that motivates you to maintain your eye care routine.</li>
-<li><strong>Ergonomic Workspace Shop:</strong> Browse curated recommendations for blue light glasses, ergonomic mice, laptop stands, and desk lamps to optimize your remote work setup.</li>
-<li><strong>No Account Required:</strong> All data is stored locally in your browser using LocalStorage—100% private and secure.</li>
-<li><strong>Completely Free:</strong> EyeZen will always remain free with no subscriptions, paywalls, or premium tiers.</li>
-</ul>
-
-<h3>Why Choose EyeZen Over Other Eye Strain Tools?</h3>
-
-<p>
-Most eye care apps require downloads, consume system resources, or bombard you with ads. EyeZen is different.
-As a single-page web application, it launches instantly, works offline after the first visit, and respects your privacy.
-Whether you're a freelance designer, software engineer, or remote student, EyeZen adapts to your unique work rhythm
-while keeping your eyes healthy and your productivity high.
-</p>
-
-<h3>Understanding Digital Eye Strain</h3>
-
-<p>
-Digital eye strain is a modern health concern affecting over 60% of adults who use computers regularly.
-Symptoms include dry eyes, blurred vision, headaches, and neck or shoulder pain. The condition occurs because
-our eyes aren't designed for prolonged near-vision tasks. When staring at screens, we blink less frequently,
-which leads to dry eyes and discomfort.
-</p>
-
-<h3>How the 20-20-20 Rule Works</h3>
-
-<p>
-The 20-20-20 rule is simple yet scientifically proven. By looking at something 20 feet away for 20 seconds every
-20 minutes, you allow your eye muscles to relax and reset. This brief pause helps reduce the strain caused by
-continuous near-focus work. The distance of 20 feet is significant because it approximates optical infinity for
-the human eye, requiring minimal focusing effort.
-</p>
-
-<h3>Additional Eye Health Tips</h3>
-
-<p>
-Beyond the 20-20-20 rule, consider these practices for optimal eye health: adjust your screen brightness to match
-ambient lighting, position your monitor 20-26 inches from your eyes, use artificial tears if your eyes feel dry,
-and ensure your workspace has adequate lighting. Regular eye exams are also crucial for detecting vision problems early.
-</p>
-
-<p style="margin-top: 60px; padding: 30px; background: rgba(0, 212, 170, 0.1); border-radius: 16px; border-left: 4px solid var(--accent-mint);">
-<strong style="font-size: 1.2rem;">Ready to protect your eyes?</strong><br><br>
-Start using EyeZen's free 20-20-20 timer today and build healthier screen habits that last a lifetime.
-</p>
-
-<!-- SEO Optimization Block -->
-<div style="display:none;">
-<h2>Best Free 20-20-20 Rule Timer Online</h2>
-<p>Searching for a browser 20-20-20 timer or a free eye strain timer web tool? EyeZen by moeezio is the best no install 20-20-20 timer.
-This minimalist eye strain timer includes a 20-20-20 rule timer dark mode and a hydration tracker with timer for digital eye strain tool free access.</p>
-</div>
-
-<div style="margin-top: 30px; border-top: 1px solid var(--border-glass); padding-top: 20px;">
-<h3>Search Keywords for EyeZen</h3>
-<p style="font-size: 0.8rem; color: var(--text-dim);">
-Optimized for: moeezio eyezen, no install 20-20-20 timer, 20-20-20 rule timer dark mode,
-free 20-20-20 rule timer online, and browser 20-20-20 timer.
-</p>
-</div>
-</div>
-</div>
-
-<!-- Confirmation Dialog -->
-<div class="confirm-dialog" id="confirmDialog">
-<div class="confirm-content">
-<h2 style="margin-bottom: 15px; color: var(--accent-mint);">⚠️ Confirm Reset</h2>
-<p style="color: var(--text-secondary); margin-bottom: 25px;">
-Are you sure you want to delete all your data? This action cannot be undone.
-</p>
-<div class="confirm-buttons">
-<button class="btn btn-confirm" id="confirmYes">Yes, Reset Everything</button>
-<button class="btn btn-cancel" id="confirmNo">Cancel</button>
-</div>
-</div>
-</div>
-
-<!-- Back to Top Button -->
-<div class="back-to-top" id="backToTop" role="button" aria-label="Back to top" tabindex="0">
-<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-<path d="M12 4l-8 8h6v8h4v-8h6z"/>
-</svg>
-</div>
-
-<!-- About Modal -->
-<div id="about">
-<div class="modal-content-box">
-<div class="modal-header">
-<h2>About EyeZen</h2>
-<button class="close-modal" onclick="sh('about')">&times;</button>
-</div>
-<p>
-EyeZen is a free, browser-based wellness tool designed to protect your eyes during extended screen time.
-We follow the scientifically-backed <strong>20-20-20 rule</strong>: every 20 minutes, take a 20-second break
-and look at something 20 feet away.
-</p>
-<h3>Why We Built This</h3>
-<p>
-In today's digital age, remote workers, developers, designers, and students spend countless hours staring at screens.
-This can lead to digital eye strain, headaches, dry eyes, and long-term vision problems. We created EyeZen to make
-eye wellness accessible, customizable, and completely free.
-</p>
-<h3>Features</h3>
-<ul>
-<li>Customizable work and break intervals</li>
-<li>Browser notifications and soothing sounds</li>
-<li>Water intake tracking for overall wellness</li>
-<li>Daily streak counter for motivation</li>
-<li>Fully customizable settings</li>
-<li>No installation required - works in any modern browser</li>
-</ul>
-<h3>Our Mission</h3>
-<p>
-To promote healthier screen habits and prevent digital eye strain for everyone, everywhere.
-EyeZen is open-source and will always remain free.
-</p>
-</div>
-</div>
-
-<!-- Privacy Policy Modal -->
-<div id="priv">
-<div class="modal-content-box">
-<div class="modal-header">
-<h2>Privacy Policy</h2>
-<button class="close-modal" onclick="sh('priv')">&times;</button>
-</div>
-<p><strong>Last Updated:</strong> January 2026</p>
-
-<h3>Data Collection</h3>
-<p>
-EyeZen does <strong>not collect, store, or transmit any personal data</strong> to external servers.
-All your settings, statistics, and preferences are stored locally in your browser using LocalStorage.
-</p>
-
-<h3>What We Store Locally</h3>
-<p>The following data is saved in your browser's LocalStorage:</p>
-<ul>
-<li>Work and break interval preferences</li>
-<li>Daily water intake count</li>
-<li>Screen time tracking</li>
-<li>Break count and streak data</li>
-<li>Sound and notification preferences</li>
-</ul>
-<p>This data never leaves your device and can be cleared at any time using the "Reset All Data" button.</p>
-
-<h3>Third-Party Services</h3>
-<p>
-EyeZen may display Google AdSense advertisements and Amazon affiliate links. These services may use cookies
-to display relevant ads. We do not control these third-party cookies. Please review:
-</p>
-<ul>
-<li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
-<li><a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496" target="_blank" rel="noopener">Amazon Privacy Notice</a></li>
-</ul>
-
-<h3>Analytics</h3>
-<p>
-We do not use any analytics or tracking tools. Your usage of EyeZen is completely private.
-</p>
-
-<h3>Your Rights</h3>
-<p>
-You have full control over your data. You can reset all stored information at any time using the
-"Reset All Website Data" button at the bottom of the page.
-</p>
-
-<h3>Contact</h3>
-<p>
-If you have any questions about this Privacy Policy, please contact us through the Support page.
-</p>
-</div>
-</div>
-
-<!-- Support Modal -->
-<div id="supp">
-<div class="modal-content-box">
-<div class="modal-header">
-<h2>Support EyeZen</h2>
-<button class="close-modal" onclick="sh('supp')">&times;</button>
-</div>
-<p>
-EyeZen is a completely free tool built to help people protect their eyes during screen time.
-We believe wellness tools should be accessible to everyone, everywhere.
-</p>
-
-<h3>How You Can Support Us</h3>
-<p>
-If you find EyeZen helpful, here are ways you can support the project:
-</p>
-
-<h3>1. Share EyeZen</h3>
-<p>
-Tell your friends, colleagues, and online communities about EyeZen. The more people who protect
-their eyes, the better!
-</p>
-
-<h3>2. Use Our Affiliate Links</h3>
-<p>
-When you purchase recommended products like blue light blocking glasses through our Amazon affiliate
-links, we earn a small commission at no extra cost to you. This helps keep EyeZen free and maintained.
-</p>
-
-<h3>3. Provide Feedback</h3>
-<p>
-Have suggestions for new features? Found a bug? We'd love to hear from you! Your feedback helps
-us improve EyeZen for everyone.
-</p>
-
-<h3>4. Contribute Code</h3>
-<p>
-EyeZen is open-source! If you're a developer and want to contribute improvements, optimizations,
-or new features, we welcome your pull requests.
-</p>
-
-<h3>Our Commitment</h3>
-<p>
-EyeZen will <strong>always remain free</strong>. No subscriptions, no premium tiers, no paywalls.
-We're committed to keeping eye wellness accessible to everyone.
-</p>
-
-<p style="margin-top: 30px; padding: 20px; background: rgba(0, 212, 170, 0.1); border-radius: 12px; border-left: 3px solid var(--accent-mint);">
-<strong>Thank you for using EyeZen!</strong><br>
-Together, we're building healthier screen habits. 💚👀
-</p>
-</div>
-</div>
-
-<!-- Wellness Shop Modal -->
-<div id="shop">
-<div class="modal-content-box">
-<div class="modal-header">
-<h2>🛍️ Wellness Shop</h2>
-<button class="close-modal" onclick="sh('shop')">&times;</button>
-</div>
-<p style="text-align: center; color: var(--text-secondary); margin-bottom: 10px;">
-Upgrade your workspace with these ergonomic essentials
-</p>
-
-<div class="shop-grid">
-<!-- Product 1: Blue Light Glasses -->
-<div class="product-card">
-<span class="product-emoji">👓</span>
-<div class="product-title">Blue Light Glasses</div>
-<a href="https://amzn.to/4dJhzjQ" target="_blank" rel="noopener noreferrer" class="product-btn">
-View on Amazon
-</a>
-</div>
-
-<!-- Product 2: Laptop Stand -->
-<div class="product-card">
-<span class="product-emoji">💻</span>
-<div class="product-title">Laptop Stand</div>
-<a href="https://amzn.to/3RG4peU" target="_blank" rel="noopener noreferrer" class="product-btn">
-View on Amazon
-</a>
-</div>
-
-<!-- Product 3: Ergonomic Mouse -->
-<div class="product-card">
-<span class="product-emoji">🖱️</span>
-<div class="product-title">Ergonomic Mouse</div>
-<a href="https://amzn.to/4uQw9ff" target="_blank" rel="noopener noreferrer" class="product-btn">
-View on Amazon
-</a>
-</div>
-
-<!-- Product 4: Smart Water Bottle -->
-<div class="product-card">
-<span class="product-emoji">💧</span>
-<div class="product-title">Smart Water Bottle</div>
-<a href="https://amzn.to/42DgN1H" target="_blank" rel="noopener noreferrer" class="product-btn">
-View on Amazon
-</a>
-</div>
-
-<!-- Product 5: Seat Cushion -->
-<div class="product-card">
-<span class="product-emoji">🪑</span>
-<div class="product-title">Seat Cushion</div>
-<a href="https://amzn.to/4uSCl6D" target="_blank" rel="noopener noreferrer" class="product-btn">
-View on Amazon
-</a>
-</div>
-
-<!-- Product 6: Desk Lamp -->
-<div class="product-card">
-<span class="product-emoji">💡</span>
-<div class="product-title">Desk Lamp</div>
-<a href="https://amzn.to/4ukgDbS" target="_blank" rel="noopener noreferrer" class="product-btn">
-View on Amazon
-</a>
-</div>
-</div>
-
-<div class="shop-disclaimer">
-<strong>Amazon Associate Disclosure:</strong> As an Amazon Associate, I earn from qualifying purchases.
-</div>
-</div>
-</div>
-
-<script>
-// ==================== AUDIO SYSTEM ====================
-const AudioSystem = {
-context: null,
-
-init() {
-this.context = new (window.AudioContext || window.webkitAudioContext)();
-},
-
-playBreakStart() {
-if (!settings.sound) return;
-if (!this.context) this.init();
-
-const now = this.context.currentTime;
-const oscillator = this.context.createOscillator();
-const gainNode = this.context.createGain();
-
-oscillator.connect(gainNode);
-gainNode.connect(this.context.destination);
-
-oscillator.type = 'sine';
-oscillator.frequency.value = 440; // A4 note
-
-gainNode.gain.setValueAtTime(0, now);
-gainNode.gain.linearRampToValueAtTime(0.7, now + 0.1);
-gainNode.gain.exponentialRampToValueAtTime(0.01, now + 1.5);
-
-oscillator.start(now);
-oscillator.stop(now + 1.5);
-},
-
-playBreakEnd() {
-if (!settings.sound) return;
-if (!this.context) this.init();
-
-const now = this.context.currentTime;
-const oscillator = this.context.createOscillator();
-const gainNode = this.context.createGain();
-
-oscillator.connect(gainNode);
-gainNode.connect(this.context.destination);
-
-oscillator.type = 'sine';
-oscillator.frequency.value = 523; // C5 note
-
-gainNode.gain.setValueAtTime(0, now);
-gainNode.gain.linearRampToValueAtTime(0.7, now + 0.05);
-gainNode.gain.exponentialRampToValueAtTime(0.01, now + 1);
-
-oscillator.start(now);
-oscillator.stop(now + 1);
-},
-
-playWaterDrink() {
-if (!settings.sound) return;
-if (!this.context) this.init();
-
-const now = this.context.currentTime;
-const oscillator = this.context.createOscillator();
-const gainNode = this.context.createGain();
-
-oscillator.connect(gainNode);
-gainNode.connect(this.context.destination);
-
-oscillator.type = 'triangle';
-oscillator.frequency.value = 660; // E5 note
-
-gainNode.gain.setValueAtTime(0, now);
-gainNode.gain.linearRampToValueAtTime(0.5, now + 0.05);
-gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
-
-oscillator.start(now);
-oscillator.stop(now + 0.3);
-},
-
-testAllSounds() {
-setTimeout(() => this.playBreakStart(), 0);
-setTimeout(() => this.playBreakEnd(), 1800);
-setTimeout(() => this.playWaterDrink(), 3000);
-}
-};
-
-// ==================== PARTICLES ANIMATION ====================
-const canvas = document.getElementById('particles-canvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const particles = [];
-const particleCount = 80;
-
-class Particle {
-constructor() {
-this.x = Math.random() * canvas.width;
-this.y = Math.random() * canvas.height;
-this.vx = (Math.random() - 0.5) * 0.5;
-this.vy = (Math.random() - 0.5) * 0.5;
-this.radius = Math.random() * 2 + 1;
-}
-
-update() {
-this.x += this.vx;
-this.y += this.vy;
-
-if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
-}
-
-draw() {
-ctx.beginPath();
-ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-ctx.fillStyle = 'rgba(0, 212, 170, 0.5)';
-ctx.fill();
-}
-}
-
-for (let i = 0; i < particleCount; i++) {
-particles.push(new Particle());
-}
-
-function animateParticles() {
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-particles.forEach(particle => {
-particle.update();
-particle.draw();
-});
-
-particles.forEach((p1, i) => {
-particles.slice(i + 1).forEach(p2 => {
-const dx = p1.x - p2.x;
-const dy = p1.y - p2.y;
-const distance = Math.sqrt(dx * dx + dy * dy);
-
-if (distance < 100) {
-ctx.beginPath();
-ctx.moveTo(p1.x, p1.y);
-ctx.lineTo(p2.x, p2.y);
-ctx.strokeStyle = `rgba(0, 212, 170, ${0.2 * (1 - distance / 100)})`;
-ctx.stroke();
-}
-});
-});
-
-requestAnimationFrame(animateParticles);
-}
-
-animateParticles();
-
-window.addEventListener('resize', () => {
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-});
-
-// ==================== SETTINGS ====================
-const settings = {
-workInterval: 20,
-breakDuration: 20,
-waterGoal: 8,
-notifications: true,
-sound: true
-};
-
-function saveSettings() {
-localStorage.setItem('eyezen-settings', JSON.stringify(settings));
-}
-
-function loadSettings() {
-const saved = localStorage.getItem('eyezen-settings');
-if (saved) {
-const loaded = JSON.parse(saved);
-Object.assign(settings, loaded);
-
-// Update UI
-workIntervalSlider.value = settings.workInterval;
-workIntervalValue.textContent = settings.workInterval;
-breakDurationSlider.value = settings.breakDuration;
-breakDurationValue.textContent = settings.breakDuration;
-waterGoalSlider.value = settings.waterGoal;
-waterGoalValue.textContent = settings.waterGoal;
-document.getElementById('notificationsToggle').checked = settings.notifications;
-document.getElementById('soundToggle').checked = settings.sound;
-
-workInterval = settings.workInterval * 60;
-breakDuration = settings.breakDuration;
-timeRemaining = workInterval;
-updateDisplay();
-updateWaterProgress();
-}
-}
-
-// ==================== TIMER LOGIC ====================
-let workInterval = 20 * 60;
-let breakDuration = 20;
-let timeRemaining = workInterval;
-let isRunning = false;
-let isBreak = false;
-let timerInterval = null;
-let breakInterval = null;
-
-const timerDisplay = document.getElementById('timerDisplay');
-const timerLabel = document.getElementById('timerLabel');
-const progressCircle = document.getElementById('progressCircle');
-const startBtn = document.getElementById('startBtn');
-const pauseBtn = document.getElementById('pauseBtn');
-const resetBtn = document.getElementById('resetBtn');
-const breakBtn = document.getElementById('breakBtn');
-const breakModal = document.getElementById('breakModal');
-const breakTimer = document.getElementById('breakTimer');
-const breakQuote = document.getElementById('breakQuote');
-
-const circumference = 2 * Math.PI * 140;
-progressCircle.style.strokeDasharray = circumference;
-
-const quotes = [
-"Your eyes deserve a break. Take care of them.",
-"Rest is not idleness. It's essential for productivity.",
-"Small breaks lead to big improvements in focus.",
-"Protect your vision. It's your window to the world.",
-"A healthy habit today keeps eye strain away.",
-"Take a moment to breathe and refocus.",
-"Your future self will thank you for these breaks.",
-"Vision is precious. Guard it with regular breaks.",
-"Refresh your eyes, refresh your mind.",
-"Every break is an investment in your well-being.",
-"Look away, look after yourself.",
-"Screen time is work. Break time is self-care.",
-"Distance makes the eyes grow stronger.",
-"Pause the pixels. Embrace the moment.",
-"Your eyes work hard. Let them rest.",
-"Prevention is better than prescription.",
-"See the world beyond your screen.",
-"Healthy eyes, happy life.",
-"Take breaks seriously. Your eyes will love you.",
-"The 20-20-20 rule: Simple, effective, essential."
-];
-
-function formatTime(seconds) {
-const mins = Math.floor(seconds / 60);
-const secs = seconds % 60;
-return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-}
-
-function updateDisplay() {
-timerDisplay.textContent = formatTime(timeRemaining);
-const progress = 1 - (timeRemaining / workInterval);
-const offset = circumference * (1 - progress);
-progressCircle.style.strokeDashoffset = offset;
-}
-
-function startTimer() {
-if (isRunning) return;
-
-// Unlock audio on user gesture (browser autoplay policy)
-if (!AudioSystem.context) {
-AudioSystem.init();
-}
-
-// Request notification permission on first Start click
-if ('Notification' in window && Notification.permission === 'default') {
-Notification.requestPermission();
-}
-
-isRunning = true;
-startBtn.disabled = true;
-pauseBtn.disabled = false;
-
-timerInterval = setInterval(() => {
-if (timeRemaining > 0) {
-timeRemaining--;
-updateDisplay();
-updateStats();
-} else {
-completeWorkSession();
-}
-}, 1000);
-}
-
-function pauseTimer() {
-isRunning = false;
-startBtn.disabled = false;
-pauseBtn.disabled = true;
-clearInterval(timerInterval);
-}
-
-function resetTimer() {
-pauseTimer();
-timeRemaining = workInterval;
-updateDisplay();
-}
-
-function completeWorkSession() {
-pauseTimer();
-AudioSystem.playBreakStart();
-showNotification();
-startBreak();
-}
-
-function startBreak() {
-isBreak = true;
-breakModal.classList.add('active');
-
-const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-breakQuote.textContent = `"${randomQuote}"`;
-
-let breakTime = breakDuration;
-breakTimer.textContent = breakTime;
-
-breakInterval = setInterval(() => {
-breakTime--;
-breakTimer.textContent = breakTime;
-
-if (breakTime <= 0) {
-endBreak();
-}
-}, 1000);
-}
-
-function endBreak() {
-clearInterval(breakInterval);
-breakModal.classList.remove('active');
-isBreak = false;
-
-AudioSystem.playBreakEnd();
-
-const stats = getStats();
-stats.breaksToday++;
-saveStats(stats);
-updateStatsDisplay();
-
-timeRemaining = workInterval;
-updateDisplay();
-startTimer();
-}
-
-function showNotification() {
-if (!settings.notifications) return;
-
-if ('Notification' in window && Notification.permission === 'granted') {
-new Notification('👀 Time to look away!', {
-body: 'Focus on something 20 feet away for 20 seconds',
-icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="0.9em" font-size="90">👀</text></svg>'
-});
-}
-}
-
-// Event Listeners
-startBtn.addEventListener('click', startTimer);
-pauseBtn.addEventListener('click', pauseTimer);
-resetBtn.addEventListener('click', resetTimer);
-breakBtn.addEventListener('click', () => {
-pauseTimer();
-startBreak();
-});
-
-// ==================== SETTINGS PANEL ====================
-const settingsToggle = document.getElementById('settingsToggle');
-const settingsPanel = document.getElementById('settingsPanel');
-const closeSettings = document.getElementById('closeSettings');
-
-settingsToggle.addEventListener('click', () => {
-settingsPanel.classList.toggle('active');
-});
-
-closeSettings.addEventListener('click', () => {
-settingsPanel.classList.remove('active');
-});
-
-const workIntervalSlider = document.getElementById('workIntervalSlider');
-const workIntervalValue = document.getElementById('workIntervalValue');
-
-workIntervalSlider.addEventListener('input', (e) => {
-const value = parseInt(e.target.value);
-workIntervalValue.textContent = value;
-settings.workInterval = value;
-workInterval = value * 60;
-if (!isRunning) {
-timeRemaining = workInterval;
-updateDisplay();
-}
-saveSettings();
-});
-
-const breakDurationSlider = document.getElementById('breakDurationSlider');
-const breakDurationValue = document.getElementById('breakDurationValue');
-
-breakDurationSlider.addEventListener('input', (e) => {
-const value = parseInt(e.target.value);
-breakDurationValue.textContent = value;
-settings.breakDuration = value;
-breakDuration = value;
-saveSettings();
-});
-
-const waterGoalSlider = document.getElementById('waterGoalSlider');
-const waterGoalValue = document.getElementById('waterGoalValue');
-
-waterGoalSlider.addEventListener('input', (e) => {
-const value = parseInt(e.target.value);
-waterGoalValue.textContent = value;
-settings.waterGoal = value;
-saveSettings();
-updateWaterProgress();
-});
-
-document.getElementById('notificationsToggle').addEventListener('change', (e) => {
-settings.notifications = e.target.checked;
-saveSettings();
-});
-
-document.getElementById('soundToggle').addEventListener('change', (e) => {
-settings.sound = e.target.checked;
-saveSettings();
-});
-
-document.getElementById('testSoundBtn').addEventListener('click', () => {
-AudioSystem.testAllSounds();
-showToast('🔊 Playing all sounds...');
-});
-
-// ==================== WATER TRACKER ====================
-const drinkWaterBtn = document.getElementById('drinkWaterBtn');
-
-drinkWaterBtn.addEventListener('click', (e) => {
-e.preventDefault();
-
-// Add clicked animation
-drinkWaterBtn.classList.add('clicked');
-setTimeout(() => {
-drinkWaterBtn.classList.remove('clicked');
-}, 600);
-
-const stats = getStats();
-stats.waterCount++;
-saveStats(stats);
-updateStatsDisplay();
-updateWaterProgress();
-
-AudioSystem.playWaterDrink();
-showToast('✅ Drank 1 glass of water!');
-});
-
-function updateWaterProgress() {
-const stats = getStats();
-const waterCount = stats.waterCount || 0;
-const percentage = (waterCount / settings.waterGoal) * 100;
-const progressFill = document.getElementById('waterProgressFill');
-const progressText = document.getElementById('waterProgressText');
-
-if (progressFill && progressText) {
-progressFill.style.width = Math.min(percentage, 100) + '%';
-progressText.textContent = `${waterCount} / ${settings.waterGoal}`;
-}
-}
-
-// ==================== TOAST NOTIFICATION ====================
-const toast = document.getElementById('toast');
-const toastMessage = document.getElementById('toastMessage');
-
-function showToast(message) {
-toastMessage.textContent = message;
-toast.classList.add('show');
-
-setTimeout(() => {
-toast.classList.remove('show');
-}, 3000);
-}
-
-// ==================== STATISTICS ====================
-function getStats() {
-const today = new Date().toDateString();
-const saved = localStorage.getItem('eyezen-stats');
-
-if (saved) {
-const stats = JSON.parse(saved);
-
-if (stats.date !== today) {
-const lastDate = new Date(stats.date);
-const currentDate = new Date(today);
-const diffTime = Math.abs(currentDate - lastDate);
-const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-if (diffDays === 1 && stats.breaksToday > 0) {
-stats.streak++;
-} else if (diffDays > 1) {
-stats.streak = 0;
-}
-
-stats.date = today;
-stats.breaksToday = 0;
-stats.screenTime = 0;
-stats.waterCount = 0;
-}
-
-return stats;
-}
-
-return {
-date: today,
-breaksToday: 0,
-screenTime: 0,
-streak: 0,
-waterCount: 0
-};
-}
-
-function saveStats(stats) {
-localStorage.setItem('eyezen-stats', JSON.stringify(stats));
-}
-
-function updateStats() {
-if (isRunning && !isBreak) {
-const stats = getStats();
-stats.screenTime++;
-saveStats(stats);
-updateStatsDisplay();
-}
-}
-
-function updateStatsDisplay() {
-const stats = getStats();
-document.getElementById('breaksToday').textContent = stats.breaksToday || 0;
-
-const hours = Math.floor((stats.screenTime || 0) / 3600);
-const minutes = Math.floor(((stats.screenTime || 0) % 3600) / 60);
-document.getElementById('screenTime').textContent = `${hours}h ${minutes}m`;
-
-document.getElementById('streak').textContent = stats.streak || 0;
-document.getElementById('waterCount').textContent = stats.waterCount || 0;
-}
-
-// ==================== MODAL TOGGLE FUNCTION ====================
-function sh(id) {
-const modal = document.getElementById(id);
-if (modal.classList.contains('active')) {
-modal.classList.remove('active');
-// Scroll to top when closing SEO page
-if (id === 'seo-page') {
-window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-} else {
-// Close any other open modals
-document.querySelectorAll('#about, #priv, #supp, #shop, #seo-page').forEach(m => {
-m.classList.remove('active');
-});
-modal.classList.add('active');
-// Scroll to top when opening SEO page
-if (id === 'seo-page') {
-modal.scrollTop = 0;
-}
-}
-}
-
-// Close modals on escape key
-document.addEventListener('keydown', (e) => {
-if (e.key === 'Escape') {
-document.querySelectorAll('#about, #priv, #supp, #shop, #seo-page').forEach(m => {
-m.classList.remove('active');
-});
-}
-});
-
-// Close modals when clicking outside
-document.querySelectorAll('#about, #priv, #supp, #shop').forEach(modal => {
-modal.addEventListener('click', (e) => {
-if (e.target === modal) {
-modal.classList.remove('active');
-}
-});
-});
-
-// ==================== KEYBOARD SHORTCUTS ====================
-document.addEventListener('keydown', (e) => {
-if (e.target.tagName === 'INPUT') return;
-
-if (e.code === 'Space') {
-e.preventDefault();
-if (isRunning) {
-pauseTimer();
-} else {
-startTimer();
-}
-} else if (e.code === 'KeyR') {
-e.preventDefault();
-resetTimer();
-} else if (e.code === 'KeyB') {
-e.preventDefault();
-pauseTimer();
-startBreak();
-}
-});
-
-// ==================== BACK TO TOP ====================
-const backToTop = document.getElementById('backToTop');
-
-window.addEventListener('scroll', () => {
-if (window.scrollY > 300) {
-backToTop.classList.add('visible');
-} else {
-backToTop.classList.remove('visible');
-}
-});
-
-backToTop.addEventListener('click', () => {
-window.scrollTo({
-top: 0,
-behavior: 'smooth'
-});
-});
-
-// ==================== RESET ALL DATA ====================
-const resetAllBtn = document.getElementById('resetAllBtn');
-const confirmDialog = document.getElementById('confirmDialog');
-const confirmYes = document.getElementById('confirmYes');
-const confirmNo = document.getElementById('confirmNo');
-
-resetAllBtn.addEventListener('click', () => {
-confirmDialog.classList.add('active');
-});
-
-confirmNo.addEventListener('click', () => {
-confirmDialog.classList.remove('active');
-});
-
-confirmYes.addEventListener('click', () => {
-// Clear all localStorage data
-localStorage.removeItem('eyezen-stats');
-localStorage.removeItem('eyezen-settings');
-
-// Reset to defaults
-settings.workInterval = 20;
-settings.breakDuration = 20;
-settings.waterGoal = 8;
-settings.notifications = true;
-settings.sound = true;
-
-// Update UI
-loadSettings();
-updateStatsDisplay();
-updateWaterProgress();
-resetTimer();
-
-// Close dialog and show toast
-confirmDialog.classList.remove('active');
-showToast('✅ All data has been reset!');
-});
-
-// ==================== INITIALIZATION ====================
-loadSettings();
-updateStatsDisplay();
-updateWaterProgress();
-updateDisplay();
-
-setInterval(() => {
-const stats = getStats();
-updateStatsDisplay();
-updateWaterProgress();
-}, 60000);
-</script>
+    
+
+    
+    <!-- SEO Page - Full Screen Modal -->
+    <div id="seo-page">
+        <div class="seo-page-header">
+            <button class="seo-back-btn" onclick="sh('seo-page')" aria-label="Back to timer">
+                <span>←</span>
+                <span>Back to Timer</span>
+            </button>
+        </div>
+        
+        <div class="seo-page-content">
+            <h1>Eye Health & The 20-20-20 Rule</h1>
+            
+            <h2>What is the 20-20-20 Rule for Eye Strain?</h2>
+            
+            <p>
+                <strong>Computer Vision Syndrome (CVS)</strong> affects millions of remote workers, developers, and digital professionals worldwide. 
+                Prolonged screen exposure causes digital eye strain, resulting in headaches, dry eyes, blurred vision, and neck pain. 
+                The average office worker spends over 7 hours per day staring at screens, putting immense pressure on eye muscles that weren't designed for such sustained focus.
+            </p>
+            
+            <p>
+                The <strong>20-20-20 rule</strong> is a scientifically-backed eye wellness technique recommended by optometrists and the American Academy of Ophthalmology. 
+                The principle is simple: <strong>every 20 minutes, take a 20-second break and look at something 20 feet away</strong>. 
+                This practice allows your eye muscles to relax, reducing the risk of eye fatigue and long-term vision damage. 
+                By shifting your focus to distant objects, you counteract the constant near-vision stress caused by monitors and smartphones.
+            </p>
+            
+            <p>
+                EyeZen makes following the 20-20-20 rule effortless with a <strong>browser-based reminder system</strong> that requires no installation. 
+                Our customizable timer sends gentle notifications, plays soothing sounds, and tracks your daily wellness habits. 
+                Unlike mobile apps that drain battery or desktop software that requires updates, EyeZen works instantly in any modern browser—perfect for remote workers, students, and anyone committed to protecting their vision.
+            </p>
+            
+            <h2>Features for Digital Wellness</h2>
+            
+            <ul>
+                <li><strong>Customizable 20-20-20 Timer:</strong> Adjust work intervals (5-120 minutes) and break durations (10-120 seconds) to match your workflow.</li>
+                <li><strong>Browser Notifications:</strong> Receive desktop alerts when it's time to rest your eyes—no app installation required.</li>
+                <li><strong>Soothing Audio Alerts:</strong> Gentle chime sounds generated via Web Audio API signal break time without being intrusive.</li>
+                <li><strong>Daily Hydration Tracker:</strong> Log water intake with a single click. Staying hydrated reduces dry eye symptoms and improves overall wellness.</li>
+                <li><strong>Screen Time Analytics:</strong> Track how many hours you spend in front of screens each day and monitor your break consistency.</li>
+                <li><strong>Streak Counter:</strong> Build healthy habits with a daily streak system that motivates you to maintain your eye care routine.</li>
+                <li><strong>Ergonomic Workspace Shop:</strong> Browse curated recommendations for blue light glasses, ergonomic mice, laptop stands, and desk lamps to optimize your remote work setup.</li>
+                <li><strong>No Account Required:</strong> All data is stored locally in your browser using LocalStorage—100% private and secure.</li>
+                <li><strong>Completely Free:</strong> EyeZen will always remain free with no subscriptions, paywalls, or premium tiers.</li>
+            </ul>
+            
+            <h3>Why Choose EyeZen Over Other Eye Strain Tools?</h3>
+            
+            <p>
+                Most eye care apps require downloads, consume system resources, or bombard you with ads. EyeZen is different. 
+                As a single-page web application, it launches instantly, works offline after the first visit, and respects your privacy. 
+                Whether you're a freelance designer, software engineer, or remote student, EyeZen adapts to your unique work rhythm 
+                while keeping your eyes healthy and your productivity high.
+            </p>
+            
+            <h3>Understanding Digital Eye Strain</h3>
+            
+            <p>
+                Digital eye strain is a modern health concern affecting over 60% of adults who use computers regularly. 
+                Symptoms include dry eyes, blurred vision, headaches, and neck or shoulder pain. The condition occurs because 
+                our eyes aren't designed for prolonged near-vision tasks. When staring at screens, we blink less frequently, 
+                which leads to dry eyes and discomfort.
+            </p>
+            
+            <h3>How the 20-20-20 Rule Works</h3>
+            
+            <p>
+                The 20-20-20 rule is simple yet scientifically proven. By looking at something 20 feet away for 20 seconds every 
+                20 minutes, you allow your eye muscles to relax and reset. This brief pause helps reduce the strain caused by 
+                continuous near-focus work. The distance of 20 feet is significant because it approximates optical infinity for 
+                the human eye, requiring minimal focusing effort.
+            </p>
+            
+            <h3>Additional Eye Health Tips</h3>
+            
+            <p>
+                Beyond the 20-20-20 rule, consider these practices for optimal eye health: adjust your screen brightness to match 
+                ambient lighting, position your monitor 20-26 inches from your eyes, use artificial tears if your eyes feel dry, 
+                and ensure your workspace has adequate lighting. Regular eye exams are also crucial for detecting vision problems early.
+            </p>
+            
+            <p style="margin-top: 60px; padding: 30px; background: rgba(0, 212, 170, 0.1); border-radius: 16px; border-left: 4px solid var(--accent-mint);">
+                <strong style="font-size: 1.2rem;">Ready to protect your eyes?</strong><br><br>
+                Start using EyeZen's free 20-20-20 timer today and build healthier screen habits that last a lifetime.
+            </p>
+
+            <!-- SEO Optimization Block -->
+            <div style="display:none;">
+                <h2>Best Free 20-20-20 Rule Timer Online</h2>
+                <p>Searching for a browser 20-20-20 timer or a free eye strain timer web tool? EyeZen by moeezio is the best no install 20-20-20 timer. 
+                This minimalist eye strain timer includes a 20-20-20 rule timer dark mode and a hydration tracker with timer for digital eye strain tool free access.</p>
+            </div>
+
+            <div style="margin-top: 30px; border-top: 1px solid var(--border-glass); padding-top: 20px;">
+                <h3>Search Keywords for EyeZen</h3>
+                <p style="font-size: 0.8rem; color: var(--text-dim);">
+                    Optimized for: moeezio eyezen, no install 20-20-20 timer, 20-20-20 rule timer dark mode, 
+                    free 20-20-20 rule timer online, and browser 20-20-20 timer.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Confirmation Dialog -->
+    <div class="confirm-dialog" id="confirmDialog">
+        <div class="confirm-content">
+            <h2 style="margin-bottom: 15px; color: var(--accent-mint);">⚠️ Confirm Reset</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 25px;">
+                Are you sure you want to delete all your data? This action cannot be undone.
+            </p>
+            <div class="confirm-buttons">
+                <button class="btn btn-confirm" id="confirmYes">Yes, Reset Everything</button>
+                <button class="btn btn-cancel" id="confirmNo">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop" role="button" aria-label="Back to top" tabindex="0">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 4l-8 8h6v8h4v-8h6z"/>
+        </svg>
+    </div>
+    
+    <!-- About Modal -->
+    <div id="about">
+        <div class="modal-content-box">
+            <div class="modal-header">
+                <h2>About EyeZen</h2>
+                <button class="close-modal" onclick="sh('about')">&times;</button>
+            </div>
+            <p>
+                EyeZen is a free, browser-based wellness tool designed to protect your eyes during extended screen time. 
+                We follow the scientifically-backed <strong>20-20-20 rule</strong>: every 20 minutes, take a 20-second break 
+                and look at something 20 feet away.
+            </p>
+            <h3>Why We Built This</h3>
+            <p>
+                In today's digital age, remote workers, developers, designers, and students spend countless hours staring at screens. 
+                This can lead to digital eye strain, headaches, dry eyes, and long-term vision problems. We created EyeZen to make 
+                eye wellness accessible, customizable, and completely free.
+            </p>
+            <h3>Features</h3>
+            <ul>
+                <li>Customizable work and break intervals</li>
+                <li>Browser notifications and soothing sounds</li>
+                <li>Water intake tracking for overall wellness</li>
+                <li>Daily streak counter for motivation</li>
+                <li>Fully customizable settings</li>
+                <li>No installation required - works in any modern browser</li>
+            </ul>
+            <h3>Our Mission</h3>
+            <p>
+                To promote healthier screen habits and prevent digital eye strain for everyone, everywhere. 
+                EyeZen is open-source and will always remain free.
+            </p>
+        </div>
+    </div>
+    
+    <!-- Privacy Policy Modal -->
+    <div id="priv">
+        <div class="modal-content-box">
+            <div class="modal-header">
+                <h2>Privacy Policy</h2>
+                <button class="close-modal" onclick="sh('priv')">&times;</button>
+            </div>
+            <p><strong>Last Updated:</strong> January 2026</p>
+            
+            <h3>Data Collection</h3>
+            <p>
+                EyeZen does <strong>not collect, store, or transmit any personal data</strong> to external servers. 
+                All your settings, statistics, and preferences are stored locally in your browser using LocalStorage.
+            </p>
+            
+            <h3>What We Store Locally</h3>
+            <p>The following data is saved in your browser's LocalStorage:</p>
+            <ul>
+                <li>Work and break interval preferences</li>
+                <li>Daily water intake count</li>
+                <li>Screen time tracking</li>
+                <li>Break count and streak data</li>
+                <li>Sound and notification preferences</li>
+            </ul>
+            <p>This data never leaves your device and can be cleared at any time using the "Reset All Data" button.</p>
+            
+            <h3>Third-Party Services</h3>
+            <p>
+                EyeZen may display Google AdSense advertisements and Amazon affiliate links. These services may use cookies 
+                to display relevant ads. We do not control these third-party cookies. Please review:
+            </p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+                <li><a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=468496" target="_blank" rel="noopener">Amazon Privacy Notice</a></li>
+            </ul>
+            
+            <h3>Analytics</h3>
+            <p>
+                We do not use any analytics or tracking tools. Your usage of EyeZen is completely private.
+            </p>
+            
+            <h3>Your Rights</h3>
+            <p>
+                You have full control over your data. You can reset all stored information at any time using the 
+                "Reset All Website Data" button at the bottom of the page.
+            </p>
+            
+            <h3>Contact</h3>
+            <p>
+                If you have any questions about this Privacy Policy, please contact us through the Support page.
+            </p>
+        </div>
+    </div>
+    
+    <!-- Support Modal -->
+    <div id="supp">
+        <div class="modal-content-box">
+            <div class="modal-header">
+                <h2>Support EyeZen</h2>
+                <button class="close-modal" onclick="sh('supp')">&times;</button>
+            </div>
+            <p>
+                EyeZen is a completely free tool built to help people protect their eyes during screen time. 
+                We believe wellness tools should be accessible to everyone, everywhere.
+            </p>
+            
+            <h3>How You Can Support Us</h3>
+            <p>
+                If you find EyeZen helpful, here are ways you can support the project:
+            </p>
+            
+            <h3>1. Share EyeZen</h3>
+            <p>
+                Tell your friends, colleagues, and online communities about EyeZen. The more people who protect 
+                their eyes, the better!
+            </p>
+            
+            <h3>2. Use Our Affiliate Links</h3>
+            <p>
+                When you purchase recommended products like blue light blocking glasses through our Amazon affiliate 
+                links, we earn a small commission at no extra cost to you. This helps keep EyeZen free and maintained.
+            </p>
+            
+            <h3>3. Provide Feedback</h3>
+            <p>
+                Have suggestions for new features? Found a bug? We'd love to hear from you! Your feedback helps 
+                us improve EyeZen for everyone.
+            </p>
+            
+            <h3>4. Contribute Code</h3>
+            <p>
+                EyeZen is open-source! If you're a developer and want to contribute improvements, optimizations, 
+                or new features, we welcome your pull requests.
+            </p>
+            
+            <h3>Our Commitment</h3>
+            <p>
+                EyeZen will <strong>always remain free</strong>. No subscriptions, no premium tiers, no paywalls. 
+                We're committed to keeping eye wellness accessible to everyone.
+            </p>
+            
+            <p style="margin-top: 30px; padding: 20px; background: rgba(0, 212, 170, 0.1); border-radius: 12px; border-left: 3px solid var(--accent-mint);">
+                <strong>Thank you for using EyeZen!</strong><br>
+                Together, we're building healthier screen habits. 💚👀
+            </p>
+        </div>
+    </div>
+    
+    <!-- Wellness Shop Modal -->
+    <div id="shop">
+        <div class="modal-content-box">
+            <div class="modal-header">
+                <h2>🛍️ Wellness Shop</h2>
+                <button class="close-modal" onclick="sh('shop')">&times;</button>
+            </div>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 10px;">
+                Upgrade your workspace with these ergonomic essentials
+            </p>
+            
+            <div class="shop-grid">
+                <!-- Product 1: Blue Light Glasses -->
+                <div class="product-card">
+                    <span class="product-emoji">👓</span>
+                    <div class="product-title">Blue Light Glasses</div>
+                    <a href="https://amzn.to/4dJhzjQ" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
+                </div>
+                
+                <!-- Product 2: Laptop Stand -->
+                <div class="product-card">
+                    <span class="product-emoji">💻</span>
+                    <div class="product-title">Laptop Stand</div>
+                    <a href="https://amzn.to/3RG4peU" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
+                </div>
+                
+                <!-- Product 3: Ergonomic Mouse -->
+                <div class="product-card">
+                    <span class="product-emoji">🖱️</span>
+                    <div class="product-title">Ergonomic Mouse</div>
+                    <a href="https://amzn.to/4uQw9ff" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
+                </div>
+                
+                <!-- Product 4: Smart Water Bottle -->
+                <div class="product-card">
+                    <span class="product-emoji">💧</span>
+                    <div class="product-title">Smart Water Bottle</div>
+                    <a href="https://amzn.to/42DgN1H" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
+                </div>
+                
+                <!-- Product 5: Seat Cushion -->
+                <div class="product-card">
+                    <span class="product-emoji">🪑</span>
+                    <div class="product-title">Seat Cushion</div>
+                    <a href="https://amzn.to/4uSCl6D" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
+                </div>
+                
+                <!-- Product 6: Desk Lamp -->
+                <div class="product-card">
+                    <span class="product-emoji">💡</span>
+                    <div class="product-title">Desk Lamp</div>
+                    <a href="https://amzn.to/4ukgDbS" target="_blank" rel="noopener noreferrer" class="product-btn">
+                        View on Amazon
+                    </a>
+                </div>
+            </div>
+            
+            <div class="shop-disclaimer">
+                <strong>Amazon Associate Disclosure:</strong> As an Amazon Associate, I earn from qualifying purchases.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // ==================== AUDIO SYSTEM ====================
+        const AudioSystem = {
+            context: null,
+            
+            init() {
+                this.context = new (window.AudioContext || window.webkitAudioContext)();
+            },
+            
+            playBreakStart() {
+                if (!settings.sound) return;
+                if (!this.context) this.init();
+                
+                const now = this.context.currentTime;
+                const oscillator = this.context.createOscillator();
+                const gainNode = this.context.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(this.context.destination);
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.value = 440; // A4 note
+                
+                gainNode.gain.setValueAtTime(0, now);
+                gainNode.gain.linearRampToValueAtTime(0.7, now + 0.1);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 1.5);
+                
+                oscillator.start(now);
+                oscillator.stop(now + 1.5);
+            },
+            
+            playBreakEnd() {
+                if (!settings.sound) return;
+                if (!this.context) this.init();
+                
+                const now = this.context.currentTime;
+                const oscillator = this.context.createOscillator();
+                const gainNode = this.context.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(this.context.destination);
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.value = 523; // C5 note
+                
+                gainNode.gain.setValueAtTime(0, now);
+                gainNode.gain.linearRampToValueAtTime(0.7, now + 0.05);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 1);
+                
+                oscillator.start(now);
+                oscillator.stop(now + 1);
+            },
+            
+            playWaterDrink() {
+                if (!settings.sound) return;
+                if (!this.context) this.init();
+                
+                const now = this.context.currentTime;
+                const oscillator = this.context.createOscillator();
+                const gainNode = this.context.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(this.context.destination);
+                
+                oscillator.type = 'triangle';
+                oscillator.frequency.value = 660; // E5 note
+                
+                gainNode.gain.setValueAtTime(0, now);
+                gainNode.gain.linearRampToValueAtTime(0.5, now + 0.05);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.3);
+                
+                oscillator.start(now);
+                oscillator.stop(now + 0.3);
+            },
+            
+            testAllSounds() {
+                setTimeout(() => this.playBreakStart(), 0);
+                setTimeout(() => this.playBreakEnd(), 1800);
+                setTimeout(() => this.playWaterDrink(), 3000);
+            }
+        };
+        
+        // ==================== PARTICLES ANIMATION ====================
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const particles = [];
+        const particleCount = 80;
+        
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 2 + 1;
+            }
+            
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 212, 170, 0.5)';
+                ctx.fill();
+            }
+        }
+        
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+        
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+            
+            particles.forEach((p1, i) => {
+                particles.slice(i + 1).forEach(p2 => {
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.strokeStyle = `rgba(0, 212, 170, ${0.2 * (1 - distance / 100)})`;
+                        ctx.stroke();
+                    }
+                });
+            });
+            
+            requestAnimationFrame(animateParticles);
+        }
+        
+        animateParticles();
+        
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // ==================== SETTINGS ====================
+        const settings = {
+            workInterval: 20,
+            breakDuration: 20,
+            waterGoal: 8,
+            notifications: true,
+            sound: true
+        };
+        
+        function saveSettings() {
+            localStorage.setItem('eyezen-settings', JSON.stringify(settings));
+        }
+        
+        function loadSettings() {
+            const saved = localStorage.getItem('eyezen-settings');
+            if (saved) {
+                const loaded = JSON.parse(saved);
+                Object.assign(settings, loaded);
+                
+                // Update UI
+                workIntervalSlider.value = settings.workInterval;
+                workIntervalValue.textContent = settings.workInterval;
+                breakDurationSlider.value = settings.breakDuration;
+                breakDurationValue.textContent = settings.breakDuration;
+                waterGoalSlider.value = settings.waterGoal;
+                waterGoalValue.textContent = settings.waterGoal;
+                document.getElementById('notificationsToggle').checked = settings.notifications;
+                document.getElementById('soundToggle').checked = settings.sound;
+                
+                workInterval = settings.workInterval * 60;
+                breakDuration = settings.breakDuration;
+                timeRemaining = workInterval;
+                updateDisplay();
+                updateWaterProgress();
+            }
+        }
+        
+        // ==================== TIMER LOGIC ====================
+        let workInterval = 20 * 60;
+        let breakDuration = 20;
+        let timeRemaining = workInterval;
+        let isRunning = false;
+        let isBreak = false;
+        let timerInterval = null;
+        let breakInterval = null;
+        
+        const timerDisplay = document.getElementById('timerDisplay');
+        const timerLabel = document.getElementById('timerLabel');
+        const progressCircle = document.getElementById('progressCircle');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const breakBtn = document.getElementById('breakBtn');
+        const breakModal = document.getElementById('breakModal');
+        const breakTimer = document.getElementById('breakTimer');
+        const breakQuote = document.getElementById('breakQuote');
+        
+        const circumference = 2 * Math.PI * 140;
+        progressCircle.style.strokeDasharray = circumference;
+        
+        const quotes = [
+            "Your eyes deserve a break. Take care of them.",
+            "Rest is not idleness. It's essential for productivity.",
+            "Small breaks lead to big improvements in focus.",
+            "Protect your vision. It's your window to the world.",
+            "A healthy habit today keeps eye strain away.",
+            "Take a moment to breathe and refocus.",
+            "Your future self will thank you for these breaks.",
+            "Vision is precious. Guard it with regular breaks.",
+            "Refresh your eyes, refresh your mind.",
+            "Every break is an investment in your well-being.",
+            "Look away, look after yourself.",
+            "Screen time is work. Break time is self-care.",
+            "Distance makes the eyes grow stronger.",
+            "Pause the pixels. Embrace the moment.",
+            "Your eyes work hard. Let them rest.",
+            "Prevention is better than prescription.",
+            "See the world beyond your screen.",
+            "Healthy eyes, happy life.",
+            "Take breaks seriously. Your eyes will love you.",
+            "The 20-20-20 rule: Simple, effective, essential."
+        ];
+        
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        function updateDisplay() {
+            timerDisplay.textContent = formatTime(timeRemaining);
+            const progress = 1 - (timeRemaining / workInterval);
+            const offset = circumference * (1 - progress);
+            progressCircle.style.strokeDashoffset = offset;
+        }
+        
+        function startTimer() {
+            if (isRunning) return;
+
+            // Unlock audio on user gesture (browser autoplay policy)
+            if (!AudioSystem.context) {
+                AudioSystem.init();
+            }
+
+            // Request notification permission on first Start click
+            if ('Notification' in window && Notification.permission === 'default') {
+                Notification.requestPermission();
+            }
+
+            isRunning = true;
+            startBtn.disabled = true;
+            pauseBtn.disabled = false;
+            
+            timerInterval = setInterval(() => {
+                if (timeRemaining > 0) {
+                    timeRemaining--;
+                    updateDisplay();
+                    updateStats();
+                } else {
+                    completeWorkSession();
+                }
+            }, 1000);
+        }
+        
+        function pauseTimer() {
+            isRunning = false;
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+            clearInterval(timerInterval);
+        }
+        
+        function resetTimer() {
+            pauseTimer();
+            timeRemaining = workInterval;
+            updateDisplay();
+        }
+        
+        function completeWorkSession() {
+            pauseTimer();
+            AudioSystem.playBreakStart();
+            showNotification();
+            startBreak();
+        }
+        
+        function startBreak() {
+            isBreak = true;
+            breakModal.classList.add('active');
+            
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            breakQuote.textContent = `"${randomQuote}"`;
+            
+            let breakTime = breakDuration;
+            breakTimer.textContent = breakTime;
+            
+            breakInterval = setInterval(() => {
+                breakTime--;
+                breakTimer.textContent = breakTime;
+                
+                if (breakTime <= 0) {
+                    endBreak();
+                }
+            }, 1000);
+        }
+        
+        function endBreak() {
+            clearInterval(breakInterval);
+            breakModal.classList.remove('active');
+            isBreak = false;
+            
+            AudioSystem.playBreakEnd();
+            
+            const stats = getStats();
+            stats.breaksToday++;
+            saveStats(stats);
+            updateStatsDisplay();
+            
+            timeRemaining = workInterval;
+            updateDisplay();
+            startTimer();
+        }
+        
+        function showNotification() {
+            if (!settings.notifications) return;
+            
+            if ('Notification' in window && Notification.permission === 'granted') {
+                new Notification('👀 Time to look away!', {
+                    body: 'Focus on something 20 feet away for 20 seconds',
+                    icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="0.9em" font-size="90">👀</text></svg>'
+                });
+            }
+        }
+        
+        // Event Listeners
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
+        breakBtn.addEventListener('click', () => {
+            pauseTimer();
+            startBreak();
+        });
+        
+        // ==================== SETTINGS PANEL ====================
+        const settingsToggle = document.getElementById('settingsToggle');
+        const settingsPanel = document.getElementById('settingsPanel');
+        const closeSettings = document.getElementById('closeSettings');
+        
+        settingsToggle.addEventListener('click', () => {
+            settingsPanel.classList.toggle('active');
+        });
+        
+        closeSettings.addEventListener('click', () => {
+            settingsPanel.classList.remove('active');
+        });
+        
+        const workIntervalSlider = document.getElementById('workIntervalSlider');
+        const workIntervalValue = document.getElementById('workIntervalValue');
+        
+        workIntervalSlider.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value);
+            workIntervalValue.textContent = value;
+            settings.workInterval = value;
+            workInterval = value * 60;
+            if (!isRunning) {
+                timeRemaining = workInterval;
+                updateDisplay();
+            }
+            saveSettings();
+        });
+        
+        const breakDurationSlider = document.getElementById('breakDurationSlider');
+        const breakDurationValue = document.getElementById('breakDurationValue');
+        
+        breakDurationSlider.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value);
+            breakDurationValue.textContent = value;
+            settings.breakDuration = value;
+            breakDuration = value;
+            saveSettings();
+        });
+        
+        const waterGoalSlider = document.getElementById('waterGoalSlider');
+        const waterGoalValue = document.getElementById('waterGoalValue');
+        
+        waterGoalSlider.addEventListener('input', (e) => {
+            const value = parseInt(e.target.value);
+            waterGoalValue.textContent = value;
+            settings.waterGoal = value;
+            saveSettings();
+            updateWaterProgress();
+        });
+        
+        document.getElementById('notificationsToggle').addEventListener('change', (e) => {
+            settings.notifications = e.target.checked;
+            saveSettings();
+        });
+        
+        document.getElementById('soundToggle').addEventListener('change', (e) => {
+            settings.sound = e.target.checked;
+            saveSettings();
+        });
+        
+        document.getElementById('testSoundBtn').addEventListener('click', () => {
+            AudioSystem.testAllSounds();
+            showToast('🔊 Playing all sounds...');
+        });
+        
+        // ==================== WATER TRACKER ====================
+        const drinkWaterBtn = document.getElementById('drinkWaterBtn');
+        
+        drinkWaterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Add clicked animation
+            drinkWaterBtn.classList.add('clicked');
+            setTimeout(() => {
+                drinkWaterBtn.classList.remove('clicked');
+            }, 600);
+            
+            const stats = getStats();
+            stats.waterCount++;
+            saveStats(stats);
+            updateStatsDisplay();
+            updateWaterProgress();
+            
+            AudioSystem.playWaterDrink();
+            showToast('✅ Drank 1 glass of water!');
+        });
+        
+        function updateWaterProgress() {
+            const stats = getStats();
+            const waterCount = stats.waterCount || 0;
+            const percentage = (waterCount / settings.waterGoal) * 100;
+            const progressFill = document.getElementById('waterProgressFill');
+            const progressText = document.getElementById('waterProgressText');
+            
+            if (progressFill && progressText) {
+                progressFill.style.width = Math.min(percentage, 100) + '%';
+                progressText.textContent = `${waterCount} / ${settings.waterGoal}`;
+            }
+        }
+        
+        // ==================== TOAST NOTIFICATION ====================
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        
+        function showToast(message) {
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // ==================== STATISTICS ====================
+        function getStats() {
+            const today = new Date().toDateString();
+            const saved = localStorage.getItem('eyezen-stats');
+            
+            if (saved) {
+                const stats = JSON.parse(saved);
+                
+                if (stats.date !== today) {
+                    const lastDate = new Date(stats.date);
+                    const currentDate = new Date(today);
+                    const diffTime = Math.abs(currentDate - lastDate);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    
+                    if (diffDays === 1 && stats.breaksToday > 0) {
+                        stats.streak++;
+                    } else if (diffDays > 1) {
+                        stats.streak = 0;
+                    }
+                    
+                    stats.date = today;
+                    stats.breaksToday = 0;
+                    stats.screenTime = 0;
+                    stats.waterCount = 0;
+                }
+                
+                return stats;
+            }
+            
+            return {
+                date: today,
+                breaksToday: 0,
+                screenTime: 0,
+                streak: 0,
+                waterCount: 0
+            };
+        }
+        
+        function saveStats(stats) {
+            localStorage.setItem('eyezen-stats', JSON.stringify(stats));
+        }
+        
+        function updateStats() {
+            if (isRunning && !isBreak) {
+                const stats = getStats();
+                stats.screenTime++;
+                saveStats(stats);
+                updateStatsDisplay();
+            }
+        }
+        
+        function updateStatsDisplay() {
+            const stats = getStats();
+            document.getElementById('breaksToday').textContent = stats.breaksToday || 0;
+            
+            const hours = Math.floor((stats.screenTime || 0) / 3600);
+            const minutes = Math.floor(((stats.screenTime || 0) % 3600) / 60);
+            document.getElementById('screenTime').textContent = `${hours}h ${minutes}m`;
+            
+            document.getElementById('streak').textContent = stats.streak || 0;
+            document.getElementById('waterCount').textContent = stats.waterCount || 0;
+        }
+        
+        // ==================== MODAL TOGGLE FUNCTION ====================
+        function sh(id) {
+            const modal = document.getElementById(id);
+            if (modal.classList.contains('active')) {
+                modal.classList.remove('active');
+                // Scroll to top when closing SEO page
+                if (id === 'seo-page') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            } else {
+                // Close any other open modals
+                document.querySelectorAll('#about, #priv, #supp, #shop, #seo-page').forEach(m => {
+                    m.classList.remove('active');
+                });
+                modal.classList.add('active');
+                // Scroll to top when opening SEO page
+                if (id === 'seo-page') {
+                    modal.scrollTop = 0;
+                }
+            }
+        }
+        
+        // Close modals on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('#about, #priv, #supp, #shop, #seo-page').forEach(m => {
+                    m.classList.remove('active');
+                });
+            }
+        });
+        
+        // Close modals when clicking outside
+        document.querySelectorAll('#about, #priv, #supp, #shop').forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+        });
+        
+        // ==================== KEYBOARD SHORTCUTS ====================
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT') return;
+            
+            if (e.code === 'Space') {
+                e.preventDefault();
+                if (isRunning) {
+                    pauseTimer();
+                } else {
+                    startTimer();
+                }
+            } else if (e.code === 'KeyR') {
+                e.preventDefault();
+                resetTimer();
+            } else if (e.code === 'KeyB') {
+                e.preventDefault();
+                pauseTimer();
+                startBreak();
+            }
+        });
+        
+        // ==================== BACK TO TOP ====================
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // ==================== RESET ALL DATA ====================
+        const resetAllBtn = document.getElementById('resetAllBtn');
+        const confirmDialog = document.getElementById('confirmDialog');
+        const confirmYes = document.getElementById('confirmYes');
+        const confirmNo = document.getElementById('confirmNo');
+        
+        resetAllBtn.addEventListener('click', () => {
+            confirmDialog.classList.add('active');
+        });
+        
+        confirmNo.addEventListener('click', () => {
+            confirmDialog.classList.remove('active');
+        });
+        
+        confirmYes.addEventListener('click', () => {
+            // Clear all localStorage data
+            localStorage.removeItem('eyezen-stats');
+            localStorage.removeItem('eyezen-settings');
+            
+            // Reset to defaults
+            settings.workInterval = 20;
+            settings.breakDuration = 20;
+            settings.waterGoal = 8;
+            settings.notifications = true;
+            settings.sound = true;
+            
+            // Update UI
+            loadSettings();
+            updateStatsDisplay();
+            updateWaterProgress();
+            resetTimer();
+            
+            // Close dialog and show toast
+            confirmDialog.classList.remove('active');
+            showToast('✅ All data has been reset!');
+        });
+        
+        // ==================== INITIALIZATION ====================
+        loadSettings();
+        updateStatsDisplay();
+        updateWaterProgress();
+        updateDisplay();
+        
+        setInterval(() => {
+            const stats = getStats();
+            updateStatsDisplay();
+            updateWaterProgress();
+        }, 60000);
+    </script>
 </body>
 </html>
