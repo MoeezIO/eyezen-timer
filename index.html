@@ -716,6 +716,126 @@
         .disclaimer strong {
             color: var(--accent-mint);
         }
+
+        /* Educational Resources */
+        .educational-resources {
+            margin: 50px 0 40px;
+            text-align: left;
+        }
+
+        .educational-resources > h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--accent-mint), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .edu-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 720px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .edu-articles {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .edu-article {
+            background: rgba(6, 182, 212, 0.05);
+            border: 1px solid var(--border-glass);
+            border-radius: 16px;
+            padding: 28px 32px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .edu-article:hover {
+            border-color: rgba(0, 212, 170, 0.35);
+            box-shadow: 0 4px 24px rgba(0, 212, 170, 0.08);
+        }
+
+        .edu-article h3 {
+            font-size: 1.35rem;
+            color: var(--accent-mint);
+            margin-bottom: 16px;
+            line-height: 1.35;
+        }
+
+        .edu-article p {
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+
+        .edu-article p:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-article ul {
+            color: var(--text-secondary);
+            line-height: 1.75;
+            margin: 12px 0 14px 1.25rem;
+            font-size: 0.95rem;
+        }
+
+        .edu-article li {
+            margin-bottom: 8px;
+        }
+
+        .edu-article strong {
+            color: var(--text-primary);
+        }
+
+        .footer-legal {
+            margin-bottom: 16px;
+            padding: 12px 0;
+            border-top: 1px solid var(--border-glass);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .footer-legal-label {
+            display: block;
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 10px;
+        }
+
+        .footer-legal a {
+            margin: 0 12px;
+        }
+
+        @media (max-width: 768px) {
+            .educational-resources {
+                margin: 36px 0 28px;
+            }
+
+            .educational-resources > h2 {
+                font-size: 1.6rem;
+            }
+
+            .edu-article {
+                padding: 22px 20px;
+            }
+
+            .edu-article h3 {
+                font-size: 1.15rem;
+            }
+
+            .footer-legal a {
+                display: inline-block;
+                margin: 6px 10px;
+            }
+        }
         
         /* Confirmation Dialog */
         .confirm-dialog {
@@ -1533,6 +1653,98 @@
             </div>
         </div>
         
+        <!-- Educational Resources (visible for crawlers & AdSense) -->
+        <section class="glass-card educational-resources" aria-labelledby="edu-resources-heading">
+            <h2 id="edu-resources-heading">Educational Resources</h2>
+            <p class="edu-intro">
+                Evidence-based guides on digital eye health, workplace wellness, and the science behind the 20-20-20 rule.
+                Use EyeZen's free timer to put these habits into practice every workday.
+            </p>
+            <div class="edu-articles">
+                <article class="edu-article" id="scientific-benefits-20-20-20">
+                    <h3>Scientific Benefits of the 20-20-20 Rule for Eye Health</h3>
+                    <p>
+                        The <strong>20-20-20 rule</strong> is one of the most widely recommended habits for reducing
+                        <strong>digital eye strain</strong> among people who work on computers, tablets, and smartphones.
+                        Optometrists and organizations such as the American Academy of Ophthalmology suggest that every
+                        20 minutes of near work, you pause for 20 seconds and look at an object roughly 20 feet away.
+                        This brief shift relaxes the ciliary muscles that control lens focus, which tighten during
+                        prolonged close-up viewing and contribute to fatigue, blurred vision, and headaches.
+                    </p>
+                    <p>
+                        Research on computer vision syndrome consistently links extended screen time with dry eyes,
+                        reduced blink rate, and accommodative stress. When you stare at a monitor, blink frequency
+                        can drop by up to 66%, accelerating tear film evaporation and surface irritation. Micro-breaks
+                        that include distance viewing encourage more natural blinking and give the visual system time
+                        to recover. Studies on workplace ergonomics also show that structured rest intervals improve
+                        comfort ratings and self-reported focus without significantly harming output when breaks are short.
+                    </p>
+                    <p>
+                        The 20-20-20 rule is not a substitute for professional eye care, but it is a practical,
+                        zero-cost intervention supported by clinical guidance. Pairing timed breaks with proper
+                        lighting, screen distance, and hydration—features you can track with EyeZen—creates a
+                        sustainable routine for long-term ocular comfort. Consistency matters more than perfection:
+                        even missed cycles add up when you return to the habit, helping protect vision during years
+                        of remote and hybrid work.
+                    </p>
+                </article>
+                <article class="edu-article" id="eye-strain-productivity">
+                    <h3>How Digital Eye Strain Affects Productivity at Work</h3>
+                    <p>
+                        <strong>Digital eye strain</strong>, also called computer vision syndrome, is more than an
+                        annoyance—it measurably impacts how well people perform during knowledge work. Symptoms such
+                        as burning eyes, difficulty focusing, neck tension, and afternoon headaches increase error
+                        rates and slow reading speed on screens. Employees who experience chronic discomfort often
+                        take longer to complete tasks, require more frequent unplanned breaks, and report lower
+                        energy by mid-afternoon, which affects collaboration and decision quality in remote teams.
+                    </p>
+                    <p>
+                        Productivity losses are often invisible in spreadsheets but show up as "brain fog,"
+                        procrastination, or reliance on caffeine to push through discomfort. When the eyes struggle,
+                        the brain allocates more effort to maintaining clarity, leaving fewer cognitive resources
+                        for problem-solving and creative work. Developers, designers, writers, and students are
+                        especially vulnerable because sustained attention on pixels demands continuous accommodation
+                        and convergence—two visual processes that fatigue faster than many realize.
+                    </p>
+                    <p>
+                        Organizations that invest in eye wellness see benefits in attendance, satisfaction, and
+                        output. Simple interventions—scheduled breaks, ergonomic setups, and tools like a
+                        <strong>browser-based 20-20-20 timer</strong>—reduce symptom severity without expensive
+                        hardware. EyeZen helps individuals track screen time and break consistency so patterns
+                        become visible. Addressing eye strain early prevents it from becoming a chronic barrier
+                        to deep work, making vision care a practical productivity strategy, not just a health nicety.
+                    </p>
+                </article>
+                <article class="edu-article" id="remote-workspace-tips">
+                    <h3>Top 5 Tips for a Healthier Remote Workspace</h3>
+                    <p>
+                        A healthier <strong>remote workspace</strong> combines ergonomics, lighting, and habits that
+                        protect your eyes during long screen sessions. Whether you work from a home office or a shared
+                        desk, small upgrades compound into meaningful comfort gains over months and years.
+                    </p>
+                    <ul>
+                        <li><strong>Follow the 20-20-20 rule consistently.</strong> Use a dedicated timer—such as EyeZen—to
+                            remind you every 20 minutes. Automated cues remove the burden of remembering during deep focus.</li>
+                        <li><strong>Position your monitor correctly.</strong> The top of the screen should sit at or slightly
+                            below eye level, about an arm's length away. This reduces neck strain and limits excessive
+                            upward gaze that dries the eyes.</li>
+                        <li><strong>Optimize lighting.</strong> Avoid glare from windows or overhead lights. Soft, indirect
+                            illumination reduces contrast fatigue and helps pupils stay relaxed.</li>
+                        <li><strong>Stay hydrated.</strong> Dehydration worsens dry eye symptoms. Keep water within reach
+                            and log daily intake to build a repeatable wellness habit alongside screen breaks.</li>
+                        <li><strong>Invest in supportive gear thoughtfully.</strong> Blue-light filters, ergonomic chairs,
+                            and external keyboards can help when chosen for your body and workflow—not as generic fixes.</li>
+                    </ul>
+                    <p>
+                        Remote work rewards systems, not willpower alone. Tracking breaks, water, and screen time turns
+                        abstract advice into measurable progress. EyeZen was built to make those systems effortless:
+                        free, private, and accessible in any browser. Start with one tip this week, add another the
+                        next, and build a workspace that supports both your eyes and your career.
+                    </p>
+                </article>
+            </div>
+        </section>
+
         <!-- Ad Placeholder Sidebar (on mobile, it appears below) -->
         <div id="ad-sidebar">Ad Space</div>
         
@@ -1584,28 +1796,32 @@
     
     <!-- Footer -->
     <footer>
-        <!-- Ad Placeholder Footer -->
-        <div id="ad-footer">Ad Space</div>
-        
-        <div class="footer-links">
-            <a href="javascript:void(0);" onclick="sh('about')">About</a>
-            <a href="javascript:void(0);" onclick="sh('priv')">Privacy Policy</a>
-            <a href="javascript:void(0);" onclick="sh('supp')">Support Us</a>
-        </div>
-        <div style="margin-top: 15px; margin-bottom: 20px;">
-            <a href="javascript:void(0);" onclick="sh('seo-page')" style="color: var(--text-dim); font-size: 0.85rem; font-weight: 400;">
-                Learn About Eye Health & the 20-20-20 Rule
-            </a>
-        </div>
-        <div class="copyright">
-            © 2026 EyeZen. Protect your eyes, enhance your productivity.
-        </div>
-        
-        <!-- Amazon Disclaimer -->
-        <div class="disclaimer">
-            <strong>Affiliate Disclosure:</strong> As an Amazon Associate, I earn from qualified purchases. This supports the EyeZen team in providing free eye wellness tools for everyone.
-        </div>
-    </footer>
+    	<!-- Ad Placeholder Footer -->
+    	<div id="ad-footer">Ad Space</div>
+
+    <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="javascript:void(0);" onclick="sh('supp')">Support Us</a>
+    </div>
+
+    <div style="margin-top: 15px; margin-bottom: 20px;">
+        <a href="javascript:void(0);" onclick="sh('seo-page')" style="color: var(--text-dim); font-size: 0.85rem; font-weight: 400;">
+            Learn About Eye Health & the 20-20-20 Rule
+        </a>
+    </div>
+
+    <div class="copyright">
+        © 2026 EyeZen. Protect your eyes, enhance your productivity.
+    </div>
+    
+    <!-- Amazon Disclaimer -->
+    <div class="disclaimer">
+        <strong>Affiliate Disclosure:</strong> As an Amazon Associate, I earn from qualified purchases. This supports the EyeZen team in providing free eye wellness tools for everyone.
+    </div>
+</footer>
     
 
     
